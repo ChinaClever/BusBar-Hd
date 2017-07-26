@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context="com.clever.www.busbar.MainActivity">
 
+
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
