@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.clever.www.busbar.navigation.BarMenuFragment">
+
+    <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/bar_div_white" />
+
+    <RadioGroup
+        android:id="@+id/bar_menu_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/homeBtn"
+            style="@style/bar_menu_item"
+            android:drawableTop="@drawable/bar_menu_home"
+            android:text="@string/bar_menu_home" />
+
+        <RadioButton
+            android:id="@+id/mainBtn"
+            style="@style/bar_menu_item"
+            android:drawableTop="@drawable/bar_menu_main"
+            android:text="@string/bar_menu_main" />
+
+        <RadioButton
+            android:id="@+id/branchBtn"
+            style="@style/bar_menu_item"
+            android:drawableTop="@drawable/bar_menu_branch"
+            android:text="@string/bar_menu_branch" />
+
+        <RadioButton
+            android:id="@+id/settingsBtn"
+            style="@style/bar_menu_item"
+            android:drawableTop="@drawable/bar_menu_settings"
+            android:text="@string/bar_menu_settings"/>
+
+    </RadioGroup>
+
+</FrameLayout>

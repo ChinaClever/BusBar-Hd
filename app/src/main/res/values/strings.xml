@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">BusBar</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="navigation_home">主界面</string>
+    <string name="navigation_main">主路</string>
+    <string name="navigation_branch">支路</string>
+    <string name="navigation_settings">设置</string>
+
+    <string name="bar_menu_home">主界面</string>
+    <string name="bar_menu_main">主路</string>
+    <string name="bar_menu_branch">支路</string>
+    <string name="bar_menu_settings">设置</string>
 
     <string name="title_login_btn">登陆</string>
 
