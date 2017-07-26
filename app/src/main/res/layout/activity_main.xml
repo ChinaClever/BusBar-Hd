@@ -8,6 +8,10 @@
     android:orientation="vertical"
     tools:context="com.clever.www.busbar.MainActivity">
 
+    <fragment
+        android:name="com.clever.www.busbar.title.TitleFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <FrameLayout
         android:id="@+id/content"
