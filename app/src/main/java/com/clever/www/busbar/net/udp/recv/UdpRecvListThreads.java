@@ -5,7 +5,7 @@ package com.clever.www.busbar.net.udp.recv;
  */
 
 public class UdpRecvListThreads {
-    private static final int SOCK_NUM = 1;
+    private static final int SOCK_NUM = 20;
     private static final int PORT = 8080;
 
     public void createSocket(final int num) {

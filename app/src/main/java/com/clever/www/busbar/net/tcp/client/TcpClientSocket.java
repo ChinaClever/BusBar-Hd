@@ -120,8 +120,4 @@ public class TcpClientSocket {
         return isConnected;
     }
 
-
-
-
-
 }

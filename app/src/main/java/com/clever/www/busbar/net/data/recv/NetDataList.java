@@ -18,7 +18,7 @@ public class NetDataList {
      * 获取唯一对象
      * @return
      */
-    public static NetDataList get(){
+    public static NetDataList bulid(){
         if(mDataList == null) {
             mDataList = new NetDataList();
         }
