@@ -8,9 +8,12 @@ import com.clever.www.busbar.net.udp.recv.UdpRecvListThreads;
 
 public class NetRecvThread {
     private UdpRecvListThreads mUdpSocket = new UdpRecvListThreads();
+//    private NetDataReadThread mNet = new NetDataReadThread();
 
     public void initNet() {
         mUdpSocket.createSockets();
+
+//        new Thread(mNet).start();
 
 //        UdpSend udp = new UdpSend();
 //        String str = "luozhiyong";
