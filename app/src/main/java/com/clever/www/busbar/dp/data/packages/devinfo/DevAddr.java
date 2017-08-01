@@ -7,7 +7,7 @@ import com.clever.www.busbar.dp.data.packages.base.DevStrBase;
  *
  */
 public class DevAddr {
-    public DevStrBase company = new DevStrBase(); //区
+    public DevStrBase idc = new DevStrBase(); //区
     public DevStrBase room = new DevStrBase(); // 组
     public DevStrBase cab = new DevStrBase(); //机柜
 }

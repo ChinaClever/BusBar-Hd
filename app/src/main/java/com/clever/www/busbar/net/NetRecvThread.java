@@ -1,5 +1,6 @@
 package com.clever.www.busbar.net;
 
+import com.clever.www.busbar.net.data.recv.NetDataReadThread;
 import com.clever.www.busbar.net.udp.recv.UdpRecvListThreads;
 
 /**
@@ -8,12 +9,11 @@ import com.clever.www.busbar.net.udp.recv.UdpRecvListThreads;
 
 public class NetRecvThread {
     private UdpRecvListThreads mUdpSocket = new UdpRecvListThreads();
-//    private NetDataReadThread mNet = new NetDataReadThread();
+    private NetDataReadThread mNet = new NetDataReadThread();
 
     public void initNet() {
         mUdpSocket.createSockets();
-
-//        new Thread(mNet).start();
+        new Thread(mNet).start();
 
 //        UdpSend udp = new UdpSend();
 //        String str = "luozhiyong";
