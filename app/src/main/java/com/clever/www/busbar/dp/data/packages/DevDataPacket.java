@@ -16,7 +16,7 @@ public class DevDataPacket {
     public int devNum = 0;  // 设备号
 
     public int offLine = 0; // 离线标识
-    public int loopNum = 0; //回路数据
+    public int loopNum = 0; //回路数量
 
     public DevStrBase ip = new DevStrBase(); //设备IP
     public DevStrBase name = new DevStrBase(); //设备名称
