@@ -3,7 +3,7 @@ package com.clever.www.busbar.dp.data.hash.slave;
 
 import com.clever.www.busbar.dp.data.packages.base.DevDataBase;
 import com.clever.www.busbar.dp.data.packages.devdata.DevDataUnit;
-import com.clever.www.busbar.dp.data.packages.devdata.DevDevData;
+import com.clever.www.busbar.dp.data.packages.devdata.DevDatas;
 import com.clever.www.busbar.dp.data.packages.devdata.DevEnvData;
 import com.clever.www.busbar.dp.data.packages.devdata.DevObjData;
 import com.clever.www.busbar.net.data.packages.NetDataDomain;
@@ -163,7 +163,7 @@ public class DevDataSlave {
             mCommon.saveHashIntData(ptr, data.len, data.data, sizeBit);
     }
 
-    public void hashDevDataSlave(DevDevData dev, NetDataDomain data){
+    public void hashDevDataSlave(DevDatas dev, NetDataDomain data){
         int fc = data.fn[0]; //根据功能码，进行分支处理
         switch (fc) {
             case DevCmdConstants.DEV_CMD_LINE: //设备相参数

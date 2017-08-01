@@ -15,6 +15,7 @@ public class NetRecvThread {
         mUdpSocket.createSockets();
         new Thread(mNet).start();
 
+
 //        UdpSend udp = new UdpSend();
 //        String str = "luozhiyong";
 //        udp.dbSent(8080, str.getBytes(), str.length());

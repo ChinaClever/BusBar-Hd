@@ -29,9 +29,12 @@ public class UdpRecvSocket {
     }
 
     private boolean recv() {
-        boolean ret = true;
+        boolean ret = false;
         try {
-            socket.receive(packet);// 3.接收客户端发送的数据 此方法在接收到数据报之前会一直阻塞
+            if(packet != null) {
+                socket.receive(packet);// 3.接收客户端发送的数据 此方法在接收到数据报之前会一直阻塞
+                ret = true;
+            }
         } catch (IOException e) {
             e.printStackTrace();
             ret = false;

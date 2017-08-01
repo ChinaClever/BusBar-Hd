@@ -1,4 +1,4 @@
-package com.clever.www.busbar.title;
+package com.clever.www.busbar.titlebar;
 
 
 import android.content.Intent;

@@ -1,5 +1,7 @@
 package com.clever.www.busbar.net.udp.recv;
 
+import android.util.Log;
+
 import com.clever.www.busbar.net.data.recv.NetDataList;
 
 /**
@@ -11,12 +13,16 @@ public class UdpRecvThread {
     private UdpRecvSocket mSocket = null;
     private byte[] data = new byte[MAX_SIZE]; // 创建字节数组，指定接收的数据包的大小
     private NetDataList mNetDataList = NetDataList.bulid();
-
+    private static final String TAG = "lzy";
 
     public void init(int port) {
         mSocket = new UdpRecvSocket();
-        mSocket.init(port);
-        recvThread();
+        boolean ret = mSocket.init(port);
+        if(ret) {
+            recvThread();
+        } else {
+            Log.d(TAG, "init: lzy error!! " + port );
+        }
     }
 
 
@@ -30,8 +36,15 @@ public class UdpRecvThread {
         new Thread() {
             @Override
             public void run() {
-                while (true)
-                    recv();
+                while (true) {
+                    try {
+                        Thread.sleep(1);
+                        recv();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                }
             }
         }.start();
     }

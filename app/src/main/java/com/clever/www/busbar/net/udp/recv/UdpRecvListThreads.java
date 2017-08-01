@@ -6,14 +6,15 @@ package com.clever.www.busbar.net.udp.recv;
 
 public class UdpRecvListThreads {
     private static final int SOCK_NUM = 20;
-    private static final int PORT = 8080;
+    private static final int PORT = 28720;
 
     public void createSocket(final int num) {
         new Thread() {
             @Override
             public void run() {
-                for(int i=0; i<num; ++i)
+                for(int i=0; i<num; ++i) {
                     new UdpRecvThread().init(PORT + i);
+                }
             }
         }.start();
     }

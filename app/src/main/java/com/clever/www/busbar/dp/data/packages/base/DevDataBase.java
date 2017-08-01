@@ -72,4 +72,49 @@ public class DevDataBase {
        for (int i=0; i<mList.size(); ++i)
            mList.set(i, data);
     }
+
+    public int averData()
+    {
+        int size=0, value=0;
+
+        for(int i=0; i< size(); ++i)
+        {
+            int temp = get(i);
+            if(temp > 0) {
+                size++;
+                value += temp;
+            }
+        }
+
+        if(size > 0)
+            value /= size;
+
+        return value;
+    }
+
+    public int addData()
+    {
+        int  value=0;
+        for(int i=0; i< size(); ++i)
+        {
+            int temp = get(i);
+            if(temp > 0) {
+                value += temp;
+            }
+        }
+        return  value;
+    }
+
+    public int maxData() {
+        int  value=0;
+        for(int i=0; i< size(); ++i)
+        {
+            int temp = get(i);
+            if(temp > value) {
+                value = temp;
+            }
+        }
+        return  value;
+    }
+
 }
