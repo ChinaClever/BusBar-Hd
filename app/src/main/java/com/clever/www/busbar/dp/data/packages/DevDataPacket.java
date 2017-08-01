@@ -13,7 +13,7 @@ import com.clever.www.busbar.dp.data.packages.net.DevNetInfo;
 public class DevDataPacket {
     public int state = 0; // 工作状态 ==0 正常
 
-    public int devNum = 0;  // 设备号
+    public int boxNum = 0;  // 设备号
 
     public int offLine = 0; // 离线标识
     public int loopNum = 0; //回路数量
