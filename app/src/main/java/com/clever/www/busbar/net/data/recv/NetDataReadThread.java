@@ -37,7 +37,7 @@ public class NetDataReadThread implements Runnable{
                         break;
                 }
             } else {
-                Log.d("lzy", "recv err" + ret +" " + dataBase.ip.toString());
+                Log.d("lzy", "recv err " + ret +" " + dataBase.ip.toString());
             }
         }
         return ret;
