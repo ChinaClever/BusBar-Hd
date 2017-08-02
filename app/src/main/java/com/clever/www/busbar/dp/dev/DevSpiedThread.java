@@ -75,7 +75,6 @@ public class DevSpiedThread {
             public void run() {
                 while (true) {
                     try {
-
                         Thread.sleep(1000);
                         checkDevState();
                     } catch (InterruptedException e) {

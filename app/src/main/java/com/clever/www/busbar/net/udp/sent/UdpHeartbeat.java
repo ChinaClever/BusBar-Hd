@@ -5,7 +5,7 @@ package com.clever.www.busbar.net.udp.sent;
  */
 
 public class UdpHeartbeat {
-    private static final int PORT = 8080;
+    private static final int PORT = 18725;
     private static final String MSG = "Clever-Manager PDU APP Server OK!";
     private UdpSend udp = new UdpSend();
     private static UdpHeartbeat mUdpHeartbeat = null;
