@@ -15,7 +15,6 @@ public class LoginStatus {
     public static String login_pwd;
     public static boolean isRemember = false;
 
-
     private static BusHashRead mReadHash = new BusHashRead();
     public static DevDataPacket getPacket(int num) {
         DevDataPacket dataPacket = mReadHash.get(login_devNum, num);;
