@@ -8,14 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.clever.www.busbar.R;
+import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.login.LoginActivity;
+import com.clever.www.busbar.login.LoginStatus;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TitleFragment extends Fragment {
+    private Timers timer = new Timers();
+    private TextView mIptv = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,6 +31,9 @@ public class TitleFragment extends Fragment {
         Button btn =  view.findViewById(R.id.loginBtn);
         btn.setOnClickListener(onClickListener);
 
+        mIptv = view.findViewById(R.id.ipTv);
+
+        timer.start(500);
 
         return  view;
     }
@@ -42,6 +50,19 @@ public class TitleFragment extends Fragment {
         }
     };
 
+    private void updateData() {
+        String ip = "---";
+        if(LoginStatus.isLogin) {
+           ip = LoginStatus.login_ip;
+        }
+        mIptv.setText("IP: "+ip);
+    }
 
+    private class Timers extends HanderTimer {
+        @Override
+        public void timeout() {
+            updateData();
+        }
+    }
 
 }
