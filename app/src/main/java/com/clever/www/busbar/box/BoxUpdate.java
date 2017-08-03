@@ -24,10 +24,10 @@ public class BoxUpdate {
     }
 
     private void updateData() {
-        num++;
-        for(int i=0; i<5; ++i) {
-            mBoxItems.get(i).setName("lzy " + num);
-        }
+//        num++;
+//        for(int i=0; i<5; ++i) {
+//            mBoxItems.get(i).setName("lzy " + num);
+//        }
         mAdapter.notifyDataSetChanged();
     }
 

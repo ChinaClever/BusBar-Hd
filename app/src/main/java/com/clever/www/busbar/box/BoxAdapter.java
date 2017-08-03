@@ -20,12 +20,10 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         View mItemView;
-        TextView tv;
 
         public ViewHolder(View itemView) {
             super(itemView);
             mItemView = itemView;
-            tv = itemView.findViewById(R.id.lzy_tv);
         }
     }
 
@@ -51,13 +49,53 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
         return holder;
     }
 
+    private void updateData(ViewHolder holder, BoxItem boxItem) {
+        TextView tv =  holder.mItemView.findViewById(R.id.id_tv);
+        String str = (boxItem.getId() + 1) +"";
+        tv.setText(str);
+
+        tv = holder.mItemView.findViewById(R.id.name_tv);
+        str = boxItem.getName();
+        if(str.isEmpty())
+            str = "iBox-" +(boxItem.getId() + 1);
+        tv.setText(str);
+
+        tv = holder.mItemView.findViewById(R.id.temp_tv);
+        double value = boxItem.getTemp();
+        if(value < 0) str = "---";
+        else str = value + "";
+        tv.setText(str);
+
+        tv = holder.mItemView.findViewById(R.id.line_tv);
+        value = boxItem.getLine();
+        if(value < 0) str = "---";
+        else str = ((int)value+1) + "";
+        tv.setText(str);
+
+        tv = holder.mItemView.findViewById(R.id.vol_tv);
+        value = boxItem.getVol();
+        if(value < 0) str = "---";
+        else str = (value+1) + "";
+        tv.setText(str);
+
+        tv = holder.mItemView.findViewById(R.id.cur_tv);
+        value = boxItem.getCur();
+        if(value < 0) str = "---";
+        else str = (value+1) + "";
+        tv.setText(str);
+
+        tv = holder.mItemView.findViewById(R.id.ele_tv);
+        value = boxItem.getEle();
+        if(value < 0) str = "---";
+        else str = (value+1) + "";
+        tv.setText(str);
+    }
+
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         BoxItem boxItem = mBoxItems.get(position);
-        holder.tv.setText(boxItem.getName());
+        updateData(holder, boxItem);
     }
-
-
 
     @Override
     public int getItemCount() {
