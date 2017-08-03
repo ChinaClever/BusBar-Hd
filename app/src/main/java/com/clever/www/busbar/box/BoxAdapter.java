@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.clever.www.busbar.R;
 
@@ -18,11 +19,12 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
     private List<BoxItem> mBoxItems;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
+        View mItemView;
         TextView tv;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
+            mItemView = itemView;
             tv = itemView.findViewById(R.id.lzy_tv);
         }
     }
@@ -35,7 +37,17 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.box_item, parent, false);
-        ViewHolder holder = new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.mItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = holder.getAdapterPosition();
+                BoxItem item = mBoxItems.get(position);
+                Toast.makeText(view.getContext(), position+item.getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         return holder;
     }
 

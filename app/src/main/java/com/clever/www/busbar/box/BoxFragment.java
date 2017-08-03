@@ -3,8 +3,8 @@ package com.clever.www.busbar.box;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class BoxFragment extends Fragment {
     private List<BoxItem> boxItems = new ArrayList<>();
-
+    private BoxUpdate mBoxUpdate = null;
 
 
 
@@ -31,11 +31,15 @@ public class BoxFragment extends Fragment {
 
         init();
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         BoxAdapter adapter = new BoxAdapter(boxItems);
         recyclerView.setAdapter(adapter);
 
+        mBoxUpdate = new BoxUpdate();
+        mBoxUpdate.setData(adapter, boxItems);
 
         return view;
     }
