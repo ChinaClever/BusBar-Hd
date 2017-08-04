@@ -68,7 +68,7 @@ public class DevHashDataSlave {
                 if(dataPacket.code.version == NetConstants.DATA_DEV_VERSION) { // 版本号的验证
                     dev.boxNum = dataPacket.dataDomain.addr; // 设备地址
                     dev.ip.set(ip); // 设备IP
-                    dev.offLine = NetConstants.DEV_OFF_LINE_TIME; // 设备在线标识
+                    dev.offLine = 10* NetConstants.DEV_OFF_LINE_TIME; // 设备在线标识
 
                     hashDataFunction(dev, dataPacket.dataDomain);
                 }

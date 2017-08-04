@@ -46,6 +46,6 @@ public class NavigationFragment extends Fragment implements RadioGroup.OnChecked
         }
 
         MainActivity activity = (MainActivity) getActivity();
-        activity.changedFragment(id);
+        activity.btmenuChanged(id);
     }
 }

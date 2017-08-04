@@ -37,7 +37,6 @@ public class DevSpiedThread {
         packet.envAlarm += packet.data.env.tem.alarm.maxData();
     }
 
-
     private void checkDevState() {
         List<Integer> list = new ArrayList<>();
         mHashData.list(list);
