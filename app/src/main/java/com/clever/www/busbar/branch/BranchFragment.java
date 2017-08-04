@@ -27,7 +27,6 @@ public class BranchFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.branch_fragment, container, false);
 
-        initBranch();
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -39,15 +38,6 @@ public class BranchFragment extends Fragment {
 
         return view;
     }
-
-
-    private void initBranch() {
-        for (int i=0; i<6;++i) {
-            BranchItem item = new BranchItem(i);
-            mBranchItems.add(item);
-        }
-    }
-
 
 
 }

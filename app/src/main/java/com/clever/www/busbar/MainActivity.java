@@ -8,12 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import com.clever.www.busbar.box.BoxFragment;
 import com.clever.www.busbar.branch.BranchFragment;
 import com.clever.www.busbar.dp.dev.DevSpiedThread;
+import com.clever.www.busbar.line.LineFragment;
 import com.clever.www.busbar.net.NetRecvThread;
 
 public class MainActivity extends AppCompatActivity {
     private NetRecvThread mNetRecvThread = new NetRecvThread();
     private BoxFragment mBoxFragment = null;
     private BranchFragment mBranchFragment = null;
+    private LineFragment mLineFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case 1:
-
+                if(mLineFragment == null){
+                    mLineFragment = new LineFragment();
+                    transaction.add(R.id.content,mLineFragment);
+                }
+                transaction.show(mLineFragment);
                 break;
 
             case 2:
@@ -68,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
     private void hideAllFragment(FragmentTransaction fragmentTransaction) {
         if (mBoxFragment != null) fragmentTransaction.hide(mBoxFragment);
         if (mBranchFragment != null) fragmentTransaction.hide(mBranchFragment);
+        if (mLineFragment != null) fragmentTransaction.hide(mLineFragment);
     }
 
 }

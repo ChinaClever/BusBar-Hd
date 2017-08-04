@@ -1,24 +1,25 @@
-package com.clever.www.busbar.branch;
+package com.clever.www.busbar.line.linelist;
 
 /**
  * Created by Lzy on 17-8-4.
  */
 
-public class BranchItem {
-    private int id=0;
+public class LineItem {
+    private int id = 0;
     private String name;
     private int status = 0;
     private int vol = 0;
     private double cur = 0;
+    private double maxCur = 0;
     private double pow = 0;
     private double apPow = 0;
     private double pf = 0;
     private double ele = 0;
-    private int tem = 0;
 
-    public BranchItem(int id) {
+    public LineItem(int id) {
         setId(id);
     }
+
 
     public int getId() {
         return id;
@@ -26,14 +27,6 @@ public class BranchItem {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getStatus() {
@@ -58,6 +51,14 @@ public class BranchItem {
 
     public void setCur(double cur) {
         this.cur = cur;
+    }
+
+    public double getMaxCur() {
+        return maxCur;
+    }
+
+    public void setMaxCur(double maxCur) {
+        this.maxCur = maxCur;
     }
 
     public double getPow() {
@@ -92,12 +93,13 @@ public class BranchItem {
         this.ele = ele;
     }
 
-    public int getTem() {
-        return tem;
+    public String getName() {
+        return name;
     }
 
-    public void setTem(int tem) {
-        this.tem = tem;
+    public void setName(String name) {
+        this.name = name;
     }
+
 
 }
