@@ -1,4 +1,4 @@
-package com.clever.www.busbar.box;
+package com.clever.www.busbar.boxlist;
 
 
 import android.os.Bundle;

@@ -5,9 +5,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-import com.clever.www.busbar.box.BoxFragment;
+import com.clever.www.busbar.boxlist.BoxFragment;
 import com.clever.www.busbar.branch.BranchFragment;
 import com.clever.www.busbar.dp.dev.DevSpiedThread;
+import com.clever.www.busbar.home.HomeFragment;
 import com.clever.www.busbar.line.LineFragment;
 import com.clever.www.busbar.net.NetRecvThread;
 
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private BoxFragment mBoxFragment = null;
     private BranchFragment mBranchFragment = null;
     private LineFragment mLineFragment = null;
+    private HomeFragment mHomeFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,11 @@ public class MainActivity extends AppCompatActivity {
 
         switch (id) {
             case 0:
-
+                if(mHomeFragment == null){
+                    mHomeFragment = new HomeFragment();
+                    transaction.add(R.id.content,mHomeFragment);
+                }
+                transaction.show(mHomeFragment);
                 break;
 
             case 1:
@@ -75,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         if (mBoxFragment != null) fragmentTransaction.hide(mBoxFragment);
         if (mBranchFragment != null) fragmentTransaction.hide(mBranchFragment);
         if (mLineFragment != null) fragmentTransaction.hide(mLineFragment);
+        if (mHomeFragment != null) fragmentTransaction.hide(mHomeFragment);
     }
 
 }

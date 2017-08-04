@@ -1,4 +1,4 @@
-package com.clever.www.busbar.box;
+package com.clever.www.busbar.boxlist;
 
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.hash.data.BoxDataHash;
