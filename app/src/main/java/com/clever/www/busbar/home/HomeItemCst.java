@@ -44,9 +44,11 @@ public class HomeItemCst extends LinearLayout{
         int busId = LoginStatus.login_devNum;
         int boxNum = BusHashTable.getBoxNUm(busId);
 
-        if(mBoxID > boxNum) {
-            setVisibility(View.GONE);
-        }
+//        if(mBoxID >= boxNum) {
+//            setVisibility(View.GONE);
+//        }
+
+//        Log.d("lzy", "checkBoxNum: " + mBoxID + "  " + boxNum);
     }
 
 

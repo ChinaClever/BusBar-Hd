@@ -98,7 +98,7 @@ public class LoginFragment  extends Fragment{
         Dialog dialog = new AlertDialog.Builder(getActivity())
                 .setTitle(R.string.login_wait)
                 .setView(view)
-                .setNegativeButton(R.string.login_quit, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.login_back, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 

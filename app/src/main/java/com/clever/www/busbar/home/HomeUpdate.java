@@ -30,12 +30,6 @@ public class HomeUpdate {
         int busId = LoginStatus.login_devNum;
         int boxNum = BusHashTable.getBoxNUm(busId);
 
-
-        //////////////==================
-    ////// 显示不对
-
-
-
         if(boxNum%2 == 1) boxNum++;
         if(boxNum != (mItems.size()*2))
         {

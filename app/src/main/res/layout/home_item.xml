@@ -9,6 +9,12 @@
         android:layout_height="wrap_content">
     </com.clever.www.busbar.home.HomeItemCst>
 
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home_arrow"/>
+
     <com.clever.www.busbar.home.HomeItemCst
         android:id="@+id/cst_2"
         android:layout_width="wrap_content"

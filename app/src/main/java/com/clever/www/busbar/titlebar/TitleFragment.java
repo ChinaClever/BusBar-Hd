@@ -21,6 +21,7 @@ import com.clever.www.busbar.login.LoginStatus;
 public class TitleFragment extends Fragment {
     private Timers timer = new Timers();
     private TextView mIptv = null;
+    private Button mLoginBtn = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,8 +29,8 @@ public class TitleFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.title_fragmen, container, false);
 
-        Button btn =  view.findViewById(R.id.loginBtn);
-        btn.setOnClickListener(onClickListener);
+        mLoginBtn =  view.findViewById(R.id.loginBtn);
+        mLoginBtn.setOnClickListener(onClickListener);
 
         mIptv = view.findViewById(R.id.ipTv);
 
@@ -56,6 +57,14 @@ public class TitleFragment extends Fragment {
            ip = LoginStatus.login_ip;
         }
         mIptv.setText("IP: "+ip);
+
+
+        if(LoginStatus.getLogin()) {
+            mLoginBtn.setText(R.string.login_quit);
+        } else {
+            mLoginBtn.setText(R.string.login_btn);
+        }
+
     }
 
     private class Timers extends HanderTimer {
