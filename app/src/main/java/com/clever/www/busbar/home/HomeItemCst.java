@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.clever.www.busbar.R;
 import com.clever.www.busbar.common.timer.HanderTimer;
@@ -25,13 +26,22 @@ public class HomeItemCst extends LinearLayout{
     private ImageView loopIv;
     private int mBoxID=0;
 
-    public HomeItemCst(Context context, @Nullable AttributeSet attrs) {
+    public HomeItemCst(final Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         View view = LayoutInflater.from(context).inflate(R.layout.home_item_cst, this);
         idTv = view.findViewById(R.id.id_tv);
         curTv = view.findViewById(R.id.cur_tv);
         loopIv = view.findViewById(R.id.loopIv);
+
+        view.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(context, "home Item Cst", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         new Timers().start(500);
     }
@@ -53,7 +63,6 @@ public class HomeItemCst extends LinearLayout{
 
 //        Log.d("lzy", "checkBoxNum: " + mBoxID + "  " + boxNum);
     }
-
 
 
     private void setAlarmIcon(ImageView iv, int status) {

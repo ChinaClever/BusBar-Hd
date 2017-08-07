@@ -35,6 +35,8 @@ public class LineFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         LineAdapter adapter = new LineAdapter(mLineItems);
+
+
         recyclerView.setAdapter(adapter);
 
         mLineUpdate = new LineUpdate();

@@ -33,6 +33,34 @@
     <string name="login_please">请登陆</string>
     <string name="login_coned">已登陆</string>
 
+    <string name="line_rate">频率: </string>
+    <string name="line_tem">温度: </string>
+    <string name="line_total_cur">总电流: </string>
+    <string name="line_total_vol">平均电压: </string>
+    <string name="line_total_pow">总功率: </string>
+
+    <string name="line_name">相位</string>
+    <string name="line_status">状态</string>
+    <string name="line_vol">相电压</string>
+    <string name="line_cur">相电流</string>
+    <string name="line_max_cur">过载电流</string>
+    <string name="line_pow">有功功率</string>
+    <string name="line_appow">视在功率</string>
+    <string name="line_pf">功率因素</string>
+    <string name="line_ele">电能</string>
+
+    
+    <string name="branch_id">编号</string>
+    <string name="branch_name">名称</string>
+    <string name="branch_status">状态</string>
+    <string name="branch_total_vol">平均电压</string>
+    <string name="branch_total_cur">总电流</string>
+    <string name="branch_total_pow">有功功率</string>
+    <string name="branch_total_appow">视在功率</string>
+    <string name="branch_total_pf">功率因素</string>
+    <string name="branch_total_ele">总电能</string>
+    <string name="branch_total_tem">温度</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
