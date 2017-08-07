@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ import com.clever.www.busbar.login.LoginStatus;
 
 public class HomeItemCst extends LinearLayout{
     private TextView idTv, curTv;
+    private ImageView loopIv;
     private int mBoxID=0;
 
     public HomeItemCst(Context context, @Nullable AttributeSet attrs) {
@@ -29,6 +31,7 @@ public class HomeItemCst extends LinearLayout{
         View view = LayoutInflater.from(context).inflate(R.layout.home_item_cst, this);
         idTv = view.findViewById(R.id.id_tv);
         curTv = view.findViewById(R.id.cur_tv);
+        loopIv = view.findViewById(R.id.loopIv);
 
         new Timers().start(500);
     }
@@ -52,9 +55,58 @@ public class HomeItemCst extends LinearLayout{
     }
 
 
+
+    private void setAlarmIcon(ImageView iv, int status) {
+        int id = 0;
+
+        switch (status) {
+            case 0: // 离线
+                id = R.drawable.home_box_offine;
+                break;
+
+            case 1: // 在线
+                id = R.drawable.home_box_online;
+                break;
+
+            case 2: // 报警
+                id = R.drawable.home_box_cralarm;
+                break;
+
+            case 3:
+                id = R.drawable.home_box_alarm;
+                break;
+        }
+        iv.setImageResource(id);
+    }
+
+
+    private void checkALarmStatus() {
+        int alarm = 0;
+        int busId = LoginStatus.login_devNum;
+        int boxNum = BusHashTable.getBoxNUm(busId);
+        if(mBoxID < boxNum) {
+            DevDataPacket packet = LoginStatus.getPacket(mBoxID);
+            if(packet.offLine > 0) {
+                    alarm = 1;
+            }
+
+            if (packet.curAlarm == 1) {
+                alarm = 2;
+            }
+
+            if (packet.curAlarm == 2) {
+                alarm = 3;
+            }
+
+            setAlarmIcon(loopIv, alarm);
+        }
+    }
+
+
     private void updateData() {
         if(LoginStatus.getLogin()) {
             checkBoxNum();
+            checkALarmStatus();
 
             int busId = LoginStatus.login_devNum;
             BoxDataHash boxDataHash = BusHashTable.getHash().get(busId);

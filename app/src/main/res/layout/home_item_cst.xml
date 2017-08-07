@@ -10,6 +10,13 @@
         android:text="1"/>
 
 
+    <ImageView
+        android:id="@+id/loopIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home_box_offine"/>
+
+
     <TextView
         android:id="@+id/cur_tv"
         android:layout_width="wrap_content"
