@@ -15,8 +15,8 @@ import java.util.List;
  * Created by Lzy on 17-8-2.
  */
 
-public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
-    private List<BoxItem> mBoxItems;
+public class BoxListAdapter extends RecyclerView.Adapter<BoxListAdapter.ViewHolder>{
+    private List<BoxListItem> mBoxListItems;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView idTv, nameTv, lineTv, volTv,curTv, eleTv,temTv;
@@ -37,21 +37,21 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
         }
     }
 
-    public BoxAdapter(List<BoxItem> boxItems) {
-        mBoxItems = boxItems;
+    public BoxListAdapter(List<BoxListItem> boxListItems) {
+        mBoxListItems = boxListItems;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.box_item, parent, false);
+                .inflate(R.layout.box_list_item, parent, false);
         final ViewHolder holder = new ViewHolder(view);
 
         holder.mItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
-                BoxItem item = mBoxItems.get(position);
+                BoxListItem item = mBoxListItems.get(position);
                 Toast.makeText(view.getContext(), position+item.getName(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -60,36 +60,36 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
         return holder;
     }
 
-    private void updateData(ViewHolder holder, BoxItem boxItem) {
-        String str = (boxItem.getId() + 1) +"";
+    private void updateData(ViewHolder holder, BoxListItem boxListItem) {
+        String str = (boxListItem.getId() + 1) +"";
         holder.idTv.setText(str);
 
-        str = boxItem.getName();
+        str = boxListItem.getName();
         if(str.isEmpty())
-            str = "iBox-" +(boxItem.getId() + 1);
+            str = "iBox-" +(boxListItem.getId() + 1);
         holder.nameTv.setText(str);
 
-        double value = boxItem.getTemp();
+        double value = boxListItem.getTemp();
         if(value < 0) str = "---";
         else str = value + "C";
         holder.temTv.setText(str);
 
-        value = boxItem.getLine();
+        value = boxListItem.getLine();
         if(value < 0) str = "---";
         else str = "L" + ((int)value+1) + "";
         holder.lineTv.setText(str);
 
-        value = boxItem.getVol();
+        value = boxListItem.getVol();
         if(value < 0) str = "---";
         else str = (value+1) + "";
         holder.volTv.setText(str);
 
-        value = boxItem.getCur();
+        value = boxListItem.getCur();
         if(value < 0) str = "---";
         else str = (value+1) + "";
         holder.curTv.setText(str);
 
-        value = boxItem.getEle();
+        value = boxListItem.getEle();
         if(value < 0) str = "---";
         else str = (value+1) + "";
         holder.eleTv.setText(str);
@@ -97,12 +97,12 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        BoxItem boxItem = mBoxItems.get(position);
-        updateData(holder, boxItem);
+        BoxListItem boxListItem = mBoxListItems.get(position);
+        updateData(holder, boxListItem);
     }
 
     @Override
     public int getItemCount() {
-        return mBoxItems.size();
+        return mBoxListItems.size();
     }
 }

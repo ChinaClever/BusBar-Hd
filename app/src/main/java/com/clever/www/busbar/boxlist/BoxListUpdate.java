@@ -12,17 +12,17 @@ import java.util.List;
  * Created by Lzy on 17-8-3.
  */
 
-public class BoxUpdate {
-    BoxAdapter mAdapter = null;
+public class BoxListUpdate {
+    BoxListAdapter mAdapter = null;
     private boolean isRun = false;
-    private List<BoxItem> mItems = null;
+    private List<BoxListItem> mItems = null;
     private int mLineId=0, mCount=0;
 
-    public BoxUpdate() {
+    public BoxListUpdate() {
         new Timers().start(500);
     }
 
-    public void setData(BoxAdapter adapter, List<BoxItem> list) {
+    public void setData(BoxListAdapter adapter, List<BoxListItem> list) {
         mAdapter = adapter;
         mItems = list;
     }
@@ -35,7 +35,7 @@ public class BoxUpdate {
             mItems.clear();
             if(boxNum > 0) {
                 for (int i = 0; i < boxNum; ++i) {
-                    BoxItem item = new BoxItem(i);
+                    BoxListItem item = new BoxListItem(i);
                     mItems.add(item);
                 }
             }
@@ -49,7 +49,7 @@ public class BoxUpdate {
             mLineId++; // 相数
 
         for(int i=0; i<mItems.size(); ++i) {
-            BoxItem item = mItems.get(i);
+            BoxListItem item = mItems.get(i);
             DevDataPacket packet = boxDataHash.getPacket(i);
 
             String name = packet.devInfo.name.get();

@@ -8,15 +8,17 @@
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/id_tv"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
             android:text="1"/>
         <TextView
             android:id="@+id/name_tv"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:text="iBox-01"/>
 
         <TextView
@@ -24,6 +26,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"
             android:text="25C"/>
     </LinearLayout>
 
@@ -35,7 +39,9 @@
             android:id="@+id/line_tv"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="30sp"
+            android:gravity="center"
             android:text="L1"/>
 
         <LinearLayout
@@ -50,10 +56,12 @@
                     android:id="@+id/vol_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="30sp"
                     android:text="0"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:text="V"/>
             </LinearLayout>
 
@@ -64,10 +72,12 @@
                     android:id="@+id/cur_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="30sp"
                     android:text="0.0"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:text="A"/>
             </LinearLayout>
         </LinearLayout>
@@ -78,6 +88,6 @@
         android:id="@+id/ele_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
+        android:gravity="center"
         android:text="0.0KWh"/>
 </LinearLayout>

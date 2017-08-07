@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.clever.www.busbar.R;
+import com.clever.www.busbar.box.BxxActivity;
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.hash.data.BoxDataHash;
 import com.clever.www.busbar.dp.data.hash.data.BusHashTable;
@@ -37,9 +38,13 @@ public class HomeItemCst extends LinearLayout{
         view.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Toast.makeText(context, "home Item Cst", Toast.LENGTH_SHORT).show();
-
+                int busId = LoginStatus.login_devNum;
+                int boxNum = BusHashTable.getBoxNUm(busId);
+                if(mBoxID < boxNum) {
+                    BxxActivity.actionStart(context, mBoxID);
+                } else {
+                    Toast.makeText(context, R.string.box_offline_info, Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -96,7 +101,7 @@ public class HomeItemCst extends LinearLayout{
         if(mBoxID < boxNum) {
             DevDataPacket packet = LoginStatus.getPacket(mBoxID);
             if(packet.offLine > 0) {
-                    alarm = 1;
+                alarm = 1;
             }
 
             if (packet.curAlarm == 1) {

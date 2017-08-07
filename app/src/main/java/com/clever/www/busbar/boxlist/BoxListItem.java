@@ -4,7 +4,7 @@ package com.clever.www.busbar.boxlist;
  * Created by Lzy on 17-8-2.
  */
 
-public class BoxItem {
+public class BoxListItem {
 
     private int id = 0;
     private String name = "";
@@ -14,7 +14,7 @@ public class BoxItem {
     private double ele =-1;
     private double temp = -1;
 
-    public BoxItem(int id){
+    public BoxListItem(int id){
         this.id = id;
     }
 

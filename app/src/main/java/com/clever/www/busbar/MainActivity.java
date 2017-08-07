@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-import com.clever.www.busbar.boxlist.BoxFragment;
+import com.clever.www.busbar.boxlist.BoxListFragment;
 import com.clever.www.busbar.branch.BranchFragment;
 import com.clever.www.busbar.dp.dev.DevSpiedThread;
 import com.clever.www.busbar.home.HomeFragment;
@@ -14,7 +14,7 @@ import com.clever.www.busbar.net.NetRecvThread;
 
 public class MainActivity extends AppCompatActivity {
     private NetRecvThread mNetRecvThread = new NetRecvThread();
-    private BoxFragment mBoxFragment = null;
+    private BoxListFragment mBoxListFragment = null;
     private BranchFragment mBranchFragment = null;
     private LineFragment mLineFragment = null;
     private HomeFragment mHomeFragment = null;
@@ -65,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case 3:
-                if(mBoxFragment == null){
-                    mBoxFragment = new BoxFragment();
-                    transaction.add(R.id.content,mBoxFragment);
+                if(mBoxListFragment == null){
+                    mBoxListFragment = new BoxListFragment();
+                    transaction.add(R.id.content, mBoxListFragment);
                 }
-                transaction.show(mBoxFragment);
+                transaction.show(mBoxListFragment);
                 break;
         }
         transaction.commit();
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     //隐藏所有Fragment
     private void hideAllFragment(FragmentTransaction fragmentTransaction) {
-        if (mBoxFragment != null) fragmentTransaction.hide(mBoxFragment);
+        if (mBoxListFragment != null) fragmentTransaction.hide(mBoxListFragment);
         if (mBranchFragment != null) fragmentTransaction.hide(mBranchFragment);
         if (mLineFragment != null) fragmentTransaction.hide(mLineFragment);
         if (mHomeFragment != null) fragmentTransaction.hide(mHomeFragment);

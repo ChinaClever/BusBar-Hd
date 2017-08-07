@@ -8,6 +8,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.clever.www.busbar.R;
+import com.clever.www.busbar.box.BxxActivity;
+import com.clever.www.busbar.dp.data.hash.data.BusHashTable;
+import com.clever.www.busbar.login.LoginStatus;
 
 import java.util.List;
 
@@ -45,17 +48,25 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchAdapter.ViewHolder
 
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.branch_item,parent,false);
         final ViewHolder holder = new ViewHolder(view);
+
         holder.mItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
                 BranchItem item = mBranchItems.get(position);
 
-                Toast.makeText(view.getContext(),"branch id " +  item.getId(), Toast.LENGTH_SHORT).show();
+                int busId = LoginStatus.login_devNum;
+                int boxNum = BusHashTable.getBoxNUm(busId);
+                if(position < boxNum) {
+                    BxxActivity.actionStart(parent.getContext(), position);
+                } else {
+                    Toast.makeText(view.getContext(), R.string.box_offline_info, Toast.LENGTH_SHORT).show();
+                }
+
 
             }
         });
@@ -115,6 +126,5 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchAdapter.ViewHolder
     public int getItemCount() {
         return mBranchItems.size();
     }
-
 
 }
