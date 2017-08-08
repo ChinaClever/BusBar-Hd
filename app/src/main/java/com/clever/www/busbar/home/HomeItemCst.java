@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.clever.www.busbar.R;
-import com.clever.www.busbar.box.BxxActivity;
+import com.clever.www.busbar.box.BoxActivity;
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.hash.data.BoxDataHash;
 import com.clever.www.busbar.dp.data.hash.data.BusHashTable;
@@ -26,8 +26,9 @@ public class HomeItemCst extends LinearLayout{
     private TextView idTv, curTv;
     private ImageView loopIv;
     private int mBoxID=0;
+    private Context mContext;
 
-    public HomeItemCst(final Context context, @Nullable AttributeSet attrs) {
+    public HomeItemCst(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         View view = LayoutInflater.from(context).inflate(R.layout.home_item_cst, this);
@@ -35,15 +36,16 @@ public class HomeItemCst extends LinearLayout{
         curTv = view.findViewById(R.id.cur_tv);
         loopIv = view.findViewById(R.id.loopIv);
 
+        mContext = context;
         view.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 int busId = LoginStatus.login_devNum;
                 int boxNum = BusHashTable.getBoxNUm(busId);
                 if(mBoxID < boxNum) {
-                    BxxActivity.actionStart(context, mBoxID);
+                    BoxActivity.actionStart(mContext, mBoxID);
                 } else {
-                    Toast.makeText(context, R.string.box_offline_info, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, R.string.box_offline_info, Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -8,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.clever.www.busbar.R;
-import com.clever.www.busbar.box.BxxActivity;
 import com.clever.www.busbar.dp.data.hash.data.BusHashTable;
 import com.clever.www.busbar.login.LoginStatus;
 
@@ -62,7 +61,7 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchAdapter.ViewHolder
                 int busId = LoginStatus.login_devNum;
                 int boxNum = BusHashTable.getBoxNUm(busId);
                 if(position < boxNum) {
-                    BxxActivity.actionStart(parent.getContext(), position);
+//                    BxxActivity.actionStart(parent.getContext(), position);
                 } else {
                     Toast.makeText(view.getContext(), R.string.box_offline_info, Toast.LENGTH_SHORT).show();
                 }
