@@ -6,20 +6,24 @@
     android:orientation="vertical"
     tools:context="com.clever.www.busbar.box.BoxActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="luozhiyong"
-        android:textSize="30sp"
-        />
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/name_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="iBOx"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/box_title"
+            android:textSize="25sp"/>
 
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="iBOx"/>
+    </LinearLayout>
 
     <com.clever.www.busbar.box.BoxTotalCst
         android:id="@+id/total_cst"
@@ -27,7 +31,14 @@
         android:layout_height="wrap_content">
     </com.clever.www.busbar.box.BoxTotalCst>
 
+    <include layout="@layout/box_view_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
-
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

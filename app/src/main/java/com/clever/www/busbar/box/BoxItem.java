@@ -12,6 +12,9 @@ public class BoxItem {
     private double cur=-1;
     private double ele =-1;
     private double pf = -1;
+    private double pow = -1;
+    private double appow = -1;
+    private int sw = -1;
 
     public BoxItem(int id){
         this.id = id;
@@ -57,6 +60,30 @@ public class BoxItem {
 
     public void setPf(double pf) {
         this.pf = pf;
+    }
+
+    public double getPow() {
+        return pow;
+    }
+
+    public void setPow(double pow) {
+        this.pow = pow;
+    }
+
+    public double getAppow() {
+        return appow;
+    }
+
+    public void setAppow(double appow) {
+        this.appow = appow;
+    }
+
+    public int getSw() {
+        return sw;
+    }
+
+    public void setSw(int sw) {
+        this.sw = sw;
     }
 
 }
