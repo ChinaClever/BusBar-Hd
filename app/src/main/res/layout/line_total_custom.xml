@@ -12,6 +12,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="30sp"
             android:text="@string/line_rate"/>
 
         <TextView
@@ -19,11 +20,13 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:textSize="30sp"
             android:text="50Hz"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="30sp"
             android:text="@string/line_tem"/>
 
         <TextView
@@ -31,59 +34,36 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:textSize="30sp"
             android:text="25C"/>
     </LinearLayout>
+
+
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="@string/line_total_cur"/>
-
-        <TextView
-            android:id="@+id/cur_tv"
+        <com.clever.www.busbar.line.total.PieChartCst
+            android:id="@+id/pie_vol"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="0.0A"/>
+            android:layout_height="wrap_content">
+        </com.clever.www.busbar.line.total.PieChartCst>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="@string/line_total_vol"/>
-
-        <TextView
-            android:id="@+id/vol_tv"
+        <com.clever.www.busbar.line.total.PieChartCst
+            android:id="@+id/pie_cur"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="0V"/>
+            android:layout_height="wrap_content">
+        </com.clever.www.busbar.line.total.PieChartCst>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="@string/line_total_pow"/>
-
-        <TextView
-            android:id="@+id/pow_tv"
+        <com.clever.www.busbar.line.total.PieChartCst
+            android:id="@+id/pie_pow"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="0.0KW"/>
-
+            android:layout_height="wrap_content">
+        </com.clever.www.busbar.line.total.PieChartCst>
     </LinearLayout>
-
-
-
 
 </LinearLayout>

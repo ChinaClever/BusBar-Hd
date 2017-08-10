@@ -16,7 +16,9 @@ import com.clever.www.busbar.login.LoginStatus;
 
 
 public class LineTotalCustom extends LinearLayout {
-    private TextView rateTv, tempTv, curTv, volTv, powTv;
+    private TextView rateTv, tempTv;
+    private PieChartCst pieVol, pieCur, piePow;
+
 
     public LineTotalCustom(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -24,13 +26,15 @@ public class LineTotalCustom extends LinearLayout {
         View view = LayoutInflater.from(context).inflate(R.layout.line_total_custom, this);
         rateTv = view.findViewById(R.id.rate_tv);
         tempTv = view.findViewById(R.id.tem_tv);
-        curTv = view.findViewById(R.id.cur_tv);
-        volTv = view.findViewById(R.id.vol_tv);
-        powTv = view.findViewById(R.id.pow_tv);
+
+        pieVol = view.findViewById(R.id.pie_vol);
+        pieCur = view.findViewById(R.id.pie_cur);
+        piePow = view.findViewById(R.id.pie_pow);
 
         new Timers().start(500);
-
     }
+
+
 
     private void updateData() {
         String str = "---";
@@ -38,14 +42,17 @@ public class LineTotalCustom extends LinearLayout {
         if(LoginStatus.getLogin()) {
             DevDatas packet = LoginStatus.getPacket(0).data;
 
-            str = packet.line.cur.value.addData() + "A";
-            curTv.setText(str);
+            int value = packet.line.cur.value.addData();
+            int curMax = packet.line.cur.max.addData();
+            pieCur.setValue(value, curMax, 10, "A");
 
-            str = packet.line.vol.value.averData() + "V";
-            volTv.setText(str);
+            value =  packet.line.vol.value.averData();
+            int volMax = packet.line.vol.max.maxData();
+            pieVol.setValue(value, volMax, 1, "V");
 
-            str = packet.line.pow.addData() + "KWh";
-            powTv.setText(str);
+            value =  packet.line.pow.addData();
+            int max = curMax * volMax;
+            piePow.setValue(value, max, 10000, "KW");
 
             str = packet.env.tem.value.maxData() + "C";
             tempTv.setText(str);
@@ -53,9 +60,6 @@ public class LineTotalCustom extends LinearLayout {
             str = packet.line.rate.averData() + "Hz";
             rateTv.setText(str);
         } else {
-            curTv.setText(str);
-            volTv.setText(str);
-            powTv.setText(str);
             tempTv.setText(str);
             rateTv.setText(str);
         }
