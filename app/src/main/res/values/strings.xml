@@ -8,6 +8,7 @@
     <string name="bar_menu_home">主界面</string>
     <string name="bar_menu_main">主路</string>
     <string name="bar_menu_branch">支路</string>
+    <string name="bar_menu_box">接插箱</string>
     <string name="bar_menu_settings">设置</string>
 
     <string name="login_btn">登陆</string>
@@ -77,8 +78,16 @@
     <string name="box_title">接插箱: </string>
     <string name="box_offline_info">此接插没在线！！！</string>
 
+    <string name="set_menu_pwd">请输入系统密码确认权限</string>
+    <string name="set_menu_line">主路设置</string>
+    <string name="set_menu_branch">支路设置</string>
+    <string name="set_pwd_isempty">请输入密码，密码不能为空！！！</string>
+    <string name="set_pwd_err">密码错误，请重新输入密码！！！</string>
+    <string name="set_no_login">请先登陆！！！</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_box">BoxActivity</string>
+    <string name="title_activity_set_menu">SetMenuActivity</string>
 
 </resources>

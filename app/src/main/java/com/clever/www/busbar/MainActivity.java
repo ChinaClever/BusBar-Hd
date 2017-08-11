@@ -1,16 +1,20 @@
 package com.clever.www.busbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.clever.www.busbar.boxlist.BoxListFragment;
 import com.clever.www.busbar.branch.BranchFragment;
 import com.clever.www.busbar.dp.dev.DevSpiedThread;
 import com.clever.www.busbar.home.HomeFragment;
 import com.clever.www.busbar.line.LineFragment;
+import com.clever.www.busbar.login.LoginStatus;
 import com.clever.www.busbar.net.NetRecvThread;
+import com.clever.www.busbar.setting.SetMenuActivity;
 
 public class MainActivity extends AppCompatActivity {
     private NetRecvThread mNetRecvThread = new NetRecvThread();
@@ -33,8 +37,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private boolean startSetMenuActivity() {
+        boolean ret = true;
+        if(LoginStatus.isLogin) {
+            Intent intent = new Intent(MainActivity.this, SetMenuActivity.class);
+            startActivityForResult(intent, 1);
+
+        } else {
+            Toast.makeText(this, R.string.set_no_login, Toast.LENGTH_SHORT).show();
+            ret = false;
+        }
+
+        return  ret;
+    }
+
 
     public void btmenuChanged(int id) {
+
+        if(id == 4) {
+            startSetMenuActivity();
+        }
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         hideAllFragment(transaction);
@@ -71,6 +94,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 transaction.show(mBoxListFragment);
                 break;
+
+            case 5:
+                Toast.makeText(this, "luozhiyong " + id, Toast.LENGTH_SHORT).show();
+                return;
+
+            case 6:
+                Toast.makeText(this, "luozhiyong " + id, Toast.LENGTH_SHORT).show();
+                return;
         }
         transaction.commit();
     }
@@ -84,4 +115,17 @@ public class MainActivity extends AppCompatActivity {
         if (mHomeFragment != null) fragmentTransaction.hide(mHomeFragment);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case 1:
+                if(resultCode == RESULT_OK) {
+                    int id = data.getIntExtra("set_menu", 0);
+                    if(id > 0)
+                        btmenuChanged(4+id);
+                }
+                break;
+        }
+
+    }
 }

@@ -42,7 +42,8 @@ public class NavigationFragment extends Fragment implements RadioGroup.OnChecked
             case R.id.homeBtn:   id = 0;  break;
             case R.id.mainBtn: id = 1; break;
             case R.id.branchBtn: id = 2; break;
-            case R.id.settingsBtn:  id = 3;  break;
+            case R.id.boxBtn:  id = 3;  break;
+            case R.id.settingsBtn:  id = 4;  break;
         }
 
         MainActivity activity = (MainActivity) getActivity();

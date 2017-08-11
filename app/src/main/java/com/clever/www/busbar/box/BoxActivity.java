@@ -1,11 +1,12 @@
 package com.clever.www.busbar.box;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.clever.www.busbar.R;
@@ -15,7 +16,7 @@ import com.clever.www.busbar.login.LoginStatus;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BoxActivity extends AppCompatActivity {
+public class BoxActivity extends Activity {
     private List<BoxItem> boxItems = new ArrayList<>();
     private BoxUpdate mBoxUpdate = null;
     private int mBOxID = 0;
@@ -23,6 +24,7 @@ public class BoxActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); //去除这个Activity的标题栏
         setContentView(R.layout.box_activity);
 
         Intent intent = getIntent();

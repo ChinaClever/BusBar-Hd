@@ -20,8 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".box.BoxActivity" />
+        <activity android:name=".login.LoginActivity"  android:theme="@style/TipDialog" />
+
+        <activity  android:name=".box.BoxActivity"  android:theme="@style/TipDialog" />
+        <activity android:name=".setting.SetMenuActivity"  android:theme="@style/TipDialog" />
     </application>
 
 </manifest>

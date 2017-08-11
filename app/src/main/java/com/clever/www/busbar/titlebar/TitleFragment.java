@@ -1,7 +1,6 @@
 package com.clever.www.busbar.titlebar;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -31,6 +30,7 @@ public class TitleFragment extends Fragment {
 
         mLoginBtn =  view.findViewById(R.id.loginBtn);
         mLoginBtn.setOnClickListener(onClickListener);
+        LoginActivity.actionStart(getContext());
 
         mIptv = view.findViewById(R.id.ipTv);
 
@@ -44,8 +44,7 @@ public class TitleFragment extends Fragment {
         public void onClick(View v){
             switch (v.getId()) {
                 case R.id.loginBtn:
-                    Intent intent = new Intent(getContext(), LoginActivity.class);
-                    startActivity(intent);
+                    LoginActivity.actionStart(getContext());
                     break;
             }
         }

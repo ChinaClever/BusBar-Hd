@@ -37,6 +37,12 @@
             android:text="@string/bar_menu_branch" />
 
         <RadioButton
+            android:id="@+id/boxBtn"
+            style="@style/bar_menu_item"
+            android:drawableTop="@drawable/bar_menu_box"
+            android:text="@string/bar_menu_box" />
+
+        <RadioButton
             android:id="@+id/settingsBtn"
             style="@style/bar_menu_item"
             android:drawableTop="@drawable/bar_menu_settings"
