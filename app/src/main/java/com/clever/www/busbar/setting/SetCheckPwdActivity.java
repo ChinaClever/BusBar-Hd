@@ -12,12 +12,12 @@ import android.widget.Toast;
 import com.clever.www.busbar.R;
 import com.clever.www.busbar.login.LoginStatus;
 
-public class SetMenuActivity extends Activity {
+public class SetCheckPwdActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.set_menu_activity);
+        setContentView(R.layout.set_checkpwd_activity);
 
         Button button = findViewById(R.id.ok_btn);
         button.setOnClickListener(onClickListener);
@@ -25,7 +25,7 @@ public class SetMenuActivity extends Activity {
     }
 
     public static void actionStart(Context context) {
-        Intent intent = new Intent(context, SetMenuActivity.class);
+        Intent intent = new Intent(context, SetCheckPwdActivity.class);
         context.startActivity(intent);
     }
 

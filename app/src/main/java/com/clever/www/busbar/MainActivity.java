@@ -15,7 +15,7 @@ import com.clever.www.busbar.line.LineFragment;
 import com.clever.www.busbar.login.LoginStatus;
 import com.clever.www.busbar.navigation.NavigationFragment;
 import com.clever.www.busbar.net.NetRecvThread;
-import com.clever.www.busbar.setting.SetMenuActivity;
+import com.clever.www.busbar.setting.SetCheckPwdActivity;
 
 public class MainActivity extends AppCompatActivity {
     private NetRecvThread mNetRecvThread = new NetRecvThread();
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean startSetMenuActivity() {
         boolean ret = true;
         if(LoginStatus.isLogin) {
-            Intent intent = new Intent(MainActivity.this, SetMenuActivity.class);
+            Intent intent = new Intent(MainActivity.this, SetCheckPwdActivity.class);
             startActivityForResult(intent, 1);
         } else {
             Toast.makeText(this, R.string.set_no_login, Toast.LENGTH_SHORT).show();
