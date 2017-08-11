@@ -21,10 +21,8 @@
 
     </FrameLayout>
 
-
-
-
     <fragment
+        android:id="@+id/navigation_lzy"
         android:name="com.clever.www.busbar.navigation.NavigationFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

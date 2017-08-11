@@ -19,11 +19,9 @@ public class SetMenuActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_menu_activity);
 
-        Button button = findViewById(R.id.line_btn);
+        Button button = findViewById(R.id.ok_btn);
         button.setOnClickListener(onClickListener);
 
-        button = findViewById(R.id.branch_btn);
-        button.setOnClickListener(onClickListener);
     }
 
     public static void actionStart(Context context) {
@@ -66,17 +64,12 @@ public class SetMenuActivity extends Activity {
         @Override
         public void onClick(View v){
             switch (v.getId()) {
-                case R.id.line_btn:
+                case R.id.ok_btn:
                     if(inputCheck()) {
                         resultActivity(1);
                     }
                     break;
 
-                case R.id.branch_btn:
-                    if(inputCheck()) {
-                        resultActivity(2);
-                    }
-                    break;
             }
         }
     };

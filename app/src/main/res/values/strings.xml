@@ -79,6 +79,7 @@
     <string name="box_offline_info">此接插没在线！！！</string>
 
     <string name="set_menu_pwd">请输入系统密码确认权限</string>
+    <string name="set_pwd_sure">确定</string>
     <string name="set_menu_line">主路设置</string>
     <string name="set_menu_branch">支路设置</string>
     <string name="set_pwd_isempty">请输入密码，密码不能为空！！！</string>

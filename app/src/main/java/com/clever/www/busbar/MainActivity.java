@@ -13,15 +13,18 @@ import com.clever.www.busbar.dp.dev.DevSpiedThread;
 import com.clever.www.busbar.home.HomeFragment;
 import com.clever.www.busbar.line.LineFragment;
 import com.clever.www.busbar.login.LoginStatus;
+import com.clever.www.busbar.navigation.NavigationFragment;
 import com.clever.www.busbar.net.NetRecvThread;
 import com.clever.www.busbar.setting.SetMenuActivity;
 
 public class MainActivity extends AppCompatActivity {
     private NetRecvThread mNetRecvThread = new NetRecvThread();
+    private NavigationFragment mNavigationFragment = null;
     private BoxListFragment mBoxListFragment = null;
     private BranchFragment mBranchFragment = null;
     private LineFragment mLineFragment = null;
     private HomeFragment mHomeFragment = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initFun();
+        mNavigationFragment = (NavigationFragment) getSupportFragmentManager()
+                .findFragmentById( R.id.navigation_lzy);
     }
 
     private void initFun() {
@@ -42,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         if(LoginStatus.isLogin) {
             Intent intent = new Intent(MainActivity.this, SetMenuActivity.class);
             startActivityForResult(intent, 1);
-
         } else {
             Toast.makeText(this, R.string.set_no_login, Toast.LENGTH_SHORT).show();
             ret = false;
@@ -99,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "luozhiyong " + id, Toast.LENGTH_SHORT).show();
                 return;
 
-            case 6:
-                Toast.makeText(this, "luozhiyong " + id, Toast.LENGTH_SHORT).show();
+            default:
+                mNavigationFragment.setHomeBtn();
                 return;
         }
         transaction.commit();
@@ -121,8 +125,11 @@ public class MainActivity extends AppCompatActivity {
             case 1:
                 if(resultCode == RESULT_OK) {
                     int id = data.getIntExtra("set_menu", 0);
-                    if(id > 0)
-                        btmenuChanged(4+id);
+                    if(id > 0) {
+                        btmenuChanged(4 + id);
+                    } else {
+                        btmenuChanged(10);
+                    }
                 }
                 break;
         }
