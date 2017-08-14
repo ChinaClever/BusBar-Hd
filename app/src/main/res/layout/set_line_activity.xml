@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.clever.www.busbar.setting.setline.SetLineActivity">
 
 
@@ -14,5 +15,9 @@
     </com.clever.www.busbar.setting.setline.SetBusCst>
 
 
+    <com.clever.www.busbar.setting.setline.SetLineCst
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.clever.www.busbar.setting.setline.SetLineCst>
 
 </LinearLayout>
