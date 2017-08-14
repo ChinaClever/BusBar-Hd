@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private LineFragment mLineFragment = null;
     private HomeFragment mHomeFragment = null;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,9 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 transaction.show(mBoxListFragment);
                 break;
 
-            case 5:
-                Toast.makeText(this, "luozhiyong " + id, Toast.LENGTH_SHORT).show();
-                return;
+
 
             default:
                 mNavigationFragment.setHomeBtn();

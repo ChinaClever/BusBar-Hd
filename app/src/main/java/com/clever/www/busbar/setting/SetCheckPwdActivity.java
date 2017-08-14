@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.clever.www.busbar.R;
 import com.clever.www.busbar.login.LoginStatus;
+import com.clever.www.busbar.setting.setline.SetLineActivity;
 
 public class SetCheckPwdActivity extends Activity {
 
@@ -19,7 +20,13 @@ public class SetCheckPwdActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_checkpwd_activity);
 
-        Button button = findViewById(R.id.ok_btn);
+        Button button = findViewById(R.id.line_Btn);
+        button.setOnClickListener(onClickListener);
+
+        button = findViewById(R.id.branch_Btn);
+        button.setOnClickListener(onClickListener);
+
+        button = findViewById(R.id.ok_btn);
         button.setOnClickListener(onClickListener);
 
     }
@@ -64,9 +71,20 @@ public class SetCheckPwdActivity extends Activity {
         @Override
         public void onClick(View v){
             switch (v.getId()) {
+                case R.id.line_Btn:
+                    if(inputCheck()) {
+//                        resultActivity(1);
+                        SetLineActivity.actionStart(SetCheckPwdActivity.this);
+                    }
+                    break;
+                case R.id.branch_Btn:
+                    if(inputCheck()) {
+                        resultActivity(2);
+                    }
+                    break;
                 case R.id.ok_btn:
                     if(inputCheck()) {
-                        resultActivity(1);
+                        resultActivity(3);
                     }
                     break;
 

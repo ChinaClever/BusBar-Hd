@@ -20,10 +20,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login.LoginActivity"  android:theme="@style/TipDialog" />
-
-        <activity  android:name=".box.BoxActivity"  android:theme="@style/TipDialog" />
-        <activity android:name=".setting.SetCheckPwdActivity"  android:theme="@style/TipDialog" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:theme="@style/TipDialog" />
+        <activity
+            android:name=".box.BoxActivity"
+            android:theme="@style/TipDialog" />
+        <activity
+            android:name=".setting.SetCheckPwdActivity"
+            android:theme="@style/TipDialog" />
+        <activity android:name=".setting.setline.SetLineActivity"></activity>
     </application>
 
 </manifest>

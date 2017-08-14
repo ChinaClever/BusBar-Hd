@@ -5,6 +5,7 @@
     android:layout_width="400dp"
     android:layout_height="500dp"
     android:layout_gravity="center"
+    android:orientation="vertical"
     tools:context="com.clever.www.busbar.setting.SetCheckPwdActivity">
 
 
@@ -12,9 +13,21 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:hint="@string/set_menu_pwd"
         android:ems="10" />
+
+    <Button
+        android:id="@+id/line_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_menu_line"/>
+
+    <Button
+        android:id="@+id/branch_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_menu_branch"/>
+
 
     <Button
         android:id="@+id/ok_btn"
