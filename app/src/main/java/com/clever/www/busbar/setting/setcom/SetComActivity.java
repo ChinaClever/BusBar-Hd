@@ -1,11 +1,11 @@
 package com.clever.www.busbar.setting.setcom;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.clever.www.busbar.R;
 
-public class SetCOmActivity extends AppCompatActivity {
+public class SetComActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
