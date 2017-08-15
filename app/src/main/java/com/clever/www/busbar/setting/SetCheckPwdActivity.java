@@ -28,7 +28,6 @@ public class SetCheckPwdActivity extends Activity {
 
         button = findViewById(R.id.ok_btn);
         button.setOnClickListener(onClickListener);
-
     }
 
     public static void actionStart(Context context) {

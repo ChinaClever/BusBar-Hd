@@ -1,4 +1,4 @@
-package com.clever.www.busbar.setting;
+package com.clever.www.busbar.setting.setcom;
 
 import com.clever.www.busbar.common.array.ArrayUtil;
 import com.clever.www.busbar.login.LoginStatus;
@@ -77,7 +77,7 @@ public class SetDevCom {
     public boolean setDevData(NetDataDomain pkt , boolean udpMode) {
         DevDataPacket dataPacket = LoginStatus.getPacket(0);
         if(dataPacket != null) {
-            int num = 1;
+            int num = 1;  //////=====  设备类型
             pkt.addr = (byte) LoginStatus.login_devNum;
             byte[] buf = new byte[256];
             int len = 0;

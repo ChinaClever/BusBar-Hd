@@ -14,7 +14,7 @@ import com.clever.www.busbar.R;
 import com.clever.www.busbar.dp.data.packages.DevDataPacket;
 import com.clever.www.busbar.login.LoginStatus;
 import com.clever.www.busbar.net.data.packages.NetDataDomain;
-import com.clever.www.busbar.setting.SetDevCom;
+import com.clever.www.busbar.setting.setcom.SetDevCom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +48,7 @@ public class SetBusCst extends LinearLayout{
         String name = dataPacket.devInfo.name.get();
         mBusNameEt.setText(name);
 
-        double curRate = dataPacket.rateCur / 10.0;
+        int curRate = dataPacket.rateCur / 10;
         String str =  curRate +"";
         mBusCurEt.setText(str);
 
@@ -62,7 +62,7 @@ public class SetBusCst extends LinearLayout{
         @Override
         public void onClick(View v){
             switch (v.getId()) {
-                case R.id.loginBtn:
+                case R.id.saveBtn:
                     if(inputCheck()) {
                         saveInfo();
                     }
@@ -81,7 +81,7 @@ public class SetBusCst extends LinearLayout{
 
         String str  = mBusCurEt.getText().toString();
         if(str != null) {
-            int value = Integer.parseInt(str);
+            int value = (int)Double.parseDouble(str) * 10;
             if(value <= 0) {
                 Toast.makeText(mContext, R.string.set_bus_cur_err, Toast.LENGTH_SHORT).show();
                 return ret;
@@ -129,7 +129,7 @@ public class SetBusCst extends LinearLayout{
 
     private boolean saveBusCur() {
         String str  = mBusCurEt.getText().toString();
-        int value = Integer.parseInt(str);
+        int value = (int)Double.parseDouble(str) * 10;
 
         List<Integer> list = new ArrayList<>();
         list.add(value);
@@ -166,11 +166,10 @@ public class SetBusCst extends LinearLayout{
             if(ret) {
                 ret = saveBoxNUm();
                 if(ret) {
-
+                    Toast.makeText(mContext, R.string.set_bus_save_ok, Toast.LENGTH_SHORT).show();
                 }
             }
         }
-
     }
 
 }

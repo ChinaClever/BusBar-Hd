@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        style="@style/list_view_head"
+        android:text="@string/set_line_header_id"/>
+
+    <TextView
+        style="@style/list_view_head"
+        android:text="@string/set_line_header_phase"/>
+
+    <TextView
+        style="@style/list_view_head"
+        android:text="@string/set_line_header_type"/>
+
+    <TextView
+        style="@style/list_view_head"
+        android:text="@string/set_line_header_value"/>
+
+    <TextView
+        style="@style/list_view_head"
+        android:layout_weight="2"
+        android:text="@string/set_line_header_set"/>
+
+</LinearLayout>
