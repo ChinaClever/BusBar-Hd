@@ -2,6 +2,8 @@ package com.clever.www.busbar.login;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,8 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.clever.www.busbar.R;
-import com.clever.www.busbar.net.tcp.client.TcpLogin;
 import com.clever.www.busbar.common.timer.HanderTimer;
+import com.clever.www.busbar.net.tcp.client.TcpLogin;
 
 /**
  * Author: lzy. Created on: 16-11-4.
@@ -43,6 +45,13 @@ public class LoginConnectWait extends LinearLayout{
         this.disBtn = disBtn;
     }
 
+    private void sendBroadcasr() {
+        LocalBroadcastManager localBroadcastManager = LocalBroadcastManager.getInstance(context);
+
+        Intent intent = new Intent("com.clever.www.busbar.LOGIN_OVER");
+        localBroadcastManager.sendBroadcast(intent);
+    }
+
     private void loginOver(boolean b) {
         timer.stop();
         dialog.dismiss();
@@ -52,6 +61,7 @@ public class LoginConnectWait extends LinearLayout{
             Toast.makeText(context, R.string.login_OK, Toast.LENGTH_LONG).show();
             connectBtn.setEnabled(false);
             disBtn.setEnabled(true);
+            sendBroadcasr();
         } else {
             Toast.makeText(context, R.string.login_err, Toast.LENGTH_LONG).show();
             connectBtn.setEnabled(true);

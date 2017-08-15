@@ -28,6 +28,7 @@ public class NavigationFragment extends Fragment{
         RadioGroup radioGroup = view.findViewById(R.id.bar_menu_bar);
         radioGroup.setOnCheckedChangeListener(onClickChangeListener);
         homeBtn = view.findViewById(R.id.homeBtn);
+        setHomeBtn();
 
         return view;
     }

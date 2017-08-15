@@ -22,7 +22,8 @@
         </activity>
         <activity
             android:name=".login.LoginActivity"
-            android:theme="@style/TipDialog" />
+            android:theme="@style/TipDialog" >
+        </activity>
         <activity
             android:name=".box.BoxActivity"
             android:theme="@style/TipDialog" />
