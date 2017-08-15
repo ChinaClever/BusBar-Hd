@@ -9,13 +9,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.clever.www.busbar.R;
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.packages.DevDataPacket;
 import com.clever.www.busbar.dp.data.packages.devdata.DevDataUnit;
 import com.clever.www.busbar.login.LoginStatus;
+import com.clever.www.busbar.setting.setcom.SetComActivity;
 
 /**
  * Created by Lzy on 17-8-14.
@@ -70,13 +70,11 @@ public class SetLineCst extends LinearLayout{
         public void onClick(View v){
             switch (v.getId()) {
                 case R.id.cur_progress_bar:
-                    Toast.makeText(mContext, "AAAAAAAA", Toast.LENGTH_SHORT).show();
-
+                    SetComActivity.actionStart(mContext, 0, 1);
                     break;
 
                 case R.id.vol_progress_bar:
-                    Toast.makeText(mContext, "BBBBBBBBBBBBBB", Toast.LENGTH_SHORT).show();
-
+                    SetComActivity.actionStart(mContext, 0, 2);
                     break;
             }
         }
