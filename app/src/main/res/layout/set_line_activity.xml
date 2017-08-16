@@ -19,6 +19,19 @@
         android:layout_height="wrap_content"/>
 
     <com.clever.www.busbar.setting.setline.SetLineCst
+        android:id="@+id/set_line_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.clever.www.busbar.setting.setline.SetLineCst>
+
+    <com.clever.www.busbar.setting.setline.SetLineCst
+        android:id="@+id/set_line_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.clever.www.busbar.setting.setline.SetLineCst>
+
+    <com.clever.www.busbar.setting.setline.SetLineCst
+        android:id="@+id/set_line_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </com.clever.www.busbar.setting.setline.SetLineCst>

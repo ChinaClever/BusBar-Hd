@@ -110,5 +110,13 @@
     <string name="set_com_unified">统一设置</string>
     <string name="set_com_save">保存</string>
     <string name="set_com_cancel">取消</string>
+    <string name="set_ret_max">最大值太大，请重新输入!!!!</string>
+    <string name="set_ret_min">最小值大于最大值，请重新输入!!!</string>
+    <string name="set_ret_crmin">临界下限值小于最小值，请重新输入!!!</string>
+    <string name="set_ret_crmax">临界上限值大于最大值，请重新输入!!!</string>
+    <string name="set_ret_crminmax">临界下限值大于临界上限值，请重新输入!!!</string>
+    <string name="set_save_ok">数据保存成功!!!</string>
+    <string name="set_save_err">数据保存失败!!!</string>
+
 
 </resources>

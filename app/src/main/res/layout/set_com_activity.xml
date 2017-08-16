@@ -34,6 +34,13 @@
             android:inputType="number" />
 
         <TextView
+            android:id="@+id/unit_sym_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"/>
+
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
@@ -46,6 +53,12 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number" />
+
+        <TextView
+            android:id="@+id/unit_sym_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"/>
     </LinearLayout>
 
     <LinearLayout
@@ -67,6 +80,12 @@
             android:inputType="number" />
 
         <TextView
+            android:id="@+id/unit_sym_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
@@ -79,6 +98,12 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number" />
+
+        <TextView
+            android:id="@+id/unit_sym_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"/>
     </LinearLayout>
 
     <CheckBox

@@ -55,10 +55,10 @@ public class SetLineCst extends LinearLayout{
     public void setLine(int line) {
         mLine = line;
 
-        String str = (line+1) + "";
+        String str = (2*line+1) + "";
         idTv1.setText(str);
 
-        str = (line+2) + "";
+        str = (2*line+2)+ "";
         idTv2.setText(str);
 
         str = "L" + (line+1);
