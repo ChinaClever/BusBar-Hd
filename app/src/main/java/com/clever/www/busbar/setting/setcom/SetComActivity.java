@@ -115,7 +115,7 @@ public class SetComActivity extends Activity {
     }
 
     private void initUnitSym(String str) {
-        EditText et = findViewById(R.id.unit_sym_1);
+        TextView et = findViewById(R.id.unit_sym_1);
         et.setText(str);
 
         et = findViewById(R.id.unit_sym_2);

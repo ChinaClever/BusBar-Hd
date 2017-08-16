@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.clever.www.busbar.R;
 import com.clever.www.busbar.login.LoginStatus;
+import com.clever.www.busbar.setting.setbox.SetBoxActivity;
 import com.clever.www.busbar.setting.setline.SetLineActivity;
 
 public class SetCheckPwdActivity extends Activity {
@@ -78,7 +79,7 @@ public class SetCheckPwdActivity extends Activity {
                     break;
                 case R.id.branch_Btn:
                     if(inputCheck()) {
-                        resultActivity(2);
+                        SetBoxActivity.actionStart(SetCheckPwdActivity.this);
                     }
                     break;
                 case R.id.ok_btn:
