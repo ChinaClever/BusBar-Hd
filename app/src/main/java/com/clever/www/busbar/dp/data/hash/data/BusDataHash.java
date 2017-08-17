@@ -1,5 +1,7 @@
 package com.clever.www.busbar.dp.data.hash.data;
 
+import android.util.Log;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +44,8 @@ public class BusDataHash {
         if(dev == null) {
             dev = add(num);
         }
+
+
         return dev;
     }
 

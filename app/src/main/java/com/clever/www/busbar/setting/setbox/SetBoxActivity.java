@@ -2,8 +2,9 @@ package com.clever.www.busbar.setting.setbox;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -14,6 +15,7 @@ import java.util.List;
 
 public class SetBoxActivity extends AppCompatActivity {
     private List<SetBoxItem> mItems = new ArrayList<>();
+    private SetBoxUpdate mBoxUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +25,15 @@ public class SetBoxActivity extends AppCompatActivity {
         initItemss();
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         SetBoxAdapter adapter = new SetBoxAdapter(mItems);
         recyclerView.setAdapter(adapter);
+
+        mBoxUpdate = new SetBoxUpdate();
+        mBoxUpdate.setData(adapter, mItems);
 
     }
 

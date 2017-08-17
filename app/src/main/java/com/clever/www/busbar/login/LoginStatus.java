@@ -26,6 +26,10 @@ public class LoginStatus {
         return dataPacket;
     }
 
+    public static int getBoxNUm() {
+        return mReadHash.getBoxNum(login_devNum);
+    }
+
     public static boolean getLogin() {
         if(isLogin) {
             if(!TcpSingle.bulid().isConnect())

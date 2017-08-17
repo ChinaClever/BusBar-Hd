@@ -19,7 +19,7 @@ public class BusHashRead {
     }
 
     public int getBoxNum(int bus){
-        BoxDataHash boxDataHash =  mHashData.get(bus);
+        BoxDataHash boxDataHash =  mHashData.getDev(bus);
         return boxDataHash.size();
     }
 
