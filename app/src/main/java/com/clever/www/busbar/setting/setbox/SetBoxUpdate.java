@@ -62,7 +62,6 @@ public class SetBoxUpdate {
             for(int j=0; j<1; ++j){
                 item.setTem(j, dataUnit.value.get(j));
             }
-
         }
     }
 

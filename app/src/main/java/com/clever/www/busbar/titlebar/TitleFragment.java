@@ -33,7 +33,6 @@ public class TitleFragment extends Fragment {
         LoginActivity.actionStart(getContext());
 
         mIptv = view.findViewById(R.id.ipTv);
-
         timer.start(500);
 
         return  view;
@@ -57,13 +56,11 @@ public class TitleFragment extends Fragment {
         }
         mIptv.setText("IP: "+ip);
 
-
         if(LoginStatus.getLogin()) {
             mLoginBtn.setText(R.string.login_quit);
         } else {
             mLoginBtn.setText(R.string.login_btn);
         }
-
     }
 
     private class Timers extends HanderTimer {

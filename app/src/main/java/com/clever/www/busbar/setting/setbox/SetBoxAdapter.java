@@ -18,7 +18,6 @@ import java.util.List;
 
 public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder>{
     private List<SetBoxItem> mItems;
-    private int selectedPosition = -5; //默认一个参数
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView idTv, nameTv;
@@ -38,7 +37,6 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
 
             tv = itemView.findViewById(R.id.line_tv_3);
             curTvs.add(tv);
-
         }
     }
 
