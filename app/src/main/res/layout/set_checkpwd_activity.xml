@@ -29,6 +29,11 @@
         android:layout_height="wrap_content"
         android:text="@string/set_menu_branch"/>
 
+    <Button
+        android:id="@+id/tem_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_menu_tem"/>
 
     <Button
         android:id="@+id/ok_btn"

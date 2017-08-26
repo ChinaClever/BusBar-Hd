@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 
     <TextView
         android:id="@+id/id_tv"
@@ -14,19 +15,18 @@
         android:text="---"/>
 
     <TextView
-        android:id="@+id/line_tv_1"
+        android:id="@+id/tem_tv_1"
         style="@style/list_view_text"
         android:text="---"/>
 
     <TextView
-        android:id="@+id/line_tv_2"
+        android:id="@+id/tem_tv_2"
         style="@style/list_view_text"
         android:text="---"/>
 
     <TextView
-        android:id="@+id/line_tv_3"
+        android:id="@+id/tem_tv_3"
         style="@style/list_view_text"
         android:text="---"/>
-
 
 </LinearLayout>

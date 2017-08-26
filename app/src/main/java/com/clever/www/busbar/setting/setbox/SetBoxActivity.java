@@ -22,7 +22,7 @@ public class SetBoxActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_box_activity);
 
-        initItemss();
+        initItems();
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -43,7 +43,7 @@ public class SetBoxActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
-    private void initItemss() {
+    private void initItems() {
         for(int i=0; i<3; ++i) {
             SetBoxItem item = new SetBoxItem(i);
             mItems.add(item);

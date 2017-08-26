@@ -1,4 +1,4 @@
-package com.clever.www.busbar.setting.setbox;
+package com.clever.www.busbar.setting.setTem;
 
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.packages.DevDataPacket;
@@ -8,19 +8,20 @@ import com.clever.www.busbar.login.LoginStatus;
 import java.util.List;
 
 /**
- * Created by Lzy on 17-8-17.
+ * Created by Lzy on 17-8-26.
  */
 
-public class SetBoxUpdate {
-    SetBoxAdapter mAdapter = null;
-    private boolean isRun = false;
-    private List<SetBoxItem> mItems = null;
 
-    public SetBoxUpdate() {
+public class SetTemUpdate {
+    SetTemAdapter mAdapter = null;
+    private boolean isRun = false;
+    private List<SetTemItem> mItems = null;
+
+    public SetTemUpdate() {
         new Timers().start(500);
     }
 
-    public void setData(SetBoxAdapter adapter, List<SetBoxItem> list) {
+    public void setData(SetTemAdapter adapter, List<SetTemItem> list) {
         mAdapter = adapter;
         mItems = list;
     }
@@ -32,7 +33,7 @@ public class SetBoxUpdate {
             mItems.clear();
             if(num > 0) {
                 for (int i = 0; i < num; ++i) {
-                    SetBoxItem item = new SetBoxItem(i);
+                    SetTemItem item = new SetTemItem(i);
                     mItems.add(item);
                 }
             }
@@ -47,15 +48,15 @@ public class SetBoxUpdate {
             if(name.isEmpty())
                 name = "iBox- " + (i+1);
 
-            SetBoxItem item = mItems.get(i);
+            SetTemItem item = mItems.get(i);
             item.setName(name);
 
             int num = dataPacket.data.line.num;
             item.setNum(num);
 
-            DevDataUnit dataUnit = dataPacket.data.line.cur;
+            DevDataUnit dataUnit = dataPacket.data.env.tem;
             for(int j=0; j<num; ++j){
-                item.setCur(j, dataUnit.value.get(j));
+                item.setTem(j, dataUnit.value.get(j));
             }
         }
     }

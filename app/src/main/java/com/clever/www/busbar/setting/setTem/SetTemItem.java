@@ -1,19 +1,18 @@
-package com.clever.www.busbar.setting.setbox;
+package com.clever.www.busbar.setting.setTem;
 
 import com.clever.www.busbar.dp.data.packages.base.DevDataBase;
 
 /**
- * Created by Lzy on 17-8-16.
+ * Created by Lzy on 17-8-26.
  */
 
-public class SetBoxItem {
+public class SetTemItem {
     private int id = 0;
     private String name;
     private int num = 3;
-    private DevDataBase mCurData = new DevDataBase();
     private DevDataBase mTemData = new DevDataBase();
 
-    public SetBoxItem(int id) {
+    public SetTemItem(int id) {
         this.id = id ;
     }
 
@@ -41,14 +40,13 @@ public class SetBoxItem {
         this.num = num;
     }
 
-    public boolean setCur(int local, int data) {
-       return mCurData.set(local, data);
+
+    public boolean setTem(int local, int data) {
+        return mTemData.set(local, data);
     }
 
-    public int getCur(int local) {
-          return mCurData.get(local);
+    public int getTem(int local) {
+        return mTemData.get(local);
     }
 
 }
-
-

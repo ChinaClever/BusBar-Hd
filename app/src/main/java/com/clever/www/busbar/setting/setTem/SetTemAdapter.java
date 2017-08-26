@@ -1,4 +1,4 @@
-package com.clever.www.busbar.setting.setbox;
+package com.clever.www.busbar.setting.setTem;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,11 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Lzy on 17-8-16.
+ * Created by Lzy on 17-8-26.
  */
 
-public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder>{
-    private List<SetBoxItem> mItems;
+
+public class SetTemAdapter extends RecyclerView.Adapter<SetTemAdapter.ViewHolder>{
+    private List<SetTemItem> mItems;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView idTv, nameTv;
@@ -29,18 +30,18 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
             idTv = itemView.findViewById(R.id.id_tv);
             nameTv = itemView.findViewById(R.id.name_tv);
 
-            TextView tv = itemView.findViewById(R.id.line_tv_1);
+            TextView tv = itemView.findViewById(R.id.tem_tv_1);
             curTvs.add(tv);
 
-            tv = itemView.findViewById(R.id.line_tv_2);
+            tv = itemView.findViewById(R.id.tem_tv_2);
             curTvs.add(tv);
 
-            tv = itemView.findViewById(R.id.line_tv_3);
+            tv = itemView.findViewById(R.id.tem_tv_3);
             curTvs.add(tv);
         }
     }
 
-    public SetBoxAdapter(List<SetBoxItem> list) {
+    public SetTemAdapter(List<SetTemItem> list) {
         mItems = list;
     }
 
@@ -48,7 +49,7 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.set_box_item, parent,false);
+                .inflate(R.layout.set_tem_item, parent,false);
         final ViewHolder holder = new ViewHolder(view);
 
         for(int i=0; i<holder.curTvs.size(); ++i) {
@@ -59,11 +60,11 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
                     int position = holder.getAdapterPosition();
 
                     switch (v.getId()) {
-                        case R.id.line_tv_1:  line = 0; break;
-                        case R.id.line_tv_2:  line = 1; break;
-                        case R.id.line_tv_3:  line = 2; break;
+                        case R.id.tem_tv_1:  line = 0; break;
+                        case R.id.tem_tv_2:  line = 1; break;
+                        case R.id.tem_tv_3:  line = 2; break;
                     }
-                    SetComActivity.actionStart(v.getContext(), position, line, 3);
+                    SetComActivity.actionStart(v.getContext(), position, line, 4);
                 }
             });
         }
@@ -74,7 +75,7 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        SetBoxItem item = mItems.get(position);
+        SetTemItem item = mItems.get(position);
         String str = (item.getId() +1) + "";
         holder.idTv.setText(str);
 
@@ -82,11 +83,11 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
         holder.nameTv.setText(str);
 
         for(int i=0; i<holder.curTvs.size(); ++i) {
-            double value = item.getCur(i);
+            double value = item.getTem(i);
             if(value < 0)
                 str = "---";
             else
-                str =  value / 10.0 + "A";
+                str =  value / 10.0 + "℃";
             holder.curTvs.get(i).setText(str);
         }
     }

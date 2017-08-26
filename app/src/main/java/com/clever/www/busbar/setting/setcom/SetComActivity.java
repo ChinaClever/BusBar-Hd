@@ -77,6 +77,11 @@ public class SetComActivity extends Activity {
             case 3:
                 str += "回路电流";
                 break;
+
+            case 4:
+                str += "温度";
+                break;
+
         }
         str += "阈值设置";
 
@@ -102,6 +107,11 @@ public class SetComActivity extends Activity {
             case 3:
                 unitSym = "A";
                 dataUnit = dataPacket.data.line.cur;
+                break;
+
+            case 4:
+                unitSym = "℃";
+                dataUnit = dataPacket.data.env.tem;
                 break;
 
             default:

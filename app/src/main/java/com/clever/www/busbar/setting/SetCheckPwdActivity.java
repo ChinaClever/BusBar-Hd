@@ -11,10 +11,15 @@ import android.widget.Toast;
 
 import com.clever.www.busbar.R;
 import com.clever.www.busbar.login.LoginStatus;
+import com.clever.www.busbar.setting.setTem.SetTemActivity;
 import com.clever.www.busbar.setting.setbox.SetBoxActivity;
 import com.clever.www.busbar.setting.setline.SetLineActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SetCheckPwdActivity extends Activity {
+    List<Button> btns = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +27,20 @@ public class SetCheckPwdActivity extends Activity {
         setContentView(R.layout.set_checkpwd_activity);
 
         Button button = findViewById(R.id.line_Btn);
-        button.setOnClickListener(onClickListener);
+        btns.add(button);
 
         button = findViewById(R.id.branch_Btn);
-        button.setOnClickListener(onClickListener);
+        btns.add(button);
+
+        button = findViewById(R.id.tem_Btn);
+        btns.add(button);
 
         button = findViewById(R.id.ok_btn);
-        button.setOnClickListener(onClickListener);
+        btns.add(button);
+
+        for(int i=0; i<btns.size(); ++i)
+            btns.get(i).setOnClickListener(onClickListener);
+
     }
 
     public static void actionStart(Context context) {
@@ -82,6 +94,12 @@ public class SetCheckPwdActivity extends Activity {
                         SetBoxActivity.actionStart(SetCheckPwdActivity.this);
                     }
                     break;
+                case R.id.tem_Btn:
+                    if(inputCheck()) {
+                        SetTemActivity.actionStart(SetCheckPwdActivity.this);
+                    }
+                    break;
+
                 case R.id.ok_btn:
                     if(inputCheck()) {
                         resultActivity(3);
