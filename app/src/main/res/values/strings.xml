@@ -11,7 +11,8 @@
     <string name="bar_menu_box">接插箱</string>
     <string name="bar_menu_settings">设置</string>
 
-    <string name="login_btn">登陆</string>
+    <string name="login_dlg">登 陆</string>
+    <string name="login_btn">登 陆</string>
     <string name="login_OK">登陆成功</string>
     <string name="login_err">登陆失败</string>
     <string name="login_quited">已退出登陆</string>

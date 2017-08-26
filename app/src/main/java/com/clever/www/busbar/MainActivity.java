@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (getSupportActionBar() != null){
+            getSupportActionBar().hide();
+        }
+
         initFun();
         mNavigationFragment = (NavigationFragment) getSupportFragmentManager()
                 .findFragmentById( R.id.navigation_lzy);

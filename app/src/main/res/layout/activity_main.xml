@@ -11,7 +11,7 @@
     <fragment
         android:name="com.clever.www.busbar.titlebar.TitleFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="60dp"/>
 
     <FrameLayout
         android:id="@+id/content"
