@@ -5,9 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.clever.www.busbar.R;
+import com.clever.www.busbar.setting.setcom.SetComActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +18,7 @@ import java.util.List;
 
 public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder>{
     private List<SetBoxItem> mItems;
+    private int mPosition = 0;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView idTv, nameTv;
@@ -45,24 +46,28 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
     }
 
 
-    private View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v){
-            switch (v.getId()) {
-                case R.id.name_tv:
-                    Toast.makeText(v.getContext(), "luozhiyong", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-        }
-    };
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.set_box_item, parent,false);
-        ViewHolder holder = new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
 
-        holder.nameTv.setOnClickListener(onClickListener);
+        for(int i=0; i<holder.curTvs.size(); ++i) {
+            holder.curTvs.get(i).setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    int line = 0;
+                    int position = holder.getAdapterPosition();
+
+                    switch (v.getId()) {
+                        case R.id.line_tv_1:  line = 0; break;
+                        case R.id.line_tv_2:  line = 1; break;
+                        case R.id.line_tv_3:  line = 2; break;
+                    }
+                    SetComActivity.actionStart(v.getContext(), position, line, 3);
+                }
+            });
+        }
 
         return holder;
     }
@@ -85,7 +90,6 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
                 str =  value / 10.0 + "A";
             holder.curTvs.get(i).setText(str);
         }
-
     }
 
     @Override

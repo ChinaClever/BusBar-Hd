@@ -35,6 +35,7 @@ public class SetComActivity extends Activity {
 
         Intent intent = getIntent();
         boxNUm  = intent.getIntExtra("box_num", 0);
+        mLine  = intent.getIntExtra("line_num", 0);
         modeId  = intent.getIntExtra("set_mode", 0);
 
         Button button = findViewById(R.id.save_btn);
@@ -72,6 +73,10 @@ public class SetComActivity extends Activity {
             case 2:
                 str += "相电压";
                 break;
+
+            case 3:
+                str += "回路电流";
+                break;
         }
         str += "阈值设置";
 
@@ -87,11 +92,18 @@ public class SetComActivity extends Activity {
                 unitSym = "A";
                 dataUnit = dataPacket.data.line.cur;
                 break;
+
             case 2:
                 unitSym = "V";
                 dataUnit = dataPacket.data.line.vol;
                 mRate = 1;
                 break;
+
+            case 3:
+                unitSym = "A";
+                dataUnit = dataPacket.data.line.cur;
+                break;
+
             default:
                 break;
         }
@@ -131,9 +143,10 @@ public class SetComActivity extends Activity {
 
 
 
-    public static void actionStart(Context context, int boxNUm, int mode) {
+    public static void actionStart(Context context, int boxNum, int line, int mode) {
         Intent intent = new Intent(context, SetComActivity.class);
-        intent.putExtra("box_num", boxNUm);
+        intent.putExtra("box_num", boxNum);
+        intent.putExtra("line_num", line);
         intent.putExtra("set_mode", mode);
         context.startActivity(intent);
     }

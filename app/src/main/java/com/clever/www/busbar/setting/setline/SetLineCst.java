@@ -70,11 +70,11 @@ public class SetLineCst extends LinearLayout{
         public void onClick(View v){
             switch (v.getId()) {
                 case R.id.cur_progress_bar:
-                    SetComActivity.actionStart(mContext, 0, 1);
+                    SetComActivity.actionStart(mContext, 0, mLine, 1);
                     break;
 
                 case R.id.vol_progress_bar:
-                    SetComActivity.actionStart(mContext, 0, 2);
+                    SetComActivity.actionStart(mContext, 0, mLine, 2);
                     break;
             }
         }
