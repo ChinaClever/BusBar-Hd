@@ -28,7 +28,7 @@ public class BusHashTable {
         }
     }
 
-    public static int getBoxNUm(int id) {
+    public static int getBoxNum(int id) {
         return mHashData.get(id).size();
     }
 

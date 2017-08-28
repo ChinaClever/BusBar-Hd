@@ -60,7 +60,7 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchAdapter.ViewHolder
                 BranchItem item = mBranchItems.get(position);
 
                 int busId = LoginStatus.login_devNum;
-                int boxNum = BusHashTable.getBoxNUm(busId);
+                int boxNum = BusHashTable.getBoxNum(busId);
                 if(position < boxNum) {
                     BoxActivity.actionStart(parent.getContext(), position);
                 } else {

@@ -13,7 +13,7 @@
 
     <TextView
         style="@style/title_text_view"
-        android:text="IDC_BUSBAR"/>
+        android:text="IDC-BUSBAR"/>
 
     <TextView
         style="@style/title_text_view"

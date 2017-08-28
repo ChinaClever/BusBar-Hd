@@ -27,6 +27,7 @@ public class HomeItemCst extends LinearLayout{
     private ImageView loopIv;
     private int mBoxID=0;
     private Context mContext;
+    private View mView;
 
     public HomeItemCst(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -41,7 +42,7 @@ public class HomeItemCst extends LinearLayout{
             @Override
             public void onClick(View view) {
                 int busId = LoginStatus.login_devNum;
-                int boxNum = BusHashTable.getBoxNUm(busId);
+                int boxNum = BusHashTable.getBoxNum(busId);
                 if(mBoxID < boxNum) {
                     BoxActivity.actionStart(mContext, mBoxID);
                 } else {
@@ -50,25 +51,27 @@ public class HomeItemCst extends LinearLayout{
             }
         });
 
+        mView = view;
+
         new Timers().start(500);
     }
 
     public void setBoxId(int boxId) {
         mBoxID = boxId;
 
-        String str = (mBoxID +1) +"";
+        String str = mBoxID+"";
         idTv.setText(str);
     }
 
     private void checkBoxNum() {
         int busId = LoginStatus.login_devNum;
-        int boxNum = BusHashTable.getBoxNUm(busId);
+        int boxNum = BusHashTable.getBoxNum(busId);
 
-//        if(mBoxID >= boxNum) {
-//            setVisibility(View.GONE);
-//        }
-
-//        Log.d("lzy", "checkBoxNum: " + mBoxID + "  " + boxNum);
+        if(mBoxID >= boxNum) {
+            mView.setVisibility(View.INVISIBLE);
+        } else {
+            mView.setVisibility(View.VISIBLE);
+        }
     }
 
 
@@ -99,7 +102,7 @@ public class HomeItemCst extends LinearLayout{
     private void checkALarmStatus() {
         int alarm = 0;
         int busId = LoginStatus.login_devNum;
-        int boxNum = BusHashTable.getBoxNUm(busId);
+        int boxNum = BusHashTable.getBoxNum(busId);
         if(mBoxID < boxNum) {
             DevDataPacket packet = LoginStatus.getPacket(mBoxID);
             if(packet.offLine > 0) {
@@ -128,7 +131,7 @@ public class HomeItemCst extends LinearLayout{
             BoxDataHash boxDataHash = BusHashTable.getHash().get(busId);
             DevDataPacket packet = boxDataHash.getPacket(mBoxID);
 
-            double cur = packet.data.line.cur.value.addData();
+            double cur = packet.data.line.cur.value.addData()/10.0;
             String str = cur + "A";
             curTv.setText(str);
 

@@ -28,14 +28,14 @@ public class HomeUpdate {
 
     private void checkBoxNum() {
         int busId = LoginStatus.login_devNum;
-        int boxNum = BusHashTable.getBoxNUm(busId);
+        int boxNum = BusHashTable.getBoxNum(busId)-1;
 
         if(boxNum%2 == 1) boxNum++;
         if(boxNum != (mItems.size()*2))
         {
             mItems.clear();
             if(boxNum > 0) {
-                for (int i = 0; i < boxNum; i += 2) {
+                for (int i = 1; i < boxNum; i += 2) {
                     HomeItem item = new HomeItem(i);
                     mItems.add(item);
                 }

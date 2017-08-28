@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void initHomeItem() {
-        for(int i=0; i<20; i+=2) {
+        for(int i=1; i<=1; i+=2) {
             HomeItem item = new HomeItem(i);
             mHomeItems.add(item);
         }

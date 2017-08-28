@@ -30,7 +30,7 @@ public class BranchUpdate {
 
     private void checkBoxNum() {
         int busId = LoginStatus.login_devNum;
-        int boxNum = BusHashTable.getBoxNUm(busId);
+        int boxNum = BusHashTable.getBoxNum(busId);
 
         if(boxNum != mItems.size()) {
             mItems.clear();
