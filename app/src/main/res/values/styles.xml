@@ -27,8 +27,9 @@
     </style>
 
     <style name="dlg_title_text">
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_margin">1dp</item>
         <item name="android:textSize">25sp</item>

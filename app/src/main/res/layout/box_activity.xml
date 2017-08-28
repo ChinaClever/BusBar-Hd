@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="800dp"
-    android:layout_height="600dp"
+    android:layout_width="1000dp"
+    android:layout_height="450dp"
     android:layout_gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/dlg_bg"
     tools:context="com.clever.www.busbar.box.BoxActivity">
 
     <LinearLayout
@@ -13,15 +14,13 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/dlg_title_text"
             android:text="@string/box_title"
             android:textSize="25sp"/>
 
         <TextView
             android:id="@+id/name_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/dlg_title_text"
             android:textSize="25sp"
             android:text="iBOx"/>
     </LinearLayout>

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.clever.www.busbar.R;
 import com.clever.www.busbar.box.BoxActivity;
+import com.clever.www.busbar.common.rate.RateEnum;
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.hash.data.BoxDataHash;
 import com.clever.www.busbar.dp.data.hash.data.BusHashTable;
@@ -131,7 +132,7 @@ public class HomeItemCst extends LinearLayout{
             BoxDataHash boxDataHash = BusHashTable.getHash().get(busId);
             DevDataPacket packet = boxDataHash.getPacket(mBoxID);
 
-            double cur = packet.data.line.cur.value.addData()/10.0;
+            double cur = packet.data.line.cur.value.addData()/ RateEnum.CUR.getValue();
             String str = cur + "A";
             curTv.setText(str);
 

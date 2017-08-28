@@ -62,11 +62,12 @@
     <string name="branch_total_ele">总电能</string>
     <string name="branch_total_tem">温度</string>
 
-    <string name="box_total_cur">总电流: </string>
-    <string name="box_total_pow">有功功率: </string>
-    <string name="box_total_appow">视在功率: </string>
-    <string name="box_total_pf">功率因素: </string>
-    <string name="box_total_ele">总电能: </string>
+    <string name="box_total_vol">总电压： </string>
+    <string name="box_total_cur">总电流： </string>
+    <string name="box_total_pow">有功功率：</string>
+    <string name="box_total_appow">视在功率： </string>
+    <string name="box_total_pf">功率因素：</string>
+    <string name="box_total_ele">总电能： </string>
     <string name="box_tem">温度：</string>
     <string name="box_name">名称</string>
     <string name="box_sw">开关</string>

@@ -9,7 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.clever.www.busbar.R;
+import com.clever.www.busbar.common.rate.RateEnum;
 import com.clever.www.busbar.common.timer.HanderTimer;
+import com.clever.www.busbar.dp.data.packages.DevDataPacket;
 import com.clever.www.busbar.dp.data.packages.devdata.DevDatas;
 import com.clever.www.busbar.login.LoginStatus;
 
@@ -18,7 +20,7 @@ import com.clever.www.busbar.login.LoginStatus;
  */
 
 public class BoxTotalCst extends LinearLayout{
-    private TextView curTv, eleTv, pfTv, powTv, appow, temTv;
+    private TextView curTv, eleTv, pfTv, powTv, appow, volTv;
     private boolean isRun = false;
     private int mBoxId = 0;
 
@@ -31,7 +33,7 @@ public class BoxTotalCst extends LinearLayout{
         pfTv = view.findViewById(R.id.pf_tv);
         powTv = view.findViewById(R.id.pow_tv);
         appow = view.findViewById(R.id.appow_tv);
-        temTv = view.findViewById(R.id.tem_tv);
+        volTv = view.findViewById(R.id.vol_tv);
 
         new Timers().start(500);
     }
@@ -42,31 +44,42 @@ public class BoxTotalCst extends LinearLayout{
 
 
     private void updateData() {
-        DevDatas devData  = LoginStatus.getPacket(mBoxId).data;
+        DevDataPacket packet =  LoginStatus.getPacket(mBoxId);
+        if(packet.offLine > 0) {
+            DevDatas devData  =packet.data;
 
-        int value = devData.line.cur.value.addData();
-        String str = value + "A";
-        curTv.setText(str);
+            int value = devData.line.cur.value.addData();
+            String str = value / RateEnum.CUR.getValue() + "";
+            curTv.setText(str);
 
-        value = devData.line.ele.addData();
-        str = value + "KWh";
-        eleTv.setText(str);
+            value = devData.line.ele.addData();
+            str = value / RateEnum.ELE.getValue() + "";
+            eleTv.setText(str);
 
-        value = devData.line.pf.averData();
-        str = value + "";
-        pfTv.setText(str);
+            value = devData.line.pf.averData();
+            str = value / RateEnum.PF.getValue()+ "";
+            pfTv.setText(str);
 
-        value = devData.line.pow.addData();
-        str = value + "KW";
-        powTv.setText(str);
+            value = devData.line.pow.addData();
+            str = value / RateEnum.POW.getValue()+ "";
+            powTv.setText(str);
 
-        value = devData.line.apPow.addData();
-        str = value +"KVA";
-        appow.setText(str);
+            value = devData.line.apPow.addData();
+            str = value / RateEnum.POW.getValue()+ "";
+            appow.setText(str);
 
-        value = devData.env.tem.value.maxData();
-        str = value + "°C";
-        temTv.setText(str);
+            value = devData.line.vol.value.averData();
+            str = value + "";
+            volTv.setText(str);
+        } else {
+            String str = "---";
+            curTv.setText(str);
+            eleTv.setText(str);
+            pfTv.setText(str);
+            powTv.setText(str);
+            appow.setText(str);
+            volTv.setText(str);
+        }
     }
 
     private class Timers extends HanderTimer {
