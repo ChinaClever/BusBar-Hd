@@ -8,6 +8,7 @@
     <color name="bg_white">#FFFFFF</color>
     <color name="bg_topbar">#FCFCFC</color>
     <color name="bg_gray">#00F1F1F1</color>
+    <color name="bg_list_title">#F8FFF5</color>
 
     <color name="bar_transparent">#00FFFFFF</color>
     <color name="bar_text_gray">#8D7A71</color>

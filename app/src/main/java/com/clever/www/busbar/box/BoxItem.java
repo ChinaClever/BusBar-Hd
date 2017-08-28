@@ -14,6 +14,7 @@ public class BoxItem {
     private double pf = -1;
     private double pow = -1;
     private double appow = -1;
+    private double tem = -1;
     private int sw = -1;
 
     public BoxItem(int id){
@@ -84,6 +85,14 @@ public class BoxItem {
 
     public void setSw(int sw) {
         this.sw = sw;
+    }
+
+    public double getTem() {
+        return tem;
+    }
+
+    public void setTem(double tem) {
+        this.tem = tem;
     }
 
 }

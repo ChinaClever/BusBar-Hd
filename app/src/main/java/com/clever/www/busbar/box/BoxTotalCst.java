@@ -42,7 +42,6 @@ public class BoxTotalCst extends LinearLayout{
         mBoxId = id;
     }
 
-
     private void updateData() {
         DevDataPacket packet =  LoginStatus.getPacket(mBoxId);
         if(packet.offLine > 0) {
