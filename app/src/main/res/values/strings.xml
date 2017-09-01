@@ -36,7 +36,6 @@
     <string name="login_coned">已登陆</string>
 
     <string name="line_rate">频率: </string>
-    <string name="line_tem">温度: </string>
     <string name="line_total_cur">总电流: </string>
     <string name="line_total_vol">平均电压: </string>
     <string name="line_total_pow">总功率: </string>
@@ -50,6 +49,7 @@
     <string name="line_appow">视在功率</string>
     <string name="line_pf">功率因素</string>
     <string name="line_ele">电能</string>
+    <string name="line_tem">温度: </string>
 
     <string name="branch_id">编号</string>
     <string name="branch_name">名称</string>

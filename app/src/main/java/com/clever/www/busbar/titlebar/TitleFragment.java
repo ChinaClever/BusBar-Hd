@@ -61,8 +61,6 @@ public class TitleFragment extends Fragment {
         } else {
             mLoginBtn.setText(R.string.login_btn);
         }
-
-//        Log.d("lzy", "updateData: "  + LoginStatus.getLogin());
     }
 
     private class Timers extends HanderTimer {

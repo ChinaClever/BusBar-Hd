@@ -15,6 +15,7 @@ public class LineItem {
     private double apPow = 0;
     private double pf = 0;
     private double ele = 0;
+    private double tem = 0;
 
     public LineItem(int id) {
         setId(id);
@@ -99,6 +100,14 @@ public class LineItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getTem() {
+        return tem;
+    }
+
+    public void setTem(double tem) {
+        this.tem = tem;
     }
 
 

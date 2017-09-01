@@ -69,6 +69,7 @@ public class PieChartCst extends LinearLayout{
         data.setValueLabelBackgroundEnabled(false);//数据背景不显示
         data.setValueLabelsTextColor(Color.BLACK);
 
+
         if (isExploded) {
             data.setSlicesSpacing(0);//设置间隔为0
         }
@@ -80,17 +81,22 @@ public class PieChartCst extends LinearLayout{
 
         if (hasCenterText2) {
             data.setCenterText2("---");
-            data.setCenterText2FontSize(32);
+            data.setCenterText2FontSize(20);
         }
 
         chart.setPieChartData(data);
     }
 
-    public void setValue(int value, int max, int rate, String unitStr) {
+    public void setValue(int value, int max, double rate, String unitStr) {
         String str = value + "";
 
         if(rate > 1) {
             str = (value / (rate*1.0)) + "";
+        }
+
+        if(value < 0) {
+            value = 0;
+            str = "---";
         }
         data.setCenterText1(str);
 
@@ -102,7 +108,7 @@ public class PieChartCst extends LinearLayout{
 
         if(max > 0) {
             int maxValue = max + max / 4;
-            if (maxValue < 1) maxValue = 100;
+            if (maxValue < 1) maxValue = 10;
 
             values.get(0).setValue(maxValue / 4.0f);
             values.get(1).setValue(value / 1.0f);

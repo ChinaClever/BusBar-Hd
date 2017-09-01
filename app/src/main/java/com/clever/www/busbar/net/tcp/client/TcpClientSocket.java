@@ -117,13 +117,6 @@ public class TcpClientSocket {
      * @return
      */
     public boolean isConnect() {
-        isConnected = false;
-        
-        if(mSocket != null) {
-            if (mSocket.isConnected()) {
-                isConnected = true;
-            }
-        }
         return isConnected;
     }
 

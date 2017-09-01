@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.clever.www.busbar.R;
+import com.clever.www.busbar.common.rate.RateEnum;
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.packages.devdata.DevDatas;
 import com.clever.www.busbar.login.LoginStatus;
@@ -44,15 +45,15 @@ public class LineTotalCustom extends LinearLayout {
 
             int value = packet.line.cur.value.addData();
             int curMax = packet.line.cur.max.addData();
-            pieCur.setValue(value, curMax, 10, "A");
+            pieCur.setValue(value, curMax, RateEnum.CUR.getValue(), "A");
 
             value =  packet.line.vol.value.averData();
             int volMax = packet.line.vol.max.maxData();
             pieVol.setValue(value, volMax, 1, "V");
 
             value =  packet.line.pow.addData();
-            int max = curMax * volMax;
-            piePow.setValue(value, max, 10000, "KW");
+            int max = (curMax * volMax )/10;
+            piePow.setValue(value, max, RateEnum.POW.getValue(), "KW");
 
             str = packet.env.tem.value.maxData() + "C";
             tempTv.setText(str);
@@ -62,6 +63,10 @@ public class LineTotalCustom extends LinearLayout {
         } else {
             tempTv.setText(str);
             rateTv.setText(str);
+
+            pieCur.setValue(-1, 100, RateEnum.CUR.getValue(), "A");
+            pieVol.setValue(-1, 100, 1, "V");
+            piePow.setValue(-1, 100, RateEnum.POW.getValue(), "KW");
         }
     }
 

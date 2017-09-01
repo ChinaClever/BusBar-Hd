@@ -6,6 +6,7 @@
     tools:context="com.clever.www.busbar.line.total.LineTotalCustom">
 
     <LinearLayout
+        android:layout_margin="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -39,11 +40,10 @@
     </LinearLayout>
 
 
-
-
     <LinearLayout
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="280dp">
         <com.clever.www.busbar.line.total.PieChartCst
             android:id="@+id/pie_vol"
             android:layout_width="0dp"

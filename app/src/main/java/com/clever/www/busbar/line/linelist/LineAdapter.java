@@ -18,7 +18,7 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
     private List<LineItem> mLineItems = null;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView  nameTv, statusTv,volTv,curTv, powTv,appowTv,pfTv, eleTv,maxCurTv;
+        TextView  nameTv, statusTv,volTv,curTv, powTv,appowTv,pfTv, eleTv,maxCurTv, temTv;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -33,6 +33,7 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
             appowTv = itemView.findViewById(R.id.appow_tv);
             pfTv = itemView.findViewById(R.id.pf_tv);
             eleTv = itemView.findViewById(R.id.ele_tv);
+            temTv = itemView.findViewById(R.id.tem_tv);
         }
     }
 
@@ -90,6 +91,27 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
         if(value>=0) str = value +"KWh";
         else  str = "---";
         holder.eleTv.setText(str);
+
+        value = item.getTem();
+        if(value>=0) str = value +"℃";
+        else  str = "---";
+        holder.temTv.setText(str);
+
+
+        //////////////////// 报警字体着色
+
+        //////////////////////  报警颜色
+        ////////////============ 倍数
+
+
+
+
+
+
+
+
+
+
     }
 
     @Override

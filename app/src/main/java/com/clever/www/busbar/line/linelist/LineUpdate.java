@@ -37,7 +37,7 @@ public class LineUpdate {
         for(int i=0; i<mItems.size(); ++i) {
             LineItem item = mItems.get(i);
 
-            String name ="L" + i;
+            String name ="L" + (i+1);
             item.setName(name);
 
             item.setVol(packet.data.line.vol.value.get(i));
@@ -47,11 +47,12 @@ public class LineUpdate {
             item.setPf(packet.data.line.pf.get(i));
             item.setEle(packet.data.line.ele.get(i));
             item.setMaxCur(packet.data.line.cur.max.get(i));
+            item.setTem(packet.data.env.tem.value.get(i));
         }
     }
 
     private void clearData() {
-        int data = 0;
+        int data = -1;
         for(int i=0; i<mItems.size(); ++i) {
             LineItem item = mItems.get(i);
             String name ="L" + i;
@@ -63,6 +64,7 @@ public class LineUpdate {
             item.setPf(data);
             item.setEle(data);
             item.setMaxCur(data);
+            item.setTem(data);
         }
     }
 
