@@ -1,5 +1,6 @@
 package com.clever.www.busbar.net;
 
+import com.clever.www.busbar.dp.dev.DevSpiedThread;
 import com.clever.www.busbar.net.data.recv.NetDataReadThread;
 import com.clever.www.busbar.net.udp.recv.UdpRecvListThreads;
 import com.clever.www.busbar.net.udp.sent.UdpHeartbeat;
@@ -11,11 +12,15 @@ import com.clever.www.busbar.net.udp.sent.UdpHeartbeat;
 public class NetRecvThread {
     private UdpRecvListThreads mUdpSocket = new UdpRecvListThreads();
     private NetDataReadThread mNet = new NetDataReadThread();
+//    private DevSpiedThread mSpiedThread = DevSpiedThread.get();
     private UdpHeartbeat udpHeartbeat = new UdpHeartbeat();
 
     public void initNet() {
         mUdpSocket.createSockets();
         new Thread(mNet).start();
+//        mSpiedThread.startThread();
+
+        DevSpiedThread.get().startThread();
 
         // UDP 发送心跳包
 //        udpHeartbeat.startThread("192.168.1.105");
