@@ -35,6 +35,8 @@ public class DevSpiedThread {
 
         packet.envAlarm = packet.data.env.tem.crAlarm.maxData();
         packet.envAlarm += packet.data.env.tem.alarm.maxData();
+
+        packet.status = packet.curAlarm + packet.volAlarm + packet.envAlarm;
     }
 
     private void checkDevState() {
@@ -74,7 +76,7 @@ public class DevSpiedThread {
             public void run() {
                 while (true) {
                     try {
-                        Thread.sleep(1500);
+                        Thread.sleep(1800);
                         checkDevState();
                     } catch (InterruptedException e) {
                         e.printStackTrace();

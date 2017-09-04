@@ -1,5 +1,6 @@
 package com.clever.www.busbar.line.linelist;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,13 +19,12 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
     private List<LineItem> mLineItems = null;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView  nameTv, statusTv,volTv,curTv, powTv,appowTv,pfTv, eleTv,maxCurTv, temTv;
+        TextView  nameTv, volTv,curTv, powTv,appowTv,pfTv, eleTv,maxCurTv, temTv;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             nameTv = itemView.findViewById(R.id.name_tv);
-            statusTv = itemView.findViewById(R.id.status_tv);
             volTv = itemView.findViewById(R.id.vol_tv);
             curTv = itemView.findViewById(R.id.cur_tv);
             maxCurTv = itemView.findViewById(R.id.max_cur_tv);
@@ -50,6 +50,18 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
         return holder;
     }
 
+    private void setTextColor(TextView tv, int alarm, int crAlarm) {
+        int color = Color.BLACK;
+
+        if(alarm > 0) {
+            color = Color.RED;
+        } else if(crAlarm > 0) {
+            color = Color.YELLOW;
+        }
+
+        tv.setTextColor(color);
+    }
+
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         LineItem item = mLineItems.get(position);
@@ -61,11 +73,13 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
         if(value>=0) str = (int)value +"V";
         else  str = "---";
         holder.volTv.setText(str);
+        setTextColor(holder.volTv, item.getVolALarm(), item.getVolCrALarm());
 
         value = item.getCur();
         if(value>=0) str = value +"A";
         else  str = "---";
         holder.curTv.setText(str);
+        setTextColor(holder.curTv, item.getCurALarm(), item.getCurCrALarm());
 
         value = item.getMaxCur();
         if(value>=0) str = value +"A";
@@ -96,6 +110,7 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
         if(value>=0) str = value +"℃";
         else  str = "---";
         holder.temTv.setText(str);
+        setTextColor(holder.temTv, item.getTemALarm(), item.getTemCrALarm());
 
 
         //////////////////// 报警字体着色

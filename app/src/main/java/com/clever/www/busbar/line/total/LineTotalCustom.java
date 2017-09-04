@@ -17,7 +17,7 @@ import com.clever.www.busbar.login.LoginStatus;
 
 
 public class LineTotalCustom extends LinearLayout {
-    private TextView rateTv, tempTv;
+    private TextView rateTv;
     private PieChartCst pieVol, pieCur, piePow;
 
 
@@ -26,7 +26,6 @@ public class LineTotalCustom extends LinearLayout {
 
         View view = LayoutInflater.from(context).inflate(R.layout.line_total_custom, this);
         rateTv = view.findViewById(R.id.rate_tv);
-        tempTv = view.findViewById(R.id.tem_tv);
 
         pieVol = view.findViewById(R.id.pie_vol);
         pieCur = view.findViewById(R.id.pie_cur);
@@ -55,13 +54,9 @@ public class LineTotalCustom extends LinearLayout {
             int max = (curMax * volMax )/10;
             piePow.setValue(value, max, RateEnum.POW.getValue(), "KW");
 
-            str = packet.env.tem.value.maxData() + "C";
-            tempTv.setText(str);
-
             str = packet.line.rate.averData() + "Hz";
             rateTv.setText(str);
         } else {
-            tempTv.setText(str);
             rateTv.setText(str);
 
             pieCur.setValue(-1, 100, RateEnum.CUR.getValue(), "A");

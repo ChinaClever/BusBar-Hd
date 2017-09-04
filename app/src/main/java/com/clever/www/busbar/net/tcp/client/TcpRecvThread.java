@@ -9,7 +9,7 @@ import com.clever.www.busbar.net.data.recv.NetDataList;
  * tcp 接收线程
  */
 public class TcpRecvThread implements Runnable{
-    private static final int BUF_SIZE = 4*NetConstants.DATA_MSG_SIZE;
+    private static final int BUF_SIZE = 10*NetConstants.DATA_MSG_SIZE;
     private static byte[] searchArray = {NetConstants.DATA_MSG_ED, NetConstants.DATA_MSG_HDR, NetConstants.DATA_MSG_STX};
 
     private TcpClient mTcpClient =  TcpClient.bulid();

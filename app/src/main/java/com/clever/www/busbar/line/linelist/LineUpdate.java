@@ -1,5 +1,6 @@
 package com.clever.www.busbar.line.linelist;
 
+import com.clever.www.busbar.common.rate.RateEnum;
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.hash.data.BoxDataHash;
 import com.clever.www.busbar.dp.data.hash.data.BusHashTable;
@@ -41,13 +42,22 @@ public class LineUpdate {
             item.setName(name);
 
             item.setVol(packet.data.line.vol.value.get(i));
-            item.setCur(packet.data.line.cur.value.get(i));
-            item.setPow(packet.data.line.pow.get(i));
-            item.setApPow(packet.data.line.apPow.get(i));
-            item.setPf(packet.data.line.pf.get(i));
-            item.setEle(packet.data.line.ele.get(i));
-            item.setMaxCur(packet.data.line.cur.max.get(i));
+            item.setVolALarm(packet.data.line.vol.alarm.get(i));
+            item.setVolCrALarm(packet.data.line.vol.crAlarm.get(i));
+
+            item.setCur(packet.data.line.cur.value.get(i) / RateEnum.CUR.getValue());
+            item.setCurALarm(packet.data.line.cur.alarm.get(i));
+            item.setCurCrALarm(packet.data.line.cur.crAlarm.get(i));
+
+            item.setPow(packet.data.line.pow.get(i) / RateEnum.POW.getValue() );
+            item.setApPow(packet.data.line.apPow.get(i) / RateEnum.POW.getValue());
+            item.setPf(packet.data.line.pf.get(i) / RateEnum.PF.getValue());
+            item.setEle(packet.data.line.ele.get(i) / RateEnum.ELE.getValue());
+            item.setMaxCur(packet.data.line.cur.max.get(i) / RateEnum.CUR.getValue());
+
             item.setTem(packet.data.env.tem.value.get(i));
+            item.setTemALarm(packet.data.env.tem.alarm.get(i));
+            item.setTemCrALarm(packet.data.env.tem.crAlarm.get(i));
         }
     }
 
@@ -55,7 +65,7 @@ public class LineUpdate {
         int data = -1;
         for(int i=0; i<mItems.size(); ++i) {
             LineItem item = mItems.get(i);
-            String name ="L" + i;
+            String name ="L" + (i+1);
             item.setName(name);
             item.setVol(data);
             item.setCur(data);

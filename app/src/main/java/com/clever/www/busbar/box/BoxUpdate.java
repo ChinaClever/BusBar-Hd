@@ -1,6 +1,8 @@
 package com.clever.www.busbar.box;
 
+import com.clever.www.busbar.common.rate.RateEnum;
 import com.clever.www.busbar.common.timer.HanderTimer;
+import com.clever.www.busbar.dp.data.packages.devdata.DevEnvData;
 import com.clever.www.busbar.dp.data.packages.devdata.DevObjData;
 import com.clever.www.busbar.login.LoginStatus;
 
@@ -42,6 +44,7 @@ public class BoxUpdate {
 
     private void setUpdateData() {
         DevObjData objData = LoginStatus.getPacket(mBoxID).data.line;
+        DevEnvData envObjData = LoginStatus.getPacket(mBoxID).data.env;
 
 
         for(int i=0; i<mItems.size(); ++i) {
@@ -50,13 +53,23 @@ public class BoxUpdate {
             String name = "Loop " + (i+1);
             item.setName(name);
 
-            item.setCur(objData.cur.value.get(i));
+            item.setCur(objData.cur.value.get(i) / RateEnum.CUR.getValue());
+            item.setCurALarm(objData.cur.alarm.get(i));
+            item.setCurCrALarm(objData.cur.crAlarm.get(i));
+
             item.setVol(objData.vol.value.get(i));
-            item.setEle(objData.ele.get(i));
-            item.setPow(objData.pow.get(i));
-            item.setAppow(objData.apPow.get(i));
-            item.setPf(objData.pf.get(i));
+            item.setVolALarm(objData.vol.alarm.get(i));
+            item.setVolCrALarm(objData.vol.crAlarm.get(i));
+
+            item.setEle(objData.ele.get(i) / RateEnum.ELE.getValue());
+            item.setPow(objData.pow.get(i) / RateEnum.POW.getValue());
+            item.setAppow(objData.apPow.get(i) / RateEnum.POW.getValue());
+            item.setPf(objData.pf.get(i) / RateEnum.PF.getValue());
             item.setSw(objData.sw.get(i));
+
+            item.setTem(envObjData.tem.value.get(i));
+            item.setTemALarm(envObjData.tem.alarm.get(i));
+            item.setTemCrALarm(envObjData.tem.crAlarm.get(i));
         }
     }
 

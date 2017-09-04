@@ -9,12 +9,17 @@ public class BoxItem {
     private int id = 0;
     private String name = "";
     private double vol=-1;
+    private int volALarm=0, volCrALarm=0;
+
     private double cur=-1;
+    private int curALarm=0, curCrALarm=0;
     private double ele =-1;
     private double pf = -1;
     private double pow = -1;
     private double appow = -1;
+
     private double tem = -1;
+    private int temALarm=0, temCrALarm=0;
     private int sw = -1;
 
     public BoxItem(int id){
@@ -95,4 +100,51 @@ public class BoxItem {
         this.tem = tem;
     }
 
+    public int getVolALarm() {
+        return volALarm;
+    }
+
+    public void setVolALarm(int volALarm) {
+        this.volALarm = volALarm;
+    }
+
+    public int getVolCrALarm() {
+        return volCrALarm;
+    }
+
+    public void setVolCrALarm(int volCrALarm) {
+        this.volCrALarm = volCrALarm;
+    }
+
+    public int getCurALarm() {
+        return curALarm;
+    }
+
+    public void setCurALarm(int curALarm) {
+        this.curALarm = curALarm;
+    }
+
+    public int getCurCrALarm() {
+        return curCrALarm;
+    }
+
+    public void setCurCrALarm(int curCrALarm) {
+        this.curCrALarm = curCrALarm;
+    }
+
+    public int getTemALarm() {
+        return temALarm;
+    }
+
+    public void setTemALarm(int temALarm) {
+        this.temALarm = temALarm;
+    }
+
+    public int getTemCrALarm() {
+        return temCrALarm;
+    }
+
+    public void setTemCrALarm(int temCrALarm) {
+        this.temCrALarm = temCrALarm;
+    }
 }

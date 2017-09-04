@@ -23,20 +23,6 @@
             android:layout_height="wrap_content"
             android:textSize="30sp"
             android:text="50Hz"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="@string/line_tem"/>
-
-        <TextView
-            android:id="@id/tem_tv"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="25C"/>
     </LinearLayout>
 
 

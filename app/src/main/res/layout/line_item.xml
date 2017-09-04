@@ -13,11 +13,6 @@
             android:text="---"/>
 
         <TextView
-            android:id="@+id/status_tv"
-            style="@style/list_view_text"
-            android:text="---"/>
-
-        <TextView
             android:id="@+id/vol_tv"
             style="@style/list_view_text"
             android:text="---"/>

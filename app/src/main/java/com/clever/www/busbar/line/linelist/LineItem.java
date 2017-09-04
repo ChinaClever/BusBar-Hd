@@ -7,20 +7,22 @@ package com.clever.www.busbar.line.linelist;
 public class LineItem {
     private int id = 0;
     private String name;
-    private int status = 0;
     private int vol = 0;
+    private int volALarm=0, volCrALarm=0;
     private double cur = 0;
+    private int curALarm=0, curCrALarm=0;
+
     private double maxCur = 0;
     private double pow = 0;
     private double apPow = 0;
     private double pf = 0;
     private double ele = 0;
     private double tem = 0;
+    private int temALarm=0, temCrALarm=0;
 
     public LineItem(int id) {
         setId(id);
     }
-
 
     public int getId() {
         return id;
@@ -28,14 +30,6 @@ public class LineItem {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
     }
 
     public int getVol() {
@@ -111,4 +105,51 @@ public class LineItem {
     }
 
 
+    public int getVolALarm() {
+        return volALarm;
+    }
+
+    public void setVolALarm(int volALarm) {
+        this.volALarm = volALarm;
+    }
+
+    public int getVolCrALarm() {
+        return volCrALarm;
+    }
+
+    public void setVolCrALarm(int volCrALarm) {
+        this.volCrALarm = volCrALarm;
+    }
+
+    public int getCurALarm() {
+        return curALarm;
+    }
+
+    public void setCurALarm(int curALarm) {
+        this.curALarm = curALarm;
+    }
+
+    public int getCurCrALarm() {
+        return curCrALarm;
+    }
+
+    public void setCurCrALarm(int curCrALarm) {
+        this.curCrALarm = curCrALarm;
+    }
+
+    public int getTemALarm() {
+        return temALarm;
+    }
+
+    public void setTemALarm(int temALarm) {
+        this.temALarm = temALarm;
+    }
+
+    public int getTemCrALarm() {
+        return temCrALarm;
+    }
+
+    public void setTemCrALarm(int temCrALarm) {
+        this.temCrALarm = temCrALarm;
+    }
 }

@@ -15,10 +15,6 @@
 
         <TextView
             style="@style/list_view_head"
-            android:text="@string/line_status"/>
-
-        <TextView
-            style="@style/list_view_head"
             android:text="@string/line_vol"/>
 
         <TextView
