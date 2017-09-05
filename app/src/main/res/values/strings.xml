@@ -84,6 +84,7 @@
     <string name="box_sw_on">接通</string>
     <string name="box_sw_off">断开</string>
 
+    <string name="set_dlg">参数设置</string>
     <string name="set_menu_pwd">请输入系统密码确认权限</string>
     <string name="set_pwd_sure">确定</string>
     <string name="set_menu_line">主路设置</string>

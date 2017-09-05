@@ -35,9 +35,6 @@ public class SetCheckPwdActivity extends Activity {
         button = findViewById(R.id.tem_Btn);
         btns.add(button);
 
-        button = findViewById(R.id.ok_btn);
-        btns.add(button);
-
         for(int i=0; i<btns.size(); ++i)
             btns.get(i).setOnClickListener(onClickListener);
 
@@ -67,15 +64,7 @@ public class SetCheckPwdActivity extends Activity {
             ret = true;
         }
 
-
         return ret;
-    }
-
-    private void resultActivity(int id) {
-        Intent intent = new Intent();
-        intent.putExtra("set_menu", id);
-        setResult(RESULT_OK, intent);
-        finish();
     }
 
 
@@ -85,7 +74,6 @@ public class SetCheckPwdActivity extends Activity {
             switch (v.getId()) {
                 case R.id.line_Btn:
                     if(inputCheck()) {
-//                        resultActivity(1);
                         SetLineActivity.actionStart(SetCheckPwdActivity.this);
                     }
                     break;
@@ -99,17 +87,8 @@ public class SetCheckPwdActivity extends Activity {
                         SetTemActivity.actionStart(SetCheckPwdActivity.this);
                     }
                     break;
-
-                case R.id.ok_btn:
-                    if(inputCheck()) {
-                        resultActivity(3);
-                    }
-                    break;
-
             }
+//            finish();
         }
     };
-
-
-
 }

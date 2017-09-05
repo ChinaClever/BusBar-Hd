@@ -1,6 +1,5 @@
 package com.clever.www.busbar;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,7 +8,6 @@ import android.widget.Toast;
 
 import com.clever.www.busbar.boxlist.BoxListFragment;
 import com.clever.www.busbar.branch.BranchFragment;
-import com.clever.www.busbar.dp.dev.DevSpiedThread;
 import com.clever.www.busbar.home.HomeFragment;
 import com.clever.www.busbar.line.LineFragment;
 import com.clever.www.busbar.login.LoginStatus;
@@ -47,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean startSetMenuActivity() {
         boolean ret = true;
         if(LoginStatus.isLogin) {
-            Intent intent = new Intent(MainActivity.this, SetCheckPwdActivity.class);
-            startActivityForResult(intent, 1);
+            SetCheckPwdActivity.actionStart(MainActivity.this);
         } else {
             Toast.makeText(this, R.string.set_no_login, Toast.LENGTH_SHORT).show();
             ret = false;
@@ -101,8 +98,6 @@ public class MainActivity extends AppCompatActivity {
                 transaction.show(mBoxListFragment);
                 break;
 
-
-
             default:
                 mNavigationFragment.setHomeBtn();
                 return;
@@ -117,22 +112,6 @@ public class MainActivity extends AppCompatActivity {
         if (mBranchFragment != null) fragmentTransaction.hide(mBranchFragment);
         if (mLineFragment != null) fragmentTransaction.hide(mLineFragment);
         if (mHomeFragment != null) fragmentTransaction.hide(mHomeFragment);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case 1:
-                if(resultCode == RESULT_OK) {
-                    int id = data.getIntExtra("set_menu", 0);
-                    if(id > 0) {
-                        btmenuChanged(4 + id);
-                    } else {
-                        btmenuChanged(10);
-                    }
-                }
-                break;
-        }
     }
 
 }

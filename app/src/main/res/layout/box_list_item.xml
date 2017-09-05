@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="200dp"
     android:layout_height="wrap_content" android:layout_margin="5dp">
 
     <LinearLayout
@@ -8,9 +9,9 @@
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/id_tv"
-            android:layout_width="20dp"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:gravity="center"
             android:text="1"/>
         <TextView
@@ -18,7 +19,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="18sp"
+            android:gravity="center"
             android:text="iBox-01"/>
 
         <TextView
@@ -28,8 +30,14 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:gravity="center"
-            android:text="25C"/>
+            android:text="---"/>
     </LinearLayout>
+
+    <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/bar_div_white" />
 
     <LinearLayout
         android:layout_width="match_parent"

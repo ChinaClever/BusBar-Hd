@@ -69,7 +69,6 @@ public class BranchUpdate {
         }
     }
 
-
     private void updateData() {
         if(LoginStatus.getLogin()) {
             checkBoxNum();
@@ -79,7 +78,6 @@ public class BranchUpdate {
         }
         mAdapter.notifyDataSetChanged();
     }
-
 
 
     private class Timers extends HanderTimer {

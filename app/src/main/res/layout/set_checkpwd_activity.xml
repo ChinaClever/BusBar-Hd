@@ -2,16 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="400dp"
-    android:layout_height="500dp"
-    android:layout_gravity="center"
     android:orientation="vertical"
+    android:layout_width="400dp"
+    android:layout_height="380dp"
+    android:background="@drawable/dlg_bg"
     tools:context="com.clever.www.busbar.setting.SetCheckPwdActivity">
 
 
+    <TextView
+        style="@style/dlg_title_text"
+        android:text="@string/set_dlg"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/set_menu_pwd"
+        android:textSize="18sp"/>
+
     <EditText
         android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/set_menu_pwd"
         android:text="admin"
@@ -19,26 +35,30 @@
 
     <Button
         android:id="@+id/line_Btn"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
         android:text="@string/set_menu_line"/>
 
     <Button
         android:id="@+id/branch_Btn"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
         android:text="@string/set_menu_branch"/>
 
     <Button
         android:id="@+id/tem_Btn"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
         android:text="@string/set_menu_tem"/>
-
-    <Button
-        android:id="@+id/ok_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/set_pwd_sure"/>
+    </LinearLayout>
 
 </LinearLayout>
