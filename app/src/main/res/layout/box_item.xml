@@ -55,7 +55,6 @@
     </LinearLayout>
 
     <View
-        android:id="@+id/div_tab_bar"
         android:layout_width="match_parent"
         android:layout_height="3px"
         android:background="@color/bar_div_white" />

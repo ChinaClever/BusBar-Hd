@@ -45,7 +45,6 @@ public class SetCheckPwdActivity extends Activity {
         context.startActivity(intent);
     }
 
-
     private boolean inputCheck() {
         boolean ret = false;
 
@@ -66,7 +65,6 @@ public class SetCheckPwdActivity extends Activity {
 
         return ret;
     }
-
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
