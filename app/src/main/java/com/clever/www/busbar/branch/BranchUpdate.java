@@ -1,5 +1,6 @@
 package com.clever.www.busbar.branch;
 
+import com.clever.www.busbar.common.rate.RateEnum;
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.hash.data.BoxDataHash;
 import com.clever.www.busbar.dp.data.hash.data.BusHashTable;
@@ -35,7 +36,7 @@ public class BranchUpdate {
         if(boxNum != mItems.size()) {
             mItems.clear();
             if(boxNum > 0) {
-                for (int i = 0; i < boxNum; ++i) {
+                for (int i = 1; i < boxNum; ++i) {
                     BranchItem item = new BranchItem(i);
                     mItems.add(item);
                 }
@@ -53,18 +54,18 @@ public class BranchUpdate {
 
             String name = packet.devInfo.name.get();
             if(name.isEmpty())
-                name = "iBox-" + i;
+                name = "iBox-" + (i+1);
             item.setName(name);
 
             item.setStatus(packet.status);
 
             item.setVol(packet.data.line.vol.value.averData());
-            item.setCur(packet.data.line.cur.value.addData());
-            item.setPow(packet.data.line.pow.addData());
-            item.setApPow(packet.data.line.apPow.addData());
-            item.setPf(packet.data.line.pf.averData());
-            item.setEle(packet.data.line.ele.addData());
-            item.setTem(packet.data.env.tem.value.maxData());
+            item.setCur(packet.data.line.cur.value.addData() / RateEnum.CUR.getValue());
+            item.setPow(packet.data.line.pow.addData()  / RateEnum.POW.getValue());
+            item.setApPow(packet.data.line.apPow.addData()  / RateEnum.POW.getValue());
+            item.setPf(packet.data.line.pf.averData() / RateEnum.PF.getValue());
+            item.setEle(packet.data.line.ele.addData() / RateEnum.ELE.getValue());
+            item.setTem(packet.data.env.tem.value.averData());
         }
     }
 

@@ -54,6 +54,8 @@
     <string name="branch_id">编号</string>
     <string name="branch_name">名称</string>
     <string name="branch_status">状态</string>
+    <string name="branch_status_normal">状态</string>
+    <string name="branch_status_abnormal">异常</string>
     <string name="branch_total_vol">平均电压</string>
     <string name="branch_total_cur">总电流</string>
     <string name="branch_total_pow">有功功率</string>
@@ -79,6 +81,8 @@
     <string name="box_tem">温度</string>
     <string name="box_title">接插箱: </string>
     <string name="box_offline_info">此接插箱没在线，无法查看相关信息！！！</string>
+    <string name="box_sw_on">接通</string>
+    <string name="box_sw_off">断开</string>
 
     <string name="set_menu_pwd">请输入系统密码确认权限</string>
     <string name="set_pwd_sure">确定</string>

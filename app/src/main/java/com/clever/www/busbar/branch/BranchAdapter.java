@@ -1,5 +1,6 @@
 package com.clever.www.busbar.branch;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,15 +63,13 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchAdapter.ViewHolder
                 int busId = LoginStatus.login_devNum;
                 int boxNum = BusHashTable.getBoxNum(busId);
                 if(position < boxNum) {
-                    BoxActivity.actionStart(parent.getContext(), position);
+                    BoxActivity.actionStart(parent.getContext(), item.getId());
                 } else {
                     Toast.makeText(view.getContext(), R.string.box_offline_info, Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
-
-
 
         return holder;
     }
@@ -83,6 +82,15 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchAdapter.ViewHolder
 
         String str = item.getName();
         holder.nameTv.setText(str);
+
+        int status = item.getStatus();
+        if(status == 0) {
+            holder.statusTv.setText(R.string.branch_status_normal);
+            holder.statusTv.setTextColor(Color.BLACK);
+        } else {
+            holder.statusTv.setText(R.string.branch_status_abnormal);
+            holder.statusTv.setTextColor(Color.RED);
+        }
 
         double value = item.getVol();
         if(value>=0) str = (int)value +"V";
@@ -115,10 +123,9 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchAdapter.ViewHolder
         holder.eleTv.setText(str);
 
         value = item.getTem();
-        if(value>=0) str = (int)value +"C";
+        if(value>=0) str = (int)value +"℃";
         else  str = "---";
         holder.temTv.setText(str);
-
     }
 
     @Override

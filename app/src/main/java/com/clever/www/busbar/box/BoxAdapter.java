@@ -70,10 +70,9 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
         holder.nameTv.setText(str);
 
         int sw = item.getSw();
-        if(sw == 0) str = "接通" ;
-        else if(sw == 1) str = "断开";
-        else str = "---";
-        holder.swTv.setText(str);
+        if(sw == 0)  holder.swTv.setText(R.string.box_sw_on);
+        else if(sw == 1)  holder.swTv.setText(R.string.box_sw_off);
+        else holder.swTv.setText("---");
 
         double value = item.getVol();
         if(value < 0) str = "---";
