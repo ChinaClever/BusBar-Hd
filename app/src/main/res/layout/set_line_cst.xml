@@ -1,120 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/id_tv_1"
-            style="@style/set_line_text"
-            android:text="1"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@color/bar_div_white" />
-
-        <TextView
-            android:id="@+id/id_tv_2"
-            style="@style/set_line_text"
-            android:text="2"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@color/bar_div_white" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/line_tv"
-            style="@style/set_line_text"
-            android:height="120dp"
-            android:text="L"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:layout_gravity="bottom"
-            android:background="@color/bar_div_white" />
-    </LinearLayout>
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_weight="1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
-            style="@style/set_line_text"
-            android:text="@string/set_line_cur"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@color/bar_div_white" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/id_tv_1"
+                style="@style/set_line_text"
+                android:text="1"/>
 
-        <TextView
-            style="@style/set_line_text"
-            android:text="@string/set_line_vol"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@color/bar_div_white" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="@color/bar_div_white" />
+
+            <TextView
+                android:id="@+id/id_tv_2"
+                style="@style/set_line_text"
+                android:text="2"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/line_tv"
+                style="@style/set_line_text"
+                android:height="120dp"
+                android:text="L"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/set_line_text"
+                android:text="@string/set_line_cur"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="@color/bar_div_white" />
+            <TextView
+                style="@style/set_line_text"
+                android:text="@string/set_line_vol"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/cur_tv"
+                style="@style/set_line_text"
+                android:text="---"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="@color/bar_div_white" />
+
+            <TextView
+                android:id="@+id/vol_tv"
+                style="@style/set_line_text"
+                android:text="---"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content">
+            <ProgressBar
+                android:id="@+id/cur_progress_bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginBottom="12dp"
+                android:max="100"
+                android:progress="18" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="@color/bar_div_white" />
+
+            <ProgressBar
+                android:id="@+id/vol_progress_bar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:max="100"
+                android:progress="18" />
+        </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/cur_tv"
-            style="@style/set_line_text"
-            android:text="---"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@color/bar_div_white" />
-
-        <TextView
-            android:id="@+id/vol_tv"
-            style="@style/set_line_text"
-            android:text="---"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@color/bar_div_white" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_weight="2"
-        android:layout_height="wrap_content">
-        <ProgressBar
-            android:id="@+id/cur_progress_bar"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="100"
-            android:progress="18" />
-
-        <ProgressBar
-            android:id="@+id/vol_progress_bar"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="100"
-            android:progress="18" />
-    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/bar_div_white" />
 
 </LinearLayout>

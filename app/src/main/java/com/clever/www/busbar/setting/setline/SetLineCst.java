@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.clever.www.busbar.R;
+import com.clever.www.busbar.common.rate.RateEnum;
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.packages.DevDataPacket;
 import com.clever.www.busbar.dp.data.packages.devdata.DevDataUnit;
@@ -108,7 +109,7 @@ public class SetLineCst extends LinearLayout{
         DevDataPacket dataPacket = LoginStatus.getPacket(0);
         DevDataUnit dataUnit = dataPacket.data.line.cur;
 
-        double cur = dataUnit.value.get(mLine) /10.0;
+        double cur = dataUnit.value.get(mLine) / RateEnum.CUR.getValue();
         String str = cur + "A";
         if(cur < 0)
             str = "---";
