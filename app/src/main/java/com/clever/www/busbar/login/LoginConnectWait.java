@@ -61,6 +61,8 @@ public class LoginConnectWait extends LinearLayout{
             Toast.makeText(context, R.string.login_OK, Toast.LENGTH_LONG).show();
             connectBtn.setEnabled(false);
             disBtn.setEnabled(true);
+            LoginStatus.initBusPacket();
+
             sendBroadcasr();
         } else {
             Toast.makeText(context, R.string.login_err, Toast.LENGTH_LONG).show();

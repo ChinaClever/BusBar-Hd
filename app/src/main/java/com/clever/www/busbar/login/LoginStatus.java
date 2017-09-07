@@ -25,6 +25,16 @@ public class LoginStatus {
         return dataPacket;
     }
 
+    /**
+     * 防止登陆暖意假掉线
+     */
+    public static void initBusPacket() {
+        DevDataPacket dataPacket = getPacket(0);
+        if(dataPacket != null)
+            dataPacket.offLine = 5;
+    }
+
+
     public static int getBoxNUm() {
         return mReadHash.getBoxNum(login_devNum);
     }

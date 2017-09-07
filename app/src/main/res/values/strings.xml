@@ -99,7 +99,7 @@
     <string name="set_bus_name_empty">名称不能为空， 请重新输入！！</string>
     <string name="set_bus_cur">额定电流： </string>
     <string name="set_bus_cur_err">额定电流输入错误， 请重新输入！！</string>
-    <string name="set_box_num"> 插接箱数据: </string>
+    <string name="set_box_num"> 插接箱数量: </string>
     <string name="set_bux_num_err">插接箱数量输入错误， 请重新输入！！</string>
     <string name="set_bus_save_ok">保存成功！！！</string>
 
