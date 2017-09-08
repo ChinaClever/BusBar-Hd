@@ -102,7 +102,9 @@
     <string name="set_box_num"> 插接箱数量: </string>
     <string name="set_bux_num_err">插接箱数量输入错误， 请重新输入！！</string>
     <string name="set_bus_save_ok">保存成功！！！</string>
-
+    <string name="set_box_activity_tile">接插箱信息设置</string>
+    <string name="set_tem_activity_tile">温度信息设置</string>
+    <string name="set_line_activity_tile">主路信息设置</string>
     <string name="set_line_header_id">编号</string>
     <string name="set_line_header_phase">相位</string>
     <string name="set_line_header_type">类型</string>
@@ -118,11 +120,10 @@
     <string name="set_header_tem3">温度3</string>
 
 
-    <string name="set_com_dlg">阀值设置</string>
-    <string name="set_com_max">最大值</string>
-    <string name="set_com_min">最小值</string>
-    <string name="set_com_crmax">临界上限</string>
-    <string name="set_com_crmin">临界下限</string>
+    <string name="set_com_max">最大值: </string>
+    <string name="set_com_min">最小值: </string>
+    <string name="set_com_crmax">临界上限: </string>
+    <string name="set_com_crmin">临界下限: </string>
     <string name="set_com_unified">统一设置</string>
     <string name="set_com_save">保存</string>
     <string name="set_com_cancel">取消</string>

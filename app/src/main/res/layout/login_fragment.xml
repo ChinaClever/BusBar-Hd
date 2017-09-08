@@ -17,9 +17,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_width="60dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:textSize="18sp"
             android:text="@string/login_dev_ip"/>
 
         <EditText
@@ -27,6 +28,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:inputType="number"
             android:digits="0123456789."
             android:text="192.168.1.163"/>
@@ -44,15 +46,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_width="60dp"
+            android:layout_width="80dp"
             android:gravity="right"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="@string/login_name"/>
 
         <EditText
             android:id="@+id/usr"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:textSize="18sp"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
@@ -60,15 +64,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_width="60dp"
+            android:layout_width="80dp"
             android:gravity="right"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="@string/login_pwd"/>
 
         <EditText
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:id="@+id/pwd" />
     </LinearLayout>
 
@@ -76,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:layout_width="60dp"
+            android:layout_width="80dp"
             android:gravity="right"
             android:layout_height="wrap_content"/>
 
@@ -84,6 +90,7 @@
             android:textColor="@color/bg_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="@string/login_remember"
             android:id="@+id/checkBox" />
     </LinearLayout>
@@ -97,6 +104,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="@string/login_login"
             android:id="@+id/longin" />
 
@@ -104,12 +112,14 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="@string/login_disconnect"
             android:id="@+id/disconnect" />
         <Button
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="@string/login_back"
             android:id="@+id/quit" />
     </LinearLayout>

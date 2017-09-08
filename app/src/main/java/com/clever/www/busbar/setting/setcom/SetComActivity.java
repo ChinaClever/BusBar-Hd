@@ -23,7 +23,7 @@ import java.util.List;
 
 public class SetComActivity extends Activity {
     private int boxNUm=0, modeId = 0, mLine=0;
-    private int mRate = 10;
+    private int mRate = 1;
     private EditText minEt, maxEt, crMinEt, crMaxEt;
     private DevDataPacket dataPacket = LoginStatus.getPacket(boxNUm);
     private DevDataUnit dataUnit = null;
@@ -53,17 +53,16 @@ public class SetComActivity extends Activity {
         String str = "";
 
         if(boxNUm == 0) {
-            str = "始端箱";
+            str = "始端箱  ";
         } else {
-            str = "接插箱 ";
-
+            str = "接插箱  ";
         }
 
         DevDataPacket dataPacket = LoginStatus.getPacket(boxNUm);
         String name = dataPacket.devInfo.name.get();
         if(name.isEmpty())
             name = "iBox-" + (boxNUm+1);
-        str += name + " L" + (mLine+1);
+        str += name + "  L" + (mLine+1);
 
         switch (modeId) {
             case 1:
@@ -81,9 +80,8 @@ public class SetComActivity extends Activity {
             case 4:
                 str += "温度";
                 break;
-
         }
-        str += "阈值设置";
+        str += " 阈值设置";
 
         TextView tv = findViewById(R.id.title_tv);
         tv.setText(str);
@@ -96,6 +94,7 @@ public class SetComActivity extends Activity {
             case 1:
                 unitSym = "A";
                 dataUnit = dataPacket.data.line.cur;
+                mRate = 10;
                 break;
 
             case 2:
@@ -107,11 +106,13 @@ public class SetComActivity extends Activity {
             case 3:
                 unitSym = "A";
                 dataUnit = dataPacket.data.line.cur;
+                mRate = 10;
                 break;
 
             case 4:
                 unitSym = "℃";
                 dataUnit = dataPacket.data.env.tem;
+                mRate = 1;
                 break;
 
             default:

@@ -21,6 +21,9 @@ public class SetTemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_tem_activity);
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setTitle(R.string.set_tem_activity_tile);
+        }
 
         initItems();
 

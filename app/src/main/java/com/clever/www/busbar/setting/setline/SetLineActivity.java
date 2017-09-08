@@ -15,6 +15,10 @@ public class SetLineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_line_activity);
 
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setTitle(R.string.set_line_activity_tile);
+        }
+
         mSetLineCst_1 = (SetLineCst) findViewById(R.id.set_line_1);
         mSetLineCst_1.setLine(0);
 

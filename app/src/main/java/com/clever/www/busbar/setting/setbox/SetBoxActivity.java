@@ -22,6 +22,10 @@ public class SetBoxActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_box_activity);
 
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setTitle(R.string.set_box_activity_tile);
+        }
+
         initItems();
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
