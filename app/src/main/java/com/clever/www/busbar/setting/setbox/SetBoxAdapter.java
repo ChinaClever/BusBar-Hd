@@ -1,5 +1,6 @@
 package com.clever.www.busbar.setting.setbox;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.clever.www.busbar.R;
+import com.clever.www.busbar.common.rate.RateEnum;
 import com.clever.www.busbar.setting.setcom.SetComActivity;
 
 import java.util.ArrayList;
@@ -71,6 +73,18 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
         return holder;
     }
 
+    private void setTextColor(TextView tv, int alarm, int crAlarm) {
+        int color = Color.BLACK;
+
+        if(alarm > 0) {
+            color = Color.RED;
+        } else if(crAlarm > 0) {
+            color = Color.YELLOW;
+        }
+
+        tv.setTextColor(color);
+    }
+
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
@@ -86,8 +100,9 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
             if(value < 0)
                 str = "---";
             else
-                str =  value / 10.0 + "A";
+                str =  value / RateEnum.CUR.getValue() + "A";
             holder.curTvs.get(i).setText(str);
+            setTextColor(holder.curTvs.get(i), item.getAlarm(i), item.getCrAlarm(i));
         }
     }
 

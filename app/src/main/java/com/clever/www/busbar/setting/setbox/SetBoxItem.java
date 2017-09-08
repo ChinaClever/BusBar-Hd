@@ -11,7 +11,8 @@ public class SetBoxItem {
     private String name;
     private int num = 3;
     private DevDataBase mCurData = new DevDataBase();
-    private DevDataBase mTemData = new DevDataBase();
+    private DevDataBase mALarmData = new DevDataBase();
+    private DevDataBase mCrALarmData = new DevDataBase();
 
     public SetBoxItem(int id) {
         this.id = id ;
@@ -49,6 +50,21 @@ public class SetBoxItem {
           return mCurData.get(local);
     }
 
+    public boolean setAlarm(int local, int data) {
+        return mALarmData.set(local, data);
+    }
+
+    public int getAlarm(int local) {
+        return mALarmData.get(local);
+    }
+
+    public boolean setCrAlarm(int local, int data) {
+        return mCrALarmData.set(local, data);
+    }
+
+    public int getCrAlarm(int local) {
+        return mCrALarmData.get(local);
+    }
 }
 
 

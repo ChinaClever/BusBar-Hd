@@ -9,12 +9,15 @@
         android:layout_height="wrap_content">
 
         <TextView
-            style="@style/list_view_head"
-            android:text="ID"/>
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="21sp"
+            android:text="@string/set_header_id"/>
 
         <TextView
             style="@style/list_view_head"
-            android:text="Name"/>
+            android:text="@string/set_header_name"/>
 
         <TextView
             style="@style/list_view_head"

@@ -29,7 +29,9 @@
         <activity
             android:name=".setting.SetCheckPwdActivity"
             android:theme="@style/TipDialog" />
-        <activity android:name=".setting.setline.SetLineActivity" />
+        <activity
+            android:name=".setting.setline.SetLineActivity"
+            android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".setting.setcom.SetComActivity"
             android:theme="@style/TipDialog" />

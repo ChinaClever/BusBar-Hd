@@ -111,6 +111,9 @@
     <string name="set_line_cur">电流</string>
     <string name="set_line_vol">电压</string>
 
+    <string name="set_header_id">编号</string>
+    <string name="set_header_name">名称</string>
+
     <string name="set_com_max">最大值</string>
     <string name="set_com_min">最小值</string>
     <string name="set_com_crmax">临界上限</string>
