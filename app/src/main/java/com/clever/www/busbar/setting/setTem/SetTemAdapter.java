@@ -1,5 +1,6 @@
 package com.clever.www.busbar.setting.setTem;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,6 +73,18 @@ public class SetTemAdapter extends RecyclerView.Adapter<SetTemAdapter.ViewHolder
         return holder;
     }
 
+    private void setTextColor(TextView tv, int alarm, int crAlarm) {
+        int color = Color.BLACK;
+
+        if(alarm > 0) {
+            color = Color.RED;
+        } else if(crAlarm > 0) {
+            color = Color.YELLOW;
+        }
+
+        tv.setTextColor(color);
+    }
+
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
@@ -87,8 +100,9 @@ public class SetTemAdapter extends RecyclerView.Adapter<SetTemAdapter.ViewHolder
             if(value < 0)
                 str = "---";
             else
-                str =  value / 10.0 + "℃";
+                str =  value  + "℃";
             holder.curTvs.get(i).setText(str);
+            setTextColor(holder.curTvs.get(i), item.getAlarm(i), item.getCrAlarm(i));
         }
     }
 

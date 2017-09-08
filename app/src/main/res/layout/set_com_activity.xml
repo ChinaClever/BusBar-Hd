@@ -2,34 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="300dp"
-    android:layout_height="500dp"
+    android:layout_width="600dp"
+    android:layout_height="380dp"
     android:layout_gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/dlg_bg"
     tools:context="com.clever.www.busbar.setting.setcom.SetComActivity">
+
 
     <TextView
         android:id="@+id/title_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        style="@style/dlg_title_text"
         android:text="Setting"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:textSize="20sp"
             android:text="@string/set_com_min"/>
 
         <EditText
             android:id="@+id/min_et"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:ems="10"
             android:inputType="number" />
 
@@ -37,20 +39,22 @@
             android:id="@+id/unit_sym_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="A"/>
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:gravity="right"
             android:text="@string/set_com_max"/>
 
         <EditText
             android:id="@+id/max_et"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:ems="10"
             android:inputType="number" />
 
@@ -58,24 +62,27 @@
             android:id="@+id/unit_sym_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="A"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:gravity="right"
             android:text="@string/set_com_crmin"/>
 
         <EditText
             android:id="@+id/crmin_et"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:ems="10"
             android:inputType="number" />
 
@@ -83,19 +90,21 @@
             android:id="@+id/unit_sym_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="A"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:gravity="right"
             android:text="@string/set_com_crmax"/>
 
         <EditText
             android:id="@+id/crmax_et"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:ems="10"
             android:inputType="number" />
 
@@ -103,16 +112,24 @@
             android:id="@+id/unit_sym_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="A"/>
     </LinearLayout>
 
     <CheckBox
         android:id="@+id/checkBox"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="80dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/bg_black"
+        android:textSize="18sp"
         android:text="@string/set_com_unified" />
 
     <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -121,6 +138,7 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
+        android:textSize="18dp"
         android:text="@string/set_com_save" />
 
     <Button
@@ -128,6 +146,8 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:textSize="18dp"
         android:text="@string/set_com_cancel" />
     </LinearLayout>
 

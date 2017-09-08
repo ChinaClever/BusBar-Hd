@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.clever.www.busbar.setting.setTem.SetTemActivity">
 
-    <include layout="@layout/set_box_header"
+    <include layout="@layout/set_tem_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

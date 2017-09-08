@@ -57,6 +57,8 @@ public class SetTemUpdate {
             DevDataUnit dataUnit = dataPacket.data.env.tem;
             for(int j=0; j<num; ++j){
                 item.setTem(j, dataUnit.value.get(j));
+                item.setAlarm(j, dataUnit.alarm.get(j));
+                item.setCrAlarm(j, dataUnit.crAlarm.get(j));
             }
         }
     }

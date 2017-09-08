@@ -1,26 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        style="@style/list_view_head"
-        android:text="ID"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        style="@style/list_view_head"
-        android:text="Name"/>
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="21sp"
+            android:text="@string/set_header_id"/>
 
-    <TextView
-        style="@style/list_view_head"
-        android:text="Tem 1"/>
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/set_header_name"/>
 
-    <TextView
-        style="@style/list_view_head"
-        android:text="Tem 2"/>
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/set_header_tem1"/>
 
-    <TextView
-        style="@style/list_view_head"
-        android:text="Tem 3"/>
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/set_header_tem2"/>
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/set_header_tem3"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/bar_div_white" />
 
 </LinearLayout>
