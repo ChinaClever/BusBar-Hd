@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="landscape"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,21 +23,30 @@
         </activity>
         <activity
             android:name=".login.LoginActivity"
+            android:screenOrientation="landscape"
             android:theme="@style/TipDialog" />
         <activity
             android:name=".box.BoxActivity"
+            android:screenOrientation="landscape"
             android:theme="@style/TipDialog" />
         <activity
             android:name=".setting.SetCheckPwdActivity"
+            android:screenOrientation="landscape"
             android:theme="@style/TipDialog" />
         <activity
             android:name=".setting.setline.SetLineActivity"
+            android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden"/>
         <activity
             android:name=".setting.setcom.SetComActivity"
+            android:screenOrientation="landscape"
             android:theme="@style/TipDialog" />
-        <activity android:name=".setting.setbox.SetBoxActivity" />
-        <activity android:name=".setting.setTem.SetTemActivity"></activity>
+        <activity
+            android:name=".setting.setbox.SetBoxActivity"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".setting.setTem.SetTemActivity"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

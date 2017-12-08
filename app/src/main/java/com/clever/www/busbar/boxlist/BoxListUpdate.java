@@ -45,7 +45,7 @@ public class BoxListUpdate {
     private void setUpdateData() {
         int busId = LoginStatus.login_devNum;
         BoxDataHash boxDataHash = BusHashTable.getHash().get(busId);
-        if((++mCount % 6) == 0) // 每3抄r轮显
+        if((++mCount % 4) == 0) // 每3抄r轮显
             mLineId++; // 相数
 
         for(int i=0; i<mItems.size(); ++i) {
