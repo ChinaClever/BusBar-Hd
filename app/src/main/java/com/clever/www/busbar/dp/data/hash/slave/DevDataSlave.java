@@ -84,7 +84,7 @@ public class DevDataSlave {
         DevDataBase ptr = null;
         int sizeBit = 2;
 
-        int fc = data.fn[1] >> 4; // // 处理功能码，第二字节的高四位
+        int fc = 0x0f & (data.fn[1] >> 4); // // 处理功能码，第二字节的高四位
         switch (fc){
             case DEV_CMD_NUM: // 数量
                 obj.num = data.data.get(0);

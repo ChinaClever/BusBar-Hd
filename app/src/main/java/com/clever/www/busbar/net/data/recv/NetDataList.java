@@ -85,7 +85,7 @@ public class NetDataList {
      */
     public NetDataBase getData(){
         NetDataBase dataBase = null;
-        if(size() > 0) {
+        if(size() > 1) {
             dataBase = mList.get(0);
             mList.remove(0);
         }

@@ -143,7 +143,7 @@ public class SetBusCst extends LinearLayout{
         return setDevCom.setDevData(pkt, false);
     }
 
-    private boolean saveBoxNUm() {
+    private boolean saveBoxNum() {
         String str  = mBusNumEt.getText().toString();
         int value = Integer.parseInt(str);
 
@@ -164,7 +164,7 @@ public class SetBusCst extends LinearLayout{
         if(ret) {
             ret = saveBusCur();
             if(ret) {
-                ret = saveBoxNUm();
+                ret = saveBoxNum();
                 if(ret) {
                     Toast.makeText(mContext, R.string.set_bus_save_ok, Toast.LENGTH_SHORT).show();
                 }

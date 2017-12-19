@@ -20,7 +20,7 @@ public interface NetConstants {
     public static final int DATA_MSG_CLIENT = 0x03;	/*客户端标志*/
     public static final int DATA_DEV_VERSION = 2; /*设备通讯类型*/
 
-    public static final int DEV_OFF_LINE_TIME = 5;
+    public static final int DEV_OFF_LINE_TIME = 10;
     public static final int TRA_TYPR_UDP=1; /*UDP通讯*/
     public static final int TRA_TYPR_TCP=2; /*TCP通讯*/
 

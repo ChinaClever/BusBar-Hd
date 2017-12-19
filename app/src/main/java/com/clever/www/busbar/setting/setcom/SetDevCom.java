@@ -1,12 +1,12 @@
 package com.clever.www.busbar.setting.setcom;
 
 import com.clever.www.busbar.common.array.ArrayUtil;
+import com.clever.www.busbar.dp.data.packages.DevDataPacket;
 import com.clever.www.busbar.login.LoginStatus;
 import com.clever.www.busbar.net.data.datadone.NetPackData;
 import com.clever.www.busbar.net.data.packages.NetDataDomain;
 import com.clever.www.busbar.net.tcp.client.TcpSingle;
 import com.clever.www.busbar.net.udp.sent.UdpSend;
-import com.clever.www.busbar.dp.data.packages.DevDataPacket;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -77,7 +77,7 @@ public class SetDevCom {
     public boolean setDevData(NetDataDomain pkt , boolean udpMode) {
         DevDataPacket dataPacket = LoginStatus.getPacket(0);
         if(dataPacket != null) {
-            int num = 1;  //////=====  设备类型
+            int num = 0;  //////=====  设备类型
             pkt.addr = (byte) LoginStatus.login_devNum;
             byte[] buf = new byte[256];
             int len = 0;
@@ -101,14 +101,15 @@ public class SetDevCom {
             mUdpSentListBuf.remove(0);
         }
 
+
         if(mTcpSentListBuf.size() > 0) {
             byte[] buf = mTcpSentListBuf.get(0);
             TcpSingle.bulid().sent(buf, buf.length);
 
             ///////====================
             //// 特别说明，MPDU只能通过UDP的形式接收数据
-            String ip = TcpSingle.bulid().getServerIp().replaceAll("/","");
-            mUdpSend.sent(ip, 18750, buf, buf.length);
+//            String ip = TcpSingle.bulid().getServerIp().replaceAll("/","");
+//            mUdpSend.sent(ip, 18750, buf, buf.length);
 
 
 //            mUdpSend.sent("192.168.1.100", 18750, buf, buf.length);

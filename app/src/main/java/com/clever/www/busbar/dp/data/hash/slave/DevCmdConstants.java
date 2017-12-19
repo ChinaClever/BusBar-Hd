@@ -6,8 +6,8 @@ package com.clever.www.busbar.dp.data.hash.slave;
  */
 public class DevCmdConstants {
     public static final int DEV_CMD_STATUS = 0; //设备状态
-    public static final int DEV_CMD_LOOP = 1; // 回路参数
-    public static final int DEV_CMD_LINE = 2; // 相电参数
+    public static final int DEV_CMD_LINE = 1; // 相电参数
+    public static final int DEV_CMD_LOOP = 2; // 回路参数
     public static final int DEV_CMD_OUTPUT = 3; // 输出位
     public static final int DEV_CMD_ENV = 4; // 环境数据
 

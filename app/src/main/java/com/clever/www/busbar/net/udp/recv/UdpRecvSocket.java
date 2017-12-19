@@ -10,7 +10,7 @@ import java.net.SocketException;
  */
 
 public class UdpRecvSocket {
-    private static final int MAX_SIZE = 1024;
+    private static final int MAX_SIZE = 4*1024;
     private DatagramSocket socket = null;
     private DatagramPacket packet = null;
     private byte[] data = new byte[MAX_SIZE]; // 创建字节数组，指定接收的数据包的大小

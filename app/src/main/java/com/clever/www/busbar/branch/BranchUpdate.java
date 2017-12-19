@@ -50,15 +50,15 @@ public class BranchUpdate {
 
         for(int i=0; i<mItems.size(); ++i) {
             BranchItem item = mItems.get(i);
-            DevDataPacket packet = boxDataHash.getPacket(i);
+            int id = item.getId();
+            DevDataPacket packet = boxDataHash.getPacket(id);
 
             String name = packet.devInfo.name.get();
             if(name.isEmpty())
-                name = "iBox-" + (i+1);
+                name = "iBox-" + id;
             item.setName(name);
 
             item.setStatus(packet.status);
-
             item.setVol(packet.data.line.vol.value.averData());
             item.setCur(packet.data.line.cur.value.addData() / RateEnum.CUR.getValue());
             item.setPow(packet.data.line.pow.addData()  / RateEnum.POW.getValue());

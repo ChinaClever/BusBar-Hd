@@ -30,6 +30,8 @@ public class NavigationFragment extends Fragment{
         homeBtn = view.findViewById(R.id.homeBtn);
         setHomeBtn();
 
+
+
         return view;
     }
 
