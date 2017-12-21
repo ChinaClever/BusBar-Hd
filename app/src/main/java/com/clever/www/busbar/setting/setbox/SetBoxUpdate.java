@@ -32,7 +32,7 @@ public class SetBoxUpdate {
             mItems.clear();
             if(num > 0) {
                 for (int i = 0; i < num; ++i) {
-                    SetBoxItem item = new SetBoxItem(i);
+                    SetBoxItem item = new SetBoxItem(i+1);
                     mItems.add(item);
                 }
             }

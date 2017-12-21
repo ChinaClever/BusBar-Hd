@@ -33,7 +33,7 @@ public class SetTemUpdate {
             mItems.clear();
             if(num > 0) {
                 for (int i = 0; i < num; ++i) {
-                    SetTemItem item = new SetTemItem(i);
+                    SetTemItem item = new SetTemItem(i+1);
                     mItems.add(item);
                 }
             }

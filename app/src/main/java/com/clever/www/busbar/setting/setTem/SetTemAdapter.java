@@ -65,7 +65,7 @@ public class SetTemAdapter extends RecyclerView.Adapter<SetTemAdapter.ViewHolder
                         case R.id.tem_tv_2:  line = 1; break;
                         case R.id.tem_tv_3:  line = 2; break;
                     }
-                    SetComActivity.actionStart(v.getContext(), position, line, 4);
+                    SetComActivity.actionStart(v.getContext(), position+1, line, 4);
                 }
             });
         }

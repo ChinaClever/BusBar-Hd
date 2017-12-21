@@ -48,8 +48,8 @@ public class DevSpiedThread {
             List<Integer> boxList = new ArrayList<>();
             boxHash.list(boxList);
 
-            for (int j = 0; j < boxList.size(); ++j) {
-                DevDataPacket packet = boxHash.getPacket(boxList.get(j));
+            for (int j = boxList.size(); j > 0; --j) {
+                DevDataPacket packet = boxHash.getPacket(boxList.get(j-1));
                 if (packet.offLine > 0) {
                     packet.offLine--;
                     if (packet.offLine > 0) {

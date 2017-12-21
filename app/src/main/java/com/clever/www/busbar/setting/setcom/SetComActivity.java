@@ -22,10 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SetComActivity extends Activity {
-    private int boxNUm=0, modeId = 0, mLine=0;
-    private int mRate = 1;
+    private int boxNum =0, modeId = 0, mLine=0;
+    private int mRate = 1, mFn = 2;
     private EditText minEt, maxEt, crMinEt, crMaxEt;
-    private DevDataPacket dataPacket = LoginStatus.getPacket(boxNUm);
+    private DevDataPacket dataPacket = null;
     private DevDataUnit dataUnit = null;
 
     @Override
@@ -34,9 +34,10 @@ public class SetComActivity extends Activity {
         setContentView(R.layout.set_com_activity);
 
         Intent intent = getIntent();
-        boxNUm  = intent.getIntExtra("box_num", 0);
+        boxNum = intent.getIntExtra("box_num", 0);
         mLine  = intent.getIntExtra("line_num", 0);
         modeId  = intent.getIntExtra("set_mode", 0);
+        dataPacket = LoginStatus.getPacket(boxNum);
 
         Button button = findViewById(R.id.save_btn);
         button.setOnClickListener(onClickListener);
@@ -52,33 +53,37 @@ public class SetComActivity extends Activity {
     private void initTitle() {
         String str = "";
 
-        if(boxNUm == 0) {
+        if(boxNum == 0) {
             str = "始端箱  ";
         } else {
             str = "接插箱  ";
         }
 
-        DevDataPacket dataPacket = LoginStatus.getPacket(boxNUm);
+        dataPacket = LoginStatus.getPacket(boxNum);
         String name = dataPacket.devInfo.name.get();
         if(name.isEmpty())
-            name = "iBox-" + (boxNUm+1);
+            name = "iBox-" + boxNum;
         str += name + "  L" + (mLine+1);
 
         switch (modeId) {
             case 1:
                 str += "相电流";
+                mFn = 2;
                 break;
 
             case 2:
                 str += "相电压";
+                mFn = 1;
                 break;
 
             case 3:
                 str += "回路电流";
+                mFn = 2;
                 break;
 
             case 4:
                 str += "温度";
+                mFn = 3;
                 break;
         }
         str += " 阈值设置";
@@ -188,7 +193,7 @@ public class SetComActivity extends Activity {
         list.add(crMax);
 
         NetDataDomain pkt = new NetDataDomain();
-        pkt.fn[0] = 0x71;
+        pkt.fn[0] = (byte) mFn;
         pkt.fn[1] = getBit();
         pkt.len = setDevCom.intToByteList(list, pkt.data);
 
@@ -218,7 +223,7 @@ public class SetComActivity extends Activity {
 
     private String checkData(int min, int max, int crMin, int crMax) {
         String str = "";
-        if(max > 100*mRate) {
+        if(max > 650*mRate) {
             str = getResources().getString(R.string.set_ret_max);
         }
 

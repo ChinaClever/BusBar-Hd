@@ -65,7 +65,7 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
                         case R.id.line_tv_2:  line = 1; break;
                         case R.id.line_tv_3:  line = 2; break;
                     }
-                    SetComActivity.actionStart(v.getContext(), position, line, 3);
+                    SetComActivity.actionStart(v.getContext(), position+1, line, 3);
                 }
             });
         }
@@ -89,7 +89,7 @@ public class SetBoxAdapter extends RecyclerView.Adapter<SetBoxAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         SetBoxItem item = mItems.get(position);
-        String str = (item.getId() +1) + "";
+        String str = item.getId() + "";
         holder.idTv.setText(str);
 
         str = item.getName();
