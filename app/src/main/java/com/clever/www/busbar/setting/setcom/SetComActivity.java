@@ -157,8 +157,6 @@ public class SetComActivity extends Activity {
     }
 
 
-
-
     public static void actionStart(Context context, int boxNum, int line, int mode) {
         Intent intent = new Intent(context, SetComActivity.class);
         intent.putExtra("box_num", boxNum);
