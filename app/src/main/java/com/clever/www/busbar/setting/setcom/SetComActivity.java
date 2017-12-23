@@ -191,6 +191,7 @@ public class SetComActivity extends Activity {
         list.add(crMax);
 
         NetDataDomain pkt = new NetDataDomain();
+        pkt.addr = (byte) boxNum;
         pkt.fn[0] = (byte) mFn;
         pkt.fn[1] = getBit();
         pkt.len = setDevCom.intToByteList(list, pkt.data);

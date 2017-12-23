@@ -16,7 +16,6 @@ import java.util.List;
 public class DevSpiedThread {
     private BusDataHash mHashData = BusHashTable.getHash();
     private static DevSpiedThread mDevSpid = null;
-    private static final String TAG = "LZY";
 
     public static DevSpiedThread get() {
         if(mDevSpid == null)

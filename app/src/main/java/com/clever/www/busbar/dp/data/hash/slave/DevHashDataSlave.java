@@ -48,6 +48,15 @@ public class DevHashDataSlave {
             case DevCmdConstants.DEV_CMD_OUTPUT_NAME: // 输出位名称
                 mOutput.outputName(dev.outputName, data);
                 break;
+
+            case DevCmdConstants.DEV_CMD_RATE_CUR: // 额定电流
+                int value = (data.data.get(0) & 0xff) * 256 + (data.data.get(1) & 0xff);
+                dev.rateCur = value;
+                break;
+
+            case DevCmdConstants.DEV_CMD_BOX_NUM: // 数量
+               dev.boxSize = data.data.get(0);
+                break;
         }
     }
 

@@ -18,7 +18,8 @@ public class DevDataPacket {
 
     public int boxNum = 0;  // 设备号
     public int offLine = 0; // 离线标识
-    public int rateCur = 0;
+    public int rateCur = 0; // 额定电流
+    public int boxSize = 0;
 
     public DevStrBase ip = new DevStrBase(); //设备IP
 

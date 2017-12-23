@@ -52,7 +52,7 @@ public class SetBusCst extends LinearLayout{
         String str =  curRate +"";
         mBusCurEt.setText(str);
 
-        int num = dataPacket.boxNum;
+        int num = dataPacket.boxSize;
         str = num + "";
         mBusNumEt.setText(str);
     }
@@ -136,8 +136,8 @@ public class SetBusCst extends LinearLayout{
 
         SetDevCom setDevCom = SetDevCom.get();
         NetDataDomain pkt = new NetDataDomain();
-        pkt.fn[0] = 20;
-        pkt.fn[1] = 3;
+        pkt.fn[0] = 30;
+        pkt.fn[1] = 0;
 
         pkt.len = setDevCom.intToByteList(list, pkt.data);
         return setDevCom.setDevData(pkt, false);
@@ -149,8 +149,8 @@ public class SetBusCst extends LinearLayout{
 
         SetDevCom setDevCom = SetDevCom.get();
         NetDataDomain pkt = new NetDataDomain();
-        pkt.fn[0] = 20;
-        pkt.fn[1] = 3;
+        pkt.fn[0] = 31;
+        pkt.fn[1] = 0;
 
         pkt.len = 1;
         pkt.data.add((byte)value);

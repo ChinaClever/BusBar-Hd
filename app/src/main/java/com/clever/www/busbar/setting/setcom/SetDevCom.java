@@ -77,8 +77,8 @@ public class SetDevCom {
     public boolean setDevData(NetDataDomain pkt , boolean udpMode) {
         DevDataPacket dataPacket = LoginStatus.getPacket(0);
         if(dataPacket != null) {
-            int num = 0;  //////=====  设备类型
-            pkt.addr = (byte) LoginStatus.login_devNum;
+            int num = 0x02010101;  //////=====  设备类型
+            pkt.num = (byte) LoginStatus.login_devNum;
             byte[] buf = new byte[256];
             int len = 0;
 

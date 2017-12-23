@@ -1,5 +1,7 @@
 package com.clever.www.busbar.net.data.datadone;
 
+import android.util.Log;
+
 import com.clever.www.busbar.net.data.packages.NetDataCode;
 import com.clever.www.busbar.net.data.packages.NetDataDomain;
 import com.clever.www.busbar.net.data.packages.NetDataPacket;
@@ -53,6 +55,8 @@ public class NetAnalyzeData {
         if(rtn < len){
             if(buf[rtn] == NetConstants.DATA_MSG_ED) /**/
                 return offset; /*返回头位置*/
+            else
+                Log.d("lzy", "aa  dataPacketSync: "  + rtn +" " + len  + " " + buf[rtn] +buf[len-1] + NetConstants.DATA_MSG_ED);
         }
 
         return NetConstants.DATA_ERR_END;/*结束符未找到*/

@@ -38,5 +38,6 @@ public class DevCmdConstants {
     public static final int DEV_CMD_NET_RADIUS = 12;
 
     public static final int DEV_CMD_OUTPUT_NAME = 10; // 输出位名称
-
+    public static final int DEV_CMD_RATE_CUR = 30; // 额定电流
+    public static final int DEV_CMD_BOX_NUM = 31; // 数量
 }
