@@ -54,7 +54,7 @@
     <string name="branch_id">编号</string>
     <string name="branch_name">名称</string>
     <string name="branch_status">状态</string>
-    <string name="branch_status_normal">状态</string>
+    <string name="branch_status_normal">正常</string>
     <string name="branch_status_abnormal">异常</string>
     <string name="branch_total_vol">平均电压</string>
     <string name="branch_total_cur">总电流</string>

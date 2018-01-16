@@ -89,7 +89,7 @@ public class SetTemAdapter extends RecyclerView.Adapter<SetTemAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         SetTemItem item = mItems.get(position);
-        String str = (item.getId() +1) + "";
+        String str = item.getId()  + "";
         holder.idTv.setText(str);
 
         str = item.getName();

@@ -24,6 +24,14 @@ public class DevSpiedThread {
     }
 
 
+    private void delay(int ms)
+    {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void devAlarmStatus(DevDataPacket packet) {
         packet.curAlarm = packet.data.line.cur.crAlarm.maxData();
@@ -52,6 +60,7 @@ public class DevSpiedThread {
                 if (packet.offLine > 0) {
                     packet.offLine--;
                     if (packet.offLine > 0) {
+                        delay(255);
                         devAlarmStatus(packet);
                         if (packet.status > 0) { // 设备不正常
 
@@ -60,7 +69,6 @@ public class DevSpiedThread {
                         }
 
                     } else { // 设备离线
-
                     }
                 } else {
 
@@ -74,12 +82,8 @@ public class DevSpiedThread {
             @Override
             public void run() {
                 while (true) {
-                    try {
-                        Thread.sleep(1800);
-                        checkDevState();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    delay(1350);
+                    checkDevState();
                 }
             }
         }.start();

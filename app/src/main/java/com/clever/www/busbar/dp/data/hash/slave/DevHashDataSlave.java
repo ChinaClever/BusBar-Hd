@@ -23,7 +23,7 @@ public class DevHashDataSlave {
         int fc = data.fn[0]; //根据功能码，进行分支处理
         switch (fc) {
             case DevCmdConstants.DEV_CMD_STATUS: // 设备工作状态
-                dev.status = data.data.get(0);
+//                dev.status = data.data.get(0);
                 break;
 
             case DevCmdConstants.DEV_CMD_LOOP: //回路参数
