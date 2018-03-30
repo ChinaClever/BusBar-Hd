@@ -9,5 +9,6 @@ package com.clever.www.busbar.dp.data.packages.devdata;
  */
 public class DevDatas {
     public DevObjData line = new DevObjData(); // 相数据 相若能耗散
+    public DevObjData loop = new DevObjData(); // 相数据 相若能耗散
     public DevEnvData env = new DevEnvData(); // 环境数据
 }

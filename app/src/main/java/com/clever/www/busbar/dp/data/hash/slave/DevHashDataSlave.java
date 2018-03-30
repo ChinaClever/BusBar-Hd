@@ -24,6 +24,9 @@ public class DevHashDataSlave {
         switch (fc) {
             case DevCmdConstants.DEV_CMD_STATUS: // 设备工作状态
 //                dev.status = data.data.get(0);
+                dev.dc = data.data.get(1);
+                dev.version = data.data.get(2);
+                dev.lineNum = data.data.get(3);
                 break;
 
             case DevCmdConstants.DEV_CMD_LOOP: //回路参数

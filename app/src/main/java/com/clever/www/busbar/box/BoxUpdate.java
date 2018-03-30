@@ -29,7 +29,7 @@ public class BoxUpdate {
     }
 
     private void checkBoxNum() {
-        int num = LoginStatus.getPacket(mBoxID).data.line.num;
+        int num = LoginStatus.getPacket(mBoxID).lineNum;
 
         if(num != mItems.size()) {
             mItems.clear();
@@ -50,8 +50,10 @@ public class BoxUpdate {
         for(int i=0; i<mItems.size(); ++i) {
             BoxItem item = mItems.get(i);
 
-            String name = "Loop " + (i+1);
+//            String name = "Loop " + (i+1);
+            String name = (char)(('A' + i%3)) + "" + (i/3+1);
             item.setName(name);
+
 
             item.setCur(objData.cur.value.get(i) / RateEnum.CUR.getValue());
             item.setCurALarm(objData.cur.alarm.get(i));

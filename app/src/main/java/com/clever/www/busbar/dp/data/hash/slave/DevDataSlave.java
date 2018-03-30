@@ -170,6 +170,10 @@ public class DevDataSlave {
                 objData(dev.line, data);
                 break;
 
+            case DevCmdConstants.DEV_CMD_LOOP: //设备相参数
+                objData(dev.loop, data);
+                break;
+
             case DevCmdConstants.DEV_CMD_ENV: // 环境数据
                 envData(dev.env, data);
                 break;

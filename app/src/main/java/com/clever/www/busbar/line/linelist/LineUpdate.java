@@ -38,7 +38,7 @@ public class LineUpdate {
         for(int i=0; i<mItems.size(); ++i) {
             LineItem item = mItems.get(i);
 
-            String name ="L" + (i+1);
+            String name = (char)(('A' + i)) + "";
             item.setName(name);
 
             item.setVol(packet.data.line.vol.value.get(i));
@@ -65,7 +65,7 @@ public class LineUpdate {
         int data = -1;
         for(int i=0; i<mItems.size(); ++i) {
             LineItem item = mItems.get(i);
-            String name ="L" + (i+1);
+            String name = (char)(('A' + i)) + "";
             item.setName(name);
             item.setVol(data);
             item.setCur(data);
