@@ -12,9 +12,11 @@ public class LineItem {
     private double cur = 0;
     private int curALarm=0, curCrALarm=0;
 
-    private double maxCur = 0;
+    private double pl = 0;
+    private double curThd = 0;
+    private double volThd = 0;
+
     private double pow = 0;
-    private double apPow = 0;
     private double pf = 0;
     private double ele = 0;
     private double tem = 0;
@@ -48,12 +50,28 @@ public class LineItem {
         this.cur = cur;
     }
 
-    public double getMaxCur() {
-        return maxCur;
+    public double getPl() {
+        return pl;
     }
 
-    public void setMaxCur(double maxCur) {
-        this.maxCur = maxCur;
+    public void setPl(double cur) {
+        this.pl = cur;
+    }
+
+    public double getCurThd() {
+        return curThd;
+    }
+
+    public void setCurThd(double maxCur) {
+        this.curThd = maxCur;
+    }
+
+    public double getVolThd() {
+        return volThd;
+    }
+
+    public void setVolThd(double maxCur) {
+        this.volThd = maxCur;
     }
 
     public double getPow() {
@@ -62,14 +80,6 @@ public class LineItem {
 
     public void setPow(double pow) {
         this.pow = pow;
-    }
-
-    public double getApPow() {
-        return apPow;
-    }
-
-    public void setApPow(double apPow) {
-        this.apPow = apPow;
     }
 
     public double getPf() {

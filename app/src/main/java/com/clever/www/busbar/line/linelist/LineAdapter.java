@@ -19,7 +19,7 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
     private List<LineItem> mLineItems = null;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView  nameTv, volTv,curTv, powTv,appowTv,pfTv, eleTv,maxCurTv, temTv;
+        TextView  nameTv, volTv,curTv, powTv,pfTv, eleTv,plTv, volThdTv,curThdTv,temTv;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -27,10 +27,11 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
             nameTv = itemView.findViewById(R.id.name_tv);
             volTv = itemView.findViewById(R.id.vol_tv);
             curTv = itemView.findViewById(R.id.cur_tv);
-            maxCurTv = itemView.findViewById(R.id.max_cur_tv);
+            plTv = itemView.findViewById(R.id.pl_tv);
+            volThdTv = itemView.findViewById(R.id.vol_thd_tv);
+            curThdTv = itemView.findViewById(R.id.cur_thd_tv);
 
             powTv = itemView.findViewById(R.id.pow_tv);
-            appowTv = itemView.findViewById(R.id.appow_tv);
             pfTv = itemView.findViewById(R.id.pf_tv);
             eleTv = itemView.findViewById(R.id.ele_tv);
             temTv = itemView.findViewById(R.id.tem_tv);
@@ -81,20 +82,25 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
         holder.curTv.setText(str);
         setTextColor(holder.curTv, item.getCurALarm(), item.getCurCrALarm());
 
-        value = item.getMaxCur();
-        if(value>=0) str = value +"A";
+        value = item.getPl();
+        if(value>=0) str = value +"%";
         else  str = "---";
-        holder.maxCurTv.setText(str);
+        holder.plTv.setText(str);
+
+        value = item.getCurThd();
+        if(value>=0) str = value +"%";
+        else  str = "---";
+        holder.curThdTv.setText(str);
+
+        value = item.getVolThd();
+        if(value>=0) str = value +"%";
+        else  str = "---";
+        holder.volThdTv.setText(str);
 
         value = item.getPow();
         if(value>=0) str = value +"KW";
         else  str = "---";
         holder.powTv.setText(str);
-
-        value = item.getApPow();
-        if(value>=0) str = value +"KVA";
-        else  str = "---";
-        holder.appowTv.setText(str);
 
         value = item.getPf();
         if(value>=0) str = value +"";
@@ -111,21 +117,6 @@ public class LineAdapter extends RecyclerView.Adapter<LineAdapter.ViewHolder>{
         else  str = "---";
         holder.temTv.setText(str);
         setTextColor(holder.temTv, item.getTemALarm(), item.getTemCrALarm());
-
-
-        //////////////////// 报警字体着色
-
-        //////////////////////  报警颜色
-        ////////////============ 倍数
-
-
-
-
-
-
-
-
-
 
     }
 

@@ -28,8 +28,6 @@ public class LineUpdate {
         mItems = list;
     }
 
-
-
     private void setUpdateData() {
         int busId = LoginStatus.login_devNum;
         BoxDataHash boxDataHash = BusHashTable.getHash().get(busId);
@@ -41,19 +39,20 @@ public class LineUpdate {
             String name = (char)(('A' + i)) + "";
             item.setName(name);
 
-            item.setVol(packet.data.line.vol.value.get(i));
-            item.setVolALarm(packet.data.line.vol.alarm.get(i));
-            item.setVolCrALarm(packet.data.line.vol.crAlarm.get(i));
+            item.setVol(packet.data.loop.vol.value.get(i));
+            item.setVolALarm(packet.data.loop.vol.alarm.get(i));
+            item.setVolCrALarm(packet.data.loop.vol.crAlarm.get(i));
 
-            item.setCur(packet.data.line.cur.value.get(i) / RateEnum.CUR.getValue());
-            item.setCurALarm(packet.data.line.cur.alarm.get(i));
-            item.setCurCrALarm(packet.data.line.cur.crAlarm.get(i));
+            item.setCur(packet.data.loop.cur.value.get(i) / RateEnum.CUR.getValue());
+            item.setCurALarm(packet.data.loop.cur.alarm.get(i));
+            item.setCurCrALarm(packet.data.loop.cur.crAlarm.get(i));
 
-            item.setPow(packet.data.line.pow.get(i) / RateEnum.POW.getValue() );
-            item.setApPow(packet.data.line.apPow.get(i) / RateEnum.POW.getValue());
-            item.setPf(packet.data.line.pf.get(i) / RateEnum.PF.getValue());
-            item.setEle(packet.data.line.ele.get(i) / RateEnum.ELE.getValue());
-            item.setMaxCur(packet.data.line.cur.max.get(i) / RateEnum.CUR.getValue());
+            item.setPow(packet.data.loop.pow.get(i) / RateEnum.POW.getValue() );
+            item.setPl(packet.data.loop.pl.get(i));
+            item.setPf(packet.data.loop.pf.get(i) / RateEnum.PF.getValue());
+            item.setEle(packet.data.loop.ele.get(i) / RateEnum.ELE.getValue());
+            item.setCurThd(packet.data.loop.curThd.get(i) / RateEnum.PF.getValue());
+            item.setVolThd(packet.data.loop.volThd.get(i) / RateEnum.PF.getValue());
 
             item.setTem(packet.data.env.tem.value.get(i));
             item.setTemALarm(packet.data.env.tem.alarm.get(i));
@@ -70,10 +69,11 @@ public class LineUpdate {
             item.setVol(data);
             item.setCur(data);
             item.setPow(data);
-            item.setApPow(data);
+            item.setPl(data);
             item.setPf(data);
             item.setEle(data);
-            item.setMaxCur(data);
+            item.setCurThd(data);
+            item.setVolThd(data);
             item.setTem(data);
         }
     }

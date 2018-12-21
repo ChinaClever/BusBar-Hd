@@ -17,6 +17,8 @@ import com.clever.www.busbar.line.linelist.LineUpdate;
 import java.util.ArrayList;
 import java.util.List;
 
+;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -35,8 +37,6 @@ public class LineFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         LineAdapter adapter = new LineAdapter(mLineItems);
-
-
         recyclerView.setAdapter(adapter);
 
         mLineUpdate = new LineUpdate();
