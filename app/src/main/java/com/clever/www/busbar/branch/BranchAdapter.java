@@ -23,7 +23,7 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchAdapter.ViewHolder
     private List<BranchItem> mBranchItems = null;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView idTv, nameTv, statusTv,volTv,curTv, powTv,appowTv,pfTv, eleTv,temTv;
+        TextView idTv, nameTv, statusTv,curATv,curBTv, curCTv,eleATv, eleBTv,eleCTv;
         View mItemView;
 
         public ViewHolder(View itemView) {
@@ -33,13 +33,12 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchAdapter.ViewHolder
             idTv = itemView.findViewById(R.id.id_tv);
             nameTv = itemView.findViewById(R.id.name_tv);
             statusTv = itemView.findViewById(R.id.status_tv);
-            volTv = itemView.findViewById(R.id.vol_tv);
-            curTv = itemView.findViewById(R.id.cur_tv);
-            powTv = itemView.findViewById(R.id.pow_tv);
-            appowTv = itemView.findViewById(R.id.appow_tv);
-            pfTv = itemView.findViewById(R.id.pf_tv);
-            eleTv = itemView.findViewById(R.id.ele_tv);
-            temTv = itemView.findViewById(R.id.tem_tv);
+            curATv = itemView.findViewById(R.id.cur_tv_A);
+            eleATv = itemView.findViewById(R.id.ele_tv_A);
+            curBTv = itemView.findViewById(R.id.cur_tv_B);
+            eleBTv = itemView.findViewById(R.id.ele_tv_B);
+            curCTv = itemView.findViewById(R.id.cur_tv_C);
+            eleCTv = itemView.findViewById(R.id.ele_tv_C);
         }
     }
 
@@ -92,40 +91,35 @@ public class BranchAdapter extends RecyclerView.Adapter<BranchAdapter.ViewHolder
             holder.statusTv.setTextColor(Color.RED);
         }
 
-        double value = item.getVol();
-        if(value>=0) str = (int)value +"V";
-        else  str = "---";
-        holder.volTv.setText(str);
-
-        value = item.getCur();
+        double value = item.getCur(0);
         if(value>=0) str = value +"A";
         else  str = "---";
-        holder.curTv.setText(str);
+        holder.curATv.setText(str);
 
-        value = item.getPow();
-        if(value>=0) str = value +"KW";
+        value = item.getCur(1);
+        if(value>=0) str = value +"A";
         else  str = "---";
-        holder.powTv.setText(str);
+        holder.curBTv.setText(str);
 
-        value = item.getApPow();
-        if(value>=0) str = value +"KVA";
+        value = item.getCur(2);
+        if(value>=0) str = value +"A";
         else  str = "---";
-        holder.appowTv.setText(str);
+        holder.curCTv.setText(str);
 
-        value = item.getPf();
-        if(value>=0) str = value +"";
-        else  str = "---";
-        holder.pfTv.setText(str);
-
-        value = item.getEle();
+        value = item.getEle(0);
         if(value>=0) str = value +"KWh";
         else  str = "---";
-        holder.eleTv.setText(str);
+        holder.eleATv.setText(str);
 
-        value = item.getTem();
-        if(value>=0) str = (int)value +"℃";
+        value = item.getEle(1);
+        if(value>=0) str = value +"KWh";
         else  str = "---";
-        holder.temTv.setText(str);
+        holder.eleBTv.setText(str);
+
+        value = item.getEle(2);
+        if(value>=0) str = value +"KWh";
+        else  str = "---";
+        holder.eleCTv.setText(str);
     }
 
     @Override

@@ -2,8 +2,8 @@ package com.clever.www.busbar.box;
 
 import com.clever.www.busbar.common.rate.RateEnum;
 import com.clever.www.busbar.common.timer.HanderTimer;
-import com.clever.www.busbar.dp.data.packages.devdata.DevEnvData;
 import com.clever.www.busbar.dp.data.packages.devdata.DevObjData;
+import com.clever.www.busbar.dp.data.packages.output.DevOutputsName;
 import com.clever.www.busbar.login.LoginStatus;
 
 import java.util.List;
@@ -44,16 +44,17 @@ public class BoxUpdate {
 
     private void setUpdateData() {
         DevObjData objData = LoginStatus.getPacket(mBoxID).data.line;
-        DevEnvData envObjData = LoginStatus.getPacket(mBoxID).data.env;
-
+//        DevEnvData envObjData = LoginStatus.getPacket(mBoxID).data.env;
+        DevOutputsName outputName = LoginStatus.getPacket(mBoxID).outputName;
 
         for(int i=0; i<mItems.size(); ++i) {
             BoxItem item = mItems.get(i);
 
-//            String name = "Loop " + (i+1);
             String name = (char)(('A' + i%3)) + "" + (i/3+1);
-            item.setName(name);
+            item.setLine(name);
 
+            name = outputName.get(i);
+            item.setName(name);
 
             item.setCur(objData.cur.value.get(i) / RateEnum.CUR.getValue());
             item.setCurALarm(objData.cur.alarm.get(i));
@@ -69,9 +70,9 @@ public class BoxUpdate {
             item.setPf(objData.pf.get(i) / RateEnum.PF.getValue());
             item.setSw(objData.sw.get(i));
 
-            item.setTem(envObjData.tem.value.get(i));
-            item.setTemALarm(envObjData.tem.alarm.get(i));
-            item.setTemCrALarm(envObjData.tem.crAlarm.get(i));
+//            item.setTem(envObjData.tem.value.get(i));
+//            item.setTemALarm(envObjData.tem.alarm.get(i));
+//            item.setTemCrALarm(envObjData.tem.crAlarm.get(i));
         }
     }
 
@@ -84,7 +85,6 @@ public class BoxUpdate {
         }
         mAdapter.notifyDataSetChanged();
     }
-
 
     private class Timers extends HanderTimer {
         @Override

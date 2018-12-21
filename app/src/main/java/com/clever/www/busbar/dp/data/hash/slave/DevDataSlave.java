@@ -27,10 +27,11 @@ public class DevDataSlave {
     private static final int DEV_CMD_ELE = 4; // 电能
     private static final int DEV_CMD_PF = 5; // 功率因素
     private static final int DEV_CMD_SW = 6; // 开关状态 0 表示未启用
-    private static final int DEV_CMD_CA = 7; // 排碳量
-    private static final int DEV_CMD_RATE = 8;//电压频率
-    private static final int DEV_CMD_APPOW = 9;//视在功率
-    private static final int DEV_CMD_WAVE = 10;//波什
+    private static final int DEV_CMD_APPOW = 7;//视在功率
+    private static final int DEV_CMD_RATE = 8;//视在功率
+    private static final int DEV_CMD_PL = 9; // 排碳量
+    private static final int DEV_CMD_CTHD = 10;//电压频率
+    private static final int DEV_CMD_VTHD = 11;//波什
 
     private HashSlaveCom mCommon = new HashSlaveCom();
 
@@ -117,20 +118,24 @@ public class DevDataSlave {
                 ptr = obj.sw;
                 break;
 
-            case DEV_CMD_CA: // 排碳量
-                ptr = obj.carbon;
-                break;
-
-            case DEV_CMD_RATE: //电压频率
-                ptr = obj.rate;
-                break;
-
             case DEV_CMD_APPOW:
                 ptr = obj.apPow;
                 break;
 
-            case DEV_CMD_WAVE:
-                ptr = obj.wave;
+            case DEV_CMD_RATE:
+                ptr = obj.rate;
+                break;
+
+            case DEV_CMD_PL: // 排碳量
+                ptr = obj.pl;
+                break;
+
+            case DEV_CMD_CTHD: //电压频率
+                ptr = obj.curThd;
+                break;
+
+            case DEV_CMD_VTHD:
+                ptr = obj.volThd;
                 break;
 
             default:
@@ -163,6 +168,17 @@ public class DevDataSlave {
             mCommon.saveHashIntData(ptr, data.len, data.data, sizeBit);
     }
 
+    private void thdData(DevObjData obj, NetDataDomain data){
+        int fc = 0x0f & (data.fn[1] >> 4); // // 处理功能码，第二字节的高四位
+        int l = data.fn[1] & 0x0f; // 处理功能码，第二字节的低四位数据
+
+        DevDataBase ptr = obj.cThdArray[l];
+        if(fc == 1) ptr = obj.vThdArray[l];
+
+        if(ptr != null)
+            mCommon.saveHashIntData(ptr, data.len, data.data, 2);
+    }
+
     public void hashDevDataSlave(DevDatas dev, NetDataDomain data){
         int fc = data.fn[0]; //根据功能码，进行分支处理
         switch (fc) {
@@ -172,6 +188,10 @@ public class DevDataSlave {
 
             case DevCmdConstants.DEV_CMD_LOOP: //设备相参数
                 objData(dev.loop, data);
+                break;
+
+            case DevCmdConstants.DEV_CMD_OUTPUT: // THD
+                thdData(dev.line, data);
                 break;
 
             case DevCmdConstants.DEV_CMD_ENV: // 环境数据

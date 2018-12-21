@@ -23,15 +23,18 @@
 
         <TextView
             style="@style/list_view_head"
-            android:text="@string/line_max_cur"/>
+            android:text="@string/line_pl"/>
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_vol_thd"/>
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_cur_thd"/>
 
         <TextView
             style="@style/list_view_head"
             android:text="@string/line_pow"/>
-
-        <TextView
-            style="@style/list_view_head"
-            android:text="@string/line_appow"/>
 
         <TextView
             style="@style/list_view_head"

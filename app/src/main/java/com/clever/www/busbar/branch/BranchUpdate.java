@@ -59,13 +59,12 @@ public class BranchUpdate {
             item.setName(name);
 
             item.setStatus(packet.status);
-            item.setVol(packet.data.line.vol.value.averData());
-            item.setCur(packet.data.line.cur.value.addData() / RateEnum.CUR.getValue());
-            item.setPow(packet.data.line.pow.addData()  / RateEnum.POW.getValue());
-            item.setApPow(packet.data.line.apPow.addData()  / RateEnum.POW.getValue());
-            item.setPf(packet.data.line.pf.averData() / RateEnum.PF.getValue());
-            item.setEle(packet.data.line.ele.addData() / RateEnum.ELE.getValue());
-            item.setTem(packet.data.env.tem.value.averData());
+
+            int len = packet.data.line.cur.value.size();
+            for (int j=0; j<len; ++j) {
+                item.setCur(j, packet.data.line.cur.value.get(j) / RateEnum.CUR.getValue());
+                item.setEle(j, packet.data.line.ele.get(j) / RateEnum.ELE.getValue());
+            }
         }
     }
 

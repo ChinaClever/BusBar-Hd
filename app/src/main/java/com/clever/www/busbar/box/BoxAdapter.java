@@ -19,10 +19,11 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
     private List<BoxItem> mBoxItems;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTv, swTv, curTv, volTv, powTv, appowTv, eleTv, temTv, pfTv;
+        TextView lineTv, nameTv, swTv, curTv, volTv, powTv, appowTv, eleTv, pfTv;
         public ViewHolder(View itemView) {
             super(itemView);
 
+            lineTv = itemView.findViewById(R.id.line_tv);
             nameTv = itemView.findViewById(R.id.name_tv);
             swTv = itemView.findViewById(R.id.sw_tv);
             curTv = itemView.findViewById(R.id.cur_tv);
@@ -31,7 +32,6 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
             appowTv = itemView.findViewById(R.id.appow_tv);
             pfTv = itemView.findViewById(R.id.pf_tv);
             eleTv = itemView.findViewById(R.id.ele_tv);
-            temTv = itemView.findViewById(R.id.tem_tv);
         }
     }
 
@@ -65,7 +65,11 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position) {
         BoxItem item = mBoxItems.get(position);
 
-        String str = item.getName();
+        String str = item.getLine();
+        if(str.isEmpty()) str = (char)(('A' + position%3)) + "" + (position/3+1);
+        holder.lineTv.setText(str);
+
+        str = item.getName();
         if(str.isEmpty()) str = "Loop " + (position+1);
         holder.nameTv.setText(str);
 
@@ -106,11 +110,11 @@ public class BoxAdapter extends RecyclerView.Adapter<BoxAdapter.ViewHolder>{
         else str = value + "KWh";
         holder.eleTv.setText(str);
 
-        value = item.getTem();
-        if(value>=0) str = value +"℃";
-        else  str = "---";
-        holder.temTv.setText(str);
-        setTextColor(holder.temTv, item.getTemALarm(), item.getTemCrALarm());
+//        value = item.getTem();
+//        if(value>=0) str = value +"℃";
+//        else  str = "---";
+//        holder.temTv.setText(str);
+//        setTextColor(holder.temTv, item.getTemALarm(), item.getTemCrALarm());
     }
 
     @Override

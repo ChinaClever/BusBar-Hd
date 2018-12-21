@@ -23,6 +23,7 @@ public class DevDataPacket {
     public int version = 0;
     public int dc = 0;
     public int lineNum=0;
+    public int hz = 0;
 
     public DevStrBase ip = new DevStrBase(); //设备IP
 

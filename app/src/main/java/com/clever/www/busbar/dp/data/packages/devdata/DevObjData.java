@@ -19,8 +19,12 @@ public class DevObjData {
     public DevDataBase sw = new DevDataBase(); // 开关状态 0 表示未启用
 
     public DevDataBase apPow = new DevDataBase(); // 视在功率
-    public DevDataBase wave = new DevDataBase(); // 谐波值
+    public DevDataBase rate = new DevDataBase(); // 谐波值
 
-    public DevDataBase carbon = new DevDataBase(); // 排碳量
-    public DevDataBase rate = new DevDataBase(); // 电压频率
+    public DevDataBase pl = new DevDataBase(); // 负载百分比
+    public DevDataBase curThd = new DevDataBase(); // 电流谐波
+    public DevDataBase volThd = new DevDataBase(); // 电压谐波
+
+    public DevDataBase[] cThdArray = new DevDataBase[3];
+    public DevDataBase[] vThdArray = new DevDataBase[3];
 }

@@ -8,13 +8,8 @@ public class BranchItem {
     private int id=0;
     private String name;
     private int status = 0;
-    private int vol = 0;
-    private double cur = 0;
-    private double pow = 0;
-    private double apPow = 0;
-    private double pf = 0;
-    private double ele = 0;
-    private int tem = 0;
+    private double[] cur = new double[3];
+    private double ele[] = new double[3];
 
     public BranchItem(int id) {
         setId(id);
@@ -44,60 +39,20 @@ public class BranchItem {
         this.status = status;
     }
 
-    public int getVol() {
-        return vol;
+    public double getCur(int i) {
+        return cur[i];
     }
 
-    public void setVol(int vol) {
-        this.vol = vol;
+    public void setCur(int i, double cur) {
+        this.cur[i] = cur;
     }
 
-    public double getCur() {
-        return cur;
+    public double getEle(int i) {
+        return ele[i];
     }
 
-    public void setCur(double cur) {
-        this.cur = cur;
-    }
-
-    public double getPow() {
-        return pow;
-    }
-
-    public void setPow(double pow) {
-        this.pow = pow;
-    }
-
-    public double getApPow() {
-        return apPow;
-    }
-
-    public void setApPow(double apPow) {
-        this.apPow = apPow;
-    }
-
-    public double getPf() {
-        return pf;
-    }
-
-    public void setPf(double pf) {
-        this.pf = pf;
-    }
-
-    public double getEle() {
-        return ele;
-    }
-
-    public void setEle(double ele) {
-        this.ele = ele;
-    }
-
-    public int getTem() {
-        return tem;
-    }
-
-    public void setTem(int tem) {
-        this.tem = tem;
+    public void setEle(int i, double ele) {
+        this.ele[i] = ele;
     }
 
 }

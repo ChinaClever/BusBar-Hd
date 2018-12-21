@@ -11,6 +11,10 @@
 
         <TextView
             style="@style/list_view_head"
+            android:text="@string/line_name"/>
+
+        <TextView
+            style="@style/list_view_head"
             android:text="@string/box_name"/>
 
         <TextView

@@ -50,7 +50,7 @@ public class SetBoxUpdate {
             SetBoxItem item = mItems.get(i);
             item.setName(name);
 
-            int num = dataPacket.data.line.num;
+            int num = dataPacket.lineNum;
             item.setNum(num);
 
             DevDataUnit dataUnit = dataPacket.data.line.cur;

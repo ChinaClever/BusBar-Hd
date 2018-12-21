@@ -44,9 +44,10 @@
     <string name="line_status">状态</string>
     <string name="line_vol">相电压</string>
     <string name="line_cur">相电流</string>
-    <string name="line_max_cur">过载电流</string>
+    <string name="line_pl">负载率</string>
+    <string name="line_vol_thd">电压谐波</string>
+    <string name="line_cur_thd">电流谐波</string>
     <string name="line_pow">有功功率</string>
-    <string name="line_appow">视在功率</string>
     <string name="line_pf">功率因素</string>
     <string name="line_ele">电能</string>
     <string name="line_tem">温度: </string>
@@ -56,13 +57,12 @@
     <string name="branch_status">状态</string>
     <string name="branch_status_normal">正常</string>
     <string name="branch_status_abnormal">异常</string>
-    <string name="branch_total_vol">平均电压</string>
-    <string name="branch_total_cur">总电流</string>
-    <string name="branch_total_pow">有功功率</string>
-    <string name="branch_total_appow">视在功率</string>
-    <string name="branch_total_pf">功率因素</string>
-    <string name="branch_total_ele">总电能</string>
-    <string name="branch_total_tem">温度</string>
+    <string name="branch_cur_A">A电流</string>
+    <string name="branch_ele_A">A电能</string>
+    <string name="branch_cur_B">B电流</string>
+    <string name="branch_ele_B">B电能</string>
+    <string name="branch_cur_C">C电流</string>
+    <string name="branch_ele_C">C电能</string>
 
     <string name="box_total_vol">总电压： </string>
     <string name="box_total_cur">总电流： </string>

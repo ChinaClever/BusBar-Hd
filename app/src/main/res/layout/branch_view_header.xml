@@ -1,55 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-     android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <TextView
-        android:text="@string/branch_id"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:textSize="21sp"/>
+        <TextView
+            android:text="@string/branch_id"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="21sp"/>
 
-    <TextView
-        android:text="@string/branch_name"
-        style="@style/list_view_head"/>
+        <TextView
+            android:text="@string/branch_name"
+            style="@style/list_view_head"/>
 
-    <TextView
-        android:text="@string/branch_status"
-        style="@style/list_view_head"/>
+        <TextView
+            android:text="@string/branch_status"
+            style="@style/list_view_head"/>
 
-    <TextView
-        android:text="@string/branch_total_vol"
-        style="@style/list_view_head"/>
+        <TextView
+            android:text="@string/branch_cur_A"
+            style="@style/list_view_head"/>
 
-    <TextView
-        android:text="@string/branch_total_cur"
-        style="@style/list_view_head"/>
+        <TextView
+            android:text="@string/branch_ele_A"
+            style="@style/list_view_head"/>
 
-    <TextView
-        android:text="@string/branch_total_pow"
-        style="@style/list_view_head"/>
+        <TextView
+            android:text="@string/branch_cur_B"
+            style="@style/list_view_head"/>
 
-    <TextView
-        android:text="@string/branch_total_appow"
-        style="@style/list_view_head"/>
+        <TextView
+            android:text="@string/branch_ele_B"
+            style="@style/list_view_head"/>
 
-    <TextView
-        android:text="@string/branch_total_pf"
-        style="@style/list_view_head"/>
+        <TextView
+            android:text="@string/branch_cur_C"
+            style="@style/list_view_head"/>
 
-    <TextView
-        android:text="@string/branch_total_ele"
-        style="@style/list_view_head"/>
+        <TextView
+            android:text="@string/branch_ele_C"
+            style="@style/list_view_head"/>
 
-    <TextView
-        android:text="@string/branch_total_tem"
-        style="@style/list_view_head"/>
     </LinearLayout>
 
     <View

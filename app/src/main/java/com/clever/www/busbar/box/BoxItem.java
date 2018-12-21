@@ -7,6 +7,7 @@ package com.clever.www.busbar.box;
 public class BoxItem {
 
     private int id = 0;
+    private String line = "";
     private String name = "";
     private double vol=-1;
     private int volALarm=0, volCrALarm=0;
@@ -29,12 +30,15 @@ public class BoxItem {
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
+    public String getLine() {
+        return line;
+    }
+    public void setLine(String name) { this.line = name; }
+
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
     public double getVol() {
         return vol;

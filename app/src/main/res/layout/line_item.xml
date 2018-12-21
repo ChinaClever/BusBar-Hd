@@ -23,17 +23,22 @@
             android:text="---"/>
 
         <TextView
-            android:id="@+id/max_cur_tv"
+            android:id="@+id/pl_tv"
+            style="@style/list_view_text"
+            android:text="---"/>
+
+        <TextView
+            android:id="@+id/vol_thd_tv"
+            style="@style/list_view_text"
+            android:text="---"/>
+
+        <TextView
+            android:id="@+id/cur_thd_tv"
             style="@style/list_view_text"
             android:text="---"/>
 
         <TextView
             android:id="@+id/pow_tv"
-            style="@style/list_view_text"
-            android:text="---"/>
-
-        <TextView
-            android:id="@+id/appow_tv"
             style="@style/list_view_text"
             android:text="---"/>
 
