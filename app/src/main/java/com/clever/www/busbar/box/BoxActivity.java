@@ -10,6 +10,9 @@ import android.view.Window;
 import android.widget.TextView;
 
 import com.clever.www.busbar.R;
+import com.clever.www.busbar.boxline.BoxLineAdapter;
+import com.clever.www.busbar.boxline.BoxLineItem;
+import com.clever.www.busbar.boxline.BoxLineUpdate;
 import com.clever.www.busbar.dp.data.packages.DevDataPacket;
 import com.clever.www.busbar.login.LoginStatus;
 
@@ -19,6 +22,8 @@ import java.util.List;
 public class BoxActivity extends Activity {
     private List<BoxItem> boxItems = new ArrayList<>();
     private BoxUpdate mBoxUpdate = null;
+    private List<BoxLineItem> mBoxLineItems = new ArrayList<>();
+    private BoxLineUpdate mBoxLineUpdate = null;
     private int mBOxID = 0;
 
     @Override
@@ -31,16 +36,29 @@ public class BoxActivity extends Activity {
         mBOxID = intent.getIntExtra("box_id", 0);
         initBOxName(mBOxID);
 
-        BoxTotalCst totalCst = (BoxTotalCst) findViewById(R.id.total_cst);
-        totalCst.setBoxId(mBOxID);
+//        BoxTotalCst totalCst = (BoxTotalCst) findViewById(R.id.total_cst);
+//        totalCst.setBoxId(mBOxID);
 
         initRecyclerView();
+        initLineRecyclerView();
     }
 
     public static void actionStart(Context context, int boxId) {
         Intent intent = new Intent(context, BoxActivity.class);
         intent.putExtra("box_id", boxId);
         context.startActivity(intent);
+    }
+
+    private void initLineRecyclerView() {
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_line_view);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        BoxLineAdapter adapter = new BoxLineAdapter(mBoxLineItems);
+        recyclerView.setAdapter(adapter);
+
+        mBoxLineUpdate = new BoxLineUpdate();
+        mBoxLineUpdate.setData(adapter, mBoxLineItems, mBOxID);
     }
 
     private void initRecyclerView() {

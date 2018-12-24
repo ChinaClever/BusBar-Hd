@@ -48,7 +48,7 @@ public class LineUpdate {
             item.setCurCrALarm(packet.data.loop.cur.crAlarm.get(i));
 
             item.setPow(packet.data.loop.pow.get(i) / RateEnum.POW.getValue() );
-            item.setPl(packet.data.loop.pl.get(i));
+            item.setPl(packet.data.loop.pl.get(i) / RateEnum.PF.getValue());
             item.setPf(packet.data.loop.pf.get(i) / RateEnum.PF.getValue());
             item.setEle(packet.data.loop.ele.get(i) / RateEnum.ELE.getValue());
             item.setCurThd(packet.data.loop.curThd.get(i) / RateEnum.PF.getValue());

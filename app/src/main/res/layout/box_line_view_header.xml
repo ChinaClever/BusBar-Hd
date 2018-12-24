@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:paddingTop="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_name"/>
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_vol"/>
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_cur"/>
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_pl"/>
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_cur_thd"/>
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_pow"/>
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_pf"/>
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_ele"/>
+
+        <TextView
+            style="@style/list_view_head"
+            android:text="@string/line_tem"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="@color/bar_div_white" />
+</LinearLayout>

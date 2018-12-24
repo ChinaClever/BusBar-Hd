@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.clever.www.busbar.boxlist.BoxListFragment;
+import com.clever.www.busbar.boxline.BoxLineFragment;
 import com.clever.www.busbar.branch.BranchFragment;
 import com.clever.www.busbar.home.HomeFragment;
 import com.clever.www.busbar.line.LineFragment;
@@ -18,7 +18,7 @@ import com.clever.www.busbar.setting.SetCheckPwdActivity;
 public class MainActivity extends AppCompatActivity {
     private NetRecvThread mNetRecvThread = new NetRecvThread();
     private NavigationFragment mNavigationFragment = null;
-    private BoxListFragment mBoxListFragment = null;
+    private BoxLineFragment mBoxLineFragment = null;
     private BranchFragment mBranchFragment = null;
     private LineFragment mLineFragment = null;
     private HomeFragment mHomeFragment = null;
@@ -91,11 +91,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case 3:
-                if(mBoxListFragment == null){
-                    mBoxListFragment = new BoxListFragment();
-                    transaction.add(R.id.content, mBoxListFragment);
+                if(mBoxLineFragment == null){
+                    mBoxLineFragment = new BoxLineFragment();
+                    transaction.add(R.id.content, mBoxLineFragment);
                 }
-                transaction.show(mBoxListFragment);
+                transaction.show(mBoxLineFragment);
                 break;
 
             default:
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
     //隐藏所有Fragment
     private void hideAllFragment(FragmentTransaction fragmentTransaction) {
-        if (mBoxListFragment != null) fragmentTransaction.hide(mBoxListFragment);
+        if (mBoxLineFragment != null) fragmentTransaction.hide(mBoxLineFragment);
         if (mBranchFragment != null) fragmentTransaction.hide(mBranchFragment);
         if (mLineFragment != null) fragmentTransaction.hide(mLineFragment);
         if (mHomeFragment != null) fragmentTransaction.hide(mHomeFragment);
