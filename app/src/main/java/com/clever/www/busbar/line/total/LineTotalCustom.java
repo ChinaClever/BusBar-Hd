@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,16 +14,20 @@ import com.clever.www.busbar.R;
 import com.clever.www.busbar.common.rate.RateEnum;
 import com.clever.www.busbar.common.timer.HanderTimer;
 import com.clever.www.busbar.dp.data.packages.devdata.DevDatas;
+import com.clever.www.busbar.line.linethd.LineThdActivity;
 import com.clever.www.busbar.login.LoginStatus;
 
 
 public class LineTotalCustom extends LinearLayout {
     private TextView rateTv;
     private PieChartCst pieVol, pieCur, piePow;
-
+    private Context mContext;
 
     public LineTotalCustom(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+
+        mContext = context;
+        new Timers().start(500);
 
         View view = LayoutInflater.from(context).inflate(R.layout.line_total_custom, this);
         rateTv = view.findViewById(R.id.rate_tv);
@@ -31,7 +36,13 @@ public class LineTotalCustom extends LinearLayout {
         pieCur = view.findViewById(R.id.pie_cur);
         piePow = view.findViewById(R.id.pie_pow);
 
-        new Timers().start(500);
+        Button btn = view.findViewById(R.id.thd_btn);
+        btn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LineThdActivity.actionStart(mContext, 0);
+            }
+        });
     }
 
 

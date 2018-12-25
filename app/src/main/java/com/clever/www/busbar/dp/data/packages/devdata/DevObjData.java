@@ -25,6 +25,6 @@ public class DevObjData {
     public DevDataBase curThd = new DevDataBase(); // 电流谐波
     public DevDataBase volThd = new DevDataBase(); // 电压谐波
 
-    public DevDataBase[] cThdArray = new DevDataBase[3];
-    public DevDataBase[] vThdArray = new DevDataBase[3];
+    public DevDataBase[] cThdArray = {new DevDataBase(),new DevDataBase(),new DevDataBase()};
+    public DevDataBase[] vThdArray = {new DevDataBase(),new DevDataBase(),new DevDataBase()};
 }

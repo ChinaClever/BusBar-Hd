@@ -48,7 +48,10 @@
         <activity
             android:name=".setting.setTem.SetTemActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".line.linethd.LineThdActivity"></activity>
+        <activity
+            android:name=".line.linethd.LineThdActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/TipDialog"/>
     </application>
 
 </manifest>

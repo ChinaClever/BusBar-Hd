@@ -36,6 +36,7 @@
     <string name="login_coned">已登陆</string>
 
     <string name="line_rate">频率: </string>
+    <string name="line_thd">谐波分析 </string>
     <string name="line_total_cur">总电流: </string>
     <string name="line_total_vol">平均电压: </string>
     <string name="line_total_pow">总功率: </string>
