@@ -57,6 +57,7 @@ public class PieChartCst extends LinearLayout{
         values.add(sliceValue);
     }
 
+
     private void initViews() {
         chart.setCircleFillRatio(0.9f);//设置图所占整个view的比例  当有外面的数据时使用，防止数据显示不全
         data = new PieChartData(values);
@@ -87,6 +88,15 @@ public class PieChartCst extends LinearLayout{
         chart.setPieChartData(data);
     }
 
+    public void setColor(int alarm)
+    {
+        if(alarm>0) {
+            values.get(1).setColor(Color.RED);
+        } else {
+            values.get(1).setColor(Color.GREEN);
+        }
+    }
+
     public void setValue(int value, int max, double rate, String unitStr) {
         String str = value + "";
 
@@ -100,11 +110,14 @@ public class PieChartCst extends LinearLayout{
         }
         data.setCenterText1(str);
 
+
         if (hasCenterText2) {
             data.setCenterText2(unitStr);
         } else {
             unitTv.setText(unitStr);
         }
+
+        if(value>max) max = value;
 
         if(max > 0) {
             int maxValue = max + max / 4;
@@ -114,6 +127,7 @@ public class PieChartCst extends LinearLayout{
             values.get(1).setValue(value / 1.0f);
             values.get(2).setValue((max - value) / 1.0f);
         }
+
 
         chart.startDataAnimation();
     }
